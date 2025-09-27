@@ -1,5 +1,0 @@
-theme: jekyll-theme-minimal
-title: A2A PHP SDK API Docs
-description: Complete API Reference for the A2A (AI Agent-to-Agent) Protocol PHP SDK
-markdown: kramdown
-highlighter: rouge
