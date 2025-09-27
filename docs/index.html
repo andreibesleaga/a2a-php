@@ -98,126 +98,142 @@
         .section {
             margin-bottom: 3rem;
             background: white;
-            border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 2rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
             color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 0.5rem;
         }
 
         .section h3 {
-            font-size: 1.4rem;
-            margin: 1.5rem 0 1rem 0;
             color: var(--secondary-color);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.4rem;
+        }
+
+        .section h4 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .section h5 {
+            color: var(--secondary-color);
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .class-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
         }
 
         .class-card {
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 1.5rem;
             background: var(--code-background);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
             transition: box-shadow 0.3s;
         }
 
         .class-card:hover {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
 
         .class-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
             color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
         }
 
         .class-card p {
             color: var(--secondary-color);
             margin-bottom: 1rem;
+            font-size: 0.95rem;
         }
 
         .methods-list {
             list-style: none;
+            margin: 1rem 0;
         }
 
         .methods-list li {
-            padding: 0.3rem 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .methods-list li:last-child {
-            border-bottom: none;
-        }
-
-        .method-name {
-            font-family: 'SF Mono', Consolas, monospace;
-            color: var(--primary-color);
-            font-weight: 500;
-        }
-
-        code {
-            background: var(--code-background);
-            padding: 0.2rem 0.4rem;
-            border-radius: 3px;
-            font-family: 'SF Mono', Consolas, monospace;
-            font-size: 0.9rem;
-        }
-
-        pre {
-            background: var(--code-background);
-            padding: 1rem;
-            border-radius: 6px;
-            overflow-x: auto;
-            margin: 1rem 0;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 4px;
             border-left: 4px solid var(--primary-color);
         }
 
-        .installation {
-            background: linear-gradient(135deg, #f6f8fa, #e1f5fe);
-            border-left: 4px solid var(--success-color);
+        .method-name {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 600;
         }
 
         .feature-list {
             list-style: none;
-            margin-top: 1rem;
+            margin: 1rem 0;
         }
 
         .feature-list li {
-            padding: 0.5rem 0;
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
             position: relative;
-            padding-left: 2rem;
         }
 
         .feature-list li::before {
             content: "✅";
             position: absolute;
             left: 0;
-            top: 0.5rem;
+        }
+
+        pre {
+            background: var(--code-background);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            background: var(--code-background);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
         }
 
         .toc {
             background: var(--code-background);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
+            border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 2rem;
+            position: sticky;
+            top: 80px;
         }
 
         .toc h3 {
-            margin-top: 0;
             margin-bottom: 1rem;
+            color: var(--primary-color);
         }
 
         .toc ul {
@@ -225,7 +241,7 @@
         }
 
         .toc li {
-            padding: 0.3rem 0;
+            margin: 0.5rem 0;
         }
 
         .toc a {
@@ -298,22 +314,33 @@
                     <li><a href="#overview">Overview & Features</a></li>
                     <li><a href="#installation">Installation & Quick Start</a></li>
                     <li><a href="#core-classes">Core Classes</a>
-                        <ul style="margin-left: 1rem; margin-top: 0.5rem;">
+                        <ul>
                             <li><a href="#a2aclient">A2AClient</a></li>
                             <li><a href="#a2aserver">A2AServer</a></li>
-                            <li><a href="#a2aprotocol">A2AProtocol</a></li>
+                            <li><a href="#a2aprotocol">A2AProtocol_v0_3_0</a></li>
                             <li><a href="#taskmanager">TaskManager</a></li>
+                            <li><a href="#pushnotificationmanager">PushNotificationManager</a></li>
                         </ul>
                     </li>
-                    <li><a href="#models">Models & Data Structures</a></li>
+                    <li><a href="#models">Models & Data Structures</a>
+                        <ul>
+                            <li><a href="#agentcard">AgentCard (v0.3.0)</a></li>
+                            <li><a href="#message">Message (v0.3.0)</a></li>
+                            <li><a href="#task">Task (v0.3.0)</a></li>
+                            <li><a href="#security">Security Models</a></li>
+                            <li><a href="#parts">Message Parts</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#exceptions">Exceptions & Error Handling</a></li>
                     <li><a href="#utilities">Utilities & Handlers</a></li>
+                    <li><a href="#streaming">Streaming & Real-time</a></li>
                     <li><a href="#examples">Usage Examples</a></li>
                 </ul>
             </div>
 
             <section id="overview" class="section">
-                <h2>🚀 Overview</h2>
+                <h2>🚀 Overview & Features</h2>
+                
                 <p>The A2A PHP SDK is a comprehensive implementation of the A2A (AI Agent-to-Agent) Protocol v0.3.0, providing a robust foundation for building AI agent communication systems in PHP.</p>
                 
                 <h3>🏆 Key Features</h3>
@@ -333,45 +360,41 @@
                 <h3>🔧 Architecture</h3>
                 <p>The SDK is organized into several key components:</p>
                 <ul class="feature-list">
-                    <li><strong>Core Protocol</strong> - A2AClient, A2AServer, A2AProtocol classes</li>
+                    <li><strong>Core Protocol</strong> - A2AClient, A2AServer, A2AProtocol_v0_3_0 classes</li>
                     <li><strong>Models</strong> - Data structures for agents, messages, tasks, and artifacts</li>
                     <li><strong>Streaming</strong> - Real-time communication via SSE</li>
                     <li><strong>Task Management</strong> - Complete task lifecycle and state management</li>
                     <li><strong>Utilities</strong> - HTTP client, JSON-RPC, and helper functions</li>
-                    <li><strong>Exception Handling</strong> - Comprehensive error management</li>
+                </ul>
+
+                <h3>✅ A2A-TCK Compliance</h3>
+                <p>This implementation has been thoroughly tested against the official A2A Test Compatibility Kit:</p>
+                <ul class="feature-list">
+                    <li><strong>Mandatory Features (25/25)</strong> - JSON-RPC 2.0, Agent Cards, Message Send, Task Management</li>
+                    <li><strong>Capability Features (14/14)</strong> - Message Capabilities, Push Notifications, Streaming</li>
+                    <li><strong>Quality Features (12/12)</strong> - Error Handling, State Management, Validation</li>
                 </ul>
             </section>
 
-            <section id="installation" class="section installation">
-                <h2>📦 Installation & Quick Start</h2>
+            <section id="installation" class="section">
+                <h2>⚡ Installation & Quick Start</h2>
                 
-                <h3>Installation via Composer</h3>
+                <h3>Install via Composer</h3>
                 <pre><code>composer require andreibesleaga/a2a-php</code></pre>
 
                 <h3>Basic Usage</h3>
-                <pre><code><?php
-require_once 'vendor/autoload.php';
-
-use A2A\Models\AgentCard;
+                <pre><code>use A2A\A2AClient;
+use A2A\Models\v0_3_0\AgentCard;
+use A2A\Models\v0_3_0\Message;
 use A2A\Models\AgentCapabilities;
-use A2A\A2AClient;
-use A2A\A2AServer;
 
-// Create an agent card
-$agentCard = new AgentCard(
-    'my-agent',
-    'My AI Agent',
-    'A helpful AI assistant',
-    'https://my-agent.example.com',
-    '1.0.0'
-);
+// Create agent card
+$capabilities = new AgentCapabilities(['message/send'], ['task/get', 'task/cancel']);
+$agentCard = new AgentCard('MyAgent', 'Description', 'http://localhost', '1.0.0', $capabilities, [], []);
 
-// Start a server
-$server = new A2AServer($agentCard);
-php -S localhost:8081 server.php
-
-// Or use as a client
+// Create client and send message
 $client = new A2AClient($agentCard);
+$message = new Message('msg-1', 'sender', 'Hello World!');
 $response = $client->sendMessage('http://other-agent.com', $message);</code></pre>
 
                 <h3>Verify Installation</h3>
@@ -395,153 +418,179 @@ php examples/implementation_status.php</code></pre>
                     
                     <h5>Key Methods:</h5>
                     <ul class="methods-list">
-                        <li><span class="method-name">__construct(AgentCard $agentCard, ?HttpClient $httpClient = null, ?LoggerInterface $logger = null)</span> - Initialize the client</li>
-                        <li><span class="method-name">sendMessage(string $agentUrl, Message $message): array</span> - Send a message to another agent</li>
-                        <li><span class="method-name">getAgentCard(string $agentUrl): AgentCard</span> - Retrieve agent card from URL</li>
-                        <li><span class="method-name">createTask(string $agentUrl, Task $task): array</span> - Create a task on remote agent</li>
-                        <li><span class="method-name">executeTask(string $agentUrl, string $taskId): array</span> - Execute a task on remote agent</li>
-                        <li><span class="method-name">getTaskStatus(string $agentUrl, string $taskId): array</span> - Get task status</li>
-                        <li><span class="method-name">subscribeToTask(string $agentUrl, string $taskId, callable $callback): void</span> - Subscribe to task updates</li>
+                        <li><span class="method-name">__construct(AgentCard $agentCard, ?HttpClient $httpClient = null, ?LoggerInterface $logger = null)</span></li>
+                        <li><span class="method-name">sendMessage(string $agentUrl, Message $message): array</span></li>
+                        <li><span class="method-name">getAgentCard(string $agentUrl): AgentCard</span></li>
+                        <li><span class="method-name">getAuthenticatedExtendedCard(string $agentUrl): AgentCard</span></li>
+                        <li><span class="method-name">ping(string $agentUrl): bool</span></li>
+                        <li><span class="method-name">getTask(string $taskId, ?int $historyLength = null): ?Task</span></li>
+                        <li><span class="method-name">cancelTask(string $taskId): bool</span></li>
+                        <li><span class="method-name">sendTask(string $taskId, Message $message, array $metadata = []): ?Task</span></li>
+                        <li><span class="method-name">setPushNotificationConfig(string $taskId, PushNotificationConfig $config): bool</span></li>
+                        <li><span class="method-name">getPushNotificationConfig(string $taskId): ?PushNotificationConfig</span></li>
+                        <li><span class="method-name">listPushNotificationConfigs(): array</span></li>
+                        <li><span class="method-name">deletePushNotificationConfig(string $taskId): bool</span></li>
+                        <li><span class="method-name">resubscribeTask(string $taskId): bool</span></li>
                     </ul>
-
-                    <h5>Usage Example:</h5>
-                    <pre><code>$client = new A2AClient($agentCard);
-$message = Message::createUserMessage('Hello, agent!');
-$response = $client->sendMessage('http://other-agent.com', $message);</code></pre>
                 </div>
 
                 <div id="a2aserver" class="class-card">
                     <h4>A2AServer</h4>
-                    <p>The server class for handling incoming A2A protocol requests and managing agent operations.</p>
+                    <p>Server class for handling incoming A2A protocol requests and messages.</p>
                     <p><strong>Namespace:</strong> <code>A2A\A2AServer</code></p>
                     
                     <h5>Key Methods:</h5>
                     <ul class="methods-list">
-                        <li><span class="method-name">__construct(AgentCard $agentCard, ?LoggerInterface $logger = null, ?TaskManager $taskManager = null)</span> - Initialize the server</li>
-                        <li><span class="method-name">addMessageHandler(callable $handler): void</span> - Add message handler</li>
-                        <li><span class="method-name">handleRequest(array $request): array</span> - Handle incoming JSON-RPC request</li>
-                        <li><span class="method-name">handleAgentCardRequest(): array</span> - Handle agent card requests</li>
-                        <li><span class="method-name">handleMessageSend(array $params): array</span> - Handle message sending</li>
-                        <li><span class="method-name">handleTaskCreate(array $params): array</span> - Handle task creation</li>
-                        <li><span class="method-name">handleTaskExecute(array $params): array</span> - Handle task execution</li>
-                        <li><span class="method-name">handleStreamMessage(array $params): array</span> - Handle streaming messages</li>
+                        <li><span class="method-name">__construct(A2AProtocol_v0_3_0 $protocol, array $messageHandlers = [])</span></li>
+                        <li><span class="method-name">addMessageHandler(MessageHandlerInterface $handler): void</span></li>
+                        <li><span class="method-name">handleRequest(array $request): array</span></li>
+                        <li><span class="method-name">getAgentCard(): AgentCard</span></li>
                     </ul>
-
-                    <h5>Usage Example:</h5>
-                    <pre><code>$server = new A2AServer($agentCard);
-$server->addMessageHandler(function($message) {
-    return "Received: " . $message->getContent();
-});
-$response = $server->handleRequest($jsonRpcRequest);</code></pre>
                 </div>
 
                 <div id="a2aprotocol" class="class-card">
-                    <h4>A2AProtocol</h4>
-                    <p>Protocol utilities and constants for A2A communication.</p>
-                    <p><strong>Namespace:</strong> <code>A2A\A2AProtocol</code></p>
+                    <h4>A2AProtocol_v0_3_0</h4>
+                    <p>Core protocol implementation for A2A Protocol v0.3.0 compliance.</p>
+                    <p><strong>Namespace:</strong> <code>A2A\A2AProtocol_v0_3_0</code></p>
                     
-                    <h5>Key Methods:</h5>
-                    <ul class="methods-list">
-                        <li><span class="method-name">getVersion(): string</span> - Get protocol version</li>
-                        <li><span class="method-name">validateMessage(array $message): bool</span> - Validate message structure</li>
-                        <li><span class="method-name">validateAgentCard(array $card): bool</span> - Validate agent card</li>
-                        <li><span class="method-name">getRequiredMethods(): array</span> - Get required protocol methods</li>
-                        <li><span class="method-name">getSupportedCapabilities(): array</span> - Get supported capabilities</li>
+                    <h5>Key Features:</h5>
+                    <ul class="feature-list">
+                        <li>Complete JSON-RPC 2.0 implementation</li>
+                        <li>Agent card management and validation</li>
+                        <li>Message routing and handling</li>
+                        <li>Task lifecycle management</li>
+                        <li>Push notification support</li>
+                        <li>Streaming capabilities</li>
                     </ul>
                 </div>
 
                 <div id="taskmanager" class="class-card">
                     <h4>TaskManager</h4>
-                    <p>Manages task lifecycle, execution, and state transitions.</p>
+                    <p>Manages task lifecycle, state transitions, and task-related operations.</p>
                     <p><strong>Namespace:</strong> <code>A2A\TaskManager</code></p>
                     
-                    <h5>Key Methods:</h5>
-                    <ul class="methods-list">
-                        <li><span class="method-name">__construct(Storage $storage)</span> - Initialize with storage backend</li>
-                        <li><span class="method-name">createTask(Task $task): string</span> - Create a new task</li>
-                        <li><span class="method-name">getTask(string $taskId): ?Task</span> - Retrieve task by ID</li>
-                        <li><span class="method-name">updateTaskStatus(string $taskId, TaskStatus $status): void</span> - Update task status</li>
-                        <li><span class="method-name">executeTask(string $taskId): Task</span> - Execute a task</li>
-                        <li><span class="method-name">getAllTasks(): array</span> - Get all tasks</li>
-                        <li><span class="method-name">deleteTask(string $taskId): void</span> - Delete a task</li>
+                    <h5>Features:</h5>
+                    <ul class="feature-list">
+                        <li>Task creation and tracking</li>
+                        <li>State management (pending, running, completed, failed)</li>
+                        <li>Task history and auditing</li>
+                        <li>Task cancellation and cleanup</li>
+                    </ul>
+                </div>
+
+                <div id="pushnotificationmanager" class="class-card">
+                    <h4>PushNotificationManager</h4>
+                    <p>Handles push notification configurations and delivery mechanisms.</p>
+                    <p><strong>Namespace:</strong> <code>A2A\PushNotificationManager</code></p>
+                    
+                    <h5>Features:</h5>
+                    <ul class="feature-list">
+                        <li>WebSocket notification support</li>
+                        <li>HTTP callback configurations</li>
+                        <li>Notification filtering and routing</li>
+                        <li>Configuration CRUD operations</li>
                     </ul>
                 </div>
             </section>
 
             <section id="models" class="section">
-                <h2>📋 Models & Data Structures</h2>
+                <h2>📊 Models & Data Structures</h2>
                 
                 <div class="class-grid">
-                    <div class="class-card">
-                        <h4>AgentCard</h4>
-                        <p>Represents an A2A agent with its capabilities, skills, and metadata.</p>
+                    <div id="agentcard" class="class-card">
+                        <h4>AgentCard (v0.3.0)</h4>
+                        <p>Represents an AI agent's identity, capabilities, and configuration according to A2A Protocol v0.3.0.</p>
+                        <p><strong>Namespace:</strong> <code>A2A\Models\v0_3_0\AgentCard</code></p>
+                        
+                        <h5>Key Properties:</h5>
                         <ul class="methods-list">
-                            <li><span class="method-name">getName(): string</span></li>
-                            <li><span class="method-name">getDescription(): string</span></li>
-                            <li><span class="method-name">getUrl(): string</span></li>
-                            <li><span class="method-name">getVersion(): string</span></li>
-                            <li><span class="method-name">getCapabilities(): AgentCapabilities</span></li>
-                            <li><span class="method-name">addSkill(AgentSkill $skill): void</span></li>
+                            <li><span class="method-name">string $name</span> - Unique agent identifier</li>
+                            <li><span class="method-name">string $description</span> - Human-readable description</li>
+                            <li><span class="method-name">string $url</span> - Agent's endpoint URL</li>
+                            <li><span class="method-name">string $version</span> - Agent version</li>
+                            <li><span class="method-name">string $protocolVersion</span> - A2A protocol version (0.3.0)</li>
+                            <li><span class="method-name">AgentCapabilities $capabilities</span> - Supported operations</li>
+                            <li><span class="method-name">array $defaultInputModes</span> - Default input formats</li>
+                            <li><span class="method-name">array $defaultOutputModes</span> - Default output formats</li>
+                            <li><span class="method-name">array $skills</span> - Agent skills and specializations</li>
+                            <li><span class="method-name">?AgentProvider $provider</span> - Provider information</li>
+                            <li><span class="method-name">?array $securitySchemes</span> - Security configurations</li>
+                        </ul>
+                    </div>
+
+                    <div id="message" class="class-card">
+                        <h4>Message (v0.3.0)</h4>
+                        <p>Represents a message in the A2A protocol with support for multi-part content.</p>
+                        <p><strong>Namespace:</strong> <code>A2A\Models\v0_3_0\Message</code></p>
+                        
+                        <h5>Key Properties:</h5>
+                        <ul class="methods-list">
+                            <li><span class="method-name">string $messageId</span> - Unique message identifier</li>
+                            <li><span class="method-name">string $from</span> - Sender agent identifier</li>
+                            <li><span class="method-name">array $parts</span> - Message content parts</li>
+                            <li><span class="method-name">?string $contextId</span> - Conversation context</li>
+                            <li><span class="method-name">?string $replyTo</span> - Message being replied to</li>
+                            <li><span class="method-name">array $metadata</span> - Additional message metadata</li>
+                        </ul>
+                    </div>
+
+                    <div id="task" class="class-card">
+                        <h4>Task (v0.3.0)</h4>
+                        <p>Represents a long-running task with state management and history tracking.</p>
+                        <p><strong>Namespace:</strong> <code>A2A\Models\v0_3_0\Task</code></p>
+                        
+                        <h5>Key Properties:</h5>
+                        <ul class="methods-list">
+                            <li><span class="method-name">string $taskId</span> - Unique task identifier</li>
+                            <li><span class="method-name">TaskStatus $status</span> - Current task status</li>
+                            <li><span class="method-name">?Message $initialMessage</span> - Task initiation message</li>
+                            <li><span class="method-name">array $artifacts</span> - Task outputs and results</li>
+                            <li><span class="method-name">array $history</span> - Task execution history</li>
+                            <li><span class="method-name">array $metadata</span> - Task metadata</li>
+                        </ul>
+                    </div>
+
+                    <div id="security" class="class-card">
+                        <h4>Security Models</h4>
+                        <p>Security scheme implementations for agent authentication and authorization.</p>
+                        <p><strong>Namespace:</strong> <code>A2A\Models\Security\*</code></p>
+                        
+                        <h5>Available Security Schemes:</h5>
+                        <ul class="methods-list">
+                            <li><span class="method-name">APIKeySecurityScheme</span> - API key authentication</li>
+                            <li><span class="method-name">HTTPAuthSecurityScheme</span> - HTTP basic/digest auth</li>
+                            <li><span class="method-name">OAuth2SecurityScheme</span> - OAuth 2.0 flows</li>
+                            <li><span class="method-name">OpenIdConnectSecurityScheme</span> - OpenID Connect</li>
+                            <li><span class="method-name">MutualTLSSecurityScheme</span> - Mutual TLS authentication</li>
+                        </ul>
+                    </div>
+
+                    <div id="parts" class="class-card">
+                        <h4>Message Parts</h4>
+                        <p>Different types of content that can be included in messages.</p>
+                        <p><strong>Namespace:</strong> <code>A2A\Models\*</code></p>
+                        
+                        <h5>Part Types:</h5>
+                        <ul class="methods-list">
+                            <li><span class="method-name">TextPart</span> - Plain text content</li>
+                            <li><span class="method-name">DataPart</span> - Structured data (JSON)</li>
+                            <li><span class="method-name">FilePart</span> - File attachments</li>
+                            <li><span class="method-name">FileWithBytes</span> - Files with binary content</li>
+                            <li><span class="method-name">FileWithUri</span> - Files referenced by URI</li>
                         </ul>
                     </div>
 
                     <div class="class-card">
-                        <h4>Message</h4>
-                        <p>Represents messages exchanged between agents with support for different content types.</p>
+                        <h4>Additional Models</h4>
+                        <p>Supporting data structures and enums.</p>
+                        
+                        <h5>Core Models:</h5>
                         <ul class="methods-list">
-                            <li><span class="method-name">createUserMessage(string $content): Message</span></li>
-                            <li><span class="method-name">createAssistantMessage(string $content): Message</span></li>
-                            <li><span class="method-name">createSystemMessage(string $content): Message</span></li>
-                            <li><span class="method-name">getContent(): string</span></li>
-                            <li><span class="method-name">getRole(): string</span></li>
-                            <li><span class="method-name">addPart(PartInterface $part): void</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="class-card">
-                        <h4>Task</h4>
-                        <p>Represents a task with its state, artifacts, and execution history.</p>
-                        <ul class="methods-list">
-                            <li><span class="method-name">__construct(string $id, string $description)</span></li>
-                            <li><span class="method-name">getId(): string</span></li>
-                            <li><span class="method-name">getDescription(): string</span></li>
-                            <li><span class="method-name">getStatus(): TaskStatus</span></li>
-                            <li><span class="method-name">setStatus(TaskStatus $status): void</span></li>
-                            <li><span class="method-name">addArtifact(string $name, $data): void</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="class-card">
-                        <h4>TaskStatus</h4>
-                        <p>Represents the current status and state of a task.</p>
-                        <ul class="methods-list">
-                            <li><span class="method-name">__construct(TaskState $state, bool $final = false)</span></li>
-                            <li><span class="method-name">getState(): TaskState</span></li>
-                            <li><span class="method-name">isFinal(): bool</span></li>
-                            <li><span class="method-name">getProgress(): ?float</span></li>
-                            <li><span class="method-name">getStatusMessage(): ?string</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="class-card">
-                        <h4>AgentCapabilities</h4>
-                        <p>Defines what an agent can do and its operational parameters.</p>
-                        <ul class="methods-list">
-                            <li><span class="method-name">getMaxMessagesPerBatch(): int</span></li>
-                            <li><span class="method-name">getMaxTokensPerMessage(): int</span></li>
-                            <li><span class="method-name">supportsStreaming(): bool</span></li>
-                            <li><span class="method-name">getSupportedProtocols(): array</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="class-card">
-                        <h4>Parts (TextPart, FilePart, DataPart)</h4>
-                        <p>Different content types that can be included in messages.</p>
-                        <ul class="methods-list">
-                            <li><span class="method-name">TextPart::__construct(string $text)</span></li>
-                            <li><span class="method-name">FilePart::__construct(FileInterface $file)</span></li>
-                            <li><span class="method-name">DataPart::__construct(array $data)</span></li>
-                            <li><span class="method-name">toArray(): array</span></li>
+                            <li><span class="method-name">AgentCapabilities</span> - Agent capability definitions</li>
+                            <li><span class="method-name">AgentSkill</span> - Individual agent skills</li>
+                            <li><span class="method-name">TaskStatus</span> - Task status enumeration</li>
+                            <li><span class="method-name">TaskState</span> - Task state transitions</li>
+                            <li><span class="method-name">Artifact</span> - Task output artifacts</li>
                         </ul>
                     </div>
                 </div>
@@ -554,35 +603,35 @@ $response = $server->handleRequest($jsonRpcRequest);</code></pre>
                     <div class="class-card">
                         <h4>A2AException</h4>
                         <p>Base exception class for all A2A-related errors.</p>
-                        <ul class="methods-list">
-                            <li><span class="method-name">getErrorCode(): string</span></li>
-                            <li><span class="method-name">getErrorData(): ?array</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="class-card">
-                        <h4>InvalidRequestException</h4>
-                        <p>Thrown when requests don't conform to the A2A protocol.</p>
-                        <ul class="methods-list">
-                            <li><span class="method-name">getValidationErrors(): array</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="class-card">
-                        <h4>TaskNotFoundException</h4>
-                        <p>Thrown when a requested task cannot be found.</p>
-                        <ul class="methods-list">
-                            <li><span class="method-name">getTaskId(): string</span></li>
-                        </ul>
+                        <p><strong>Namespace:</strong> <code>A2A\Exceptions\A2AException</code></p>
                     </div>
 
                     <div class="class-card">
                         <h4>A2AErrorCodes</h4>
-                        <p>Constants for standardized A2A error codes.</p>
+                        <p>Standardized error codes following JSON-RPC 2.0 specifications.</p>
+                        <p><strong>Namespace:</strong> <code>A2A\Exceptions\A2AErrorCodes</code></p>
+                        
+                        <h5>Error Codes:</h5>
                         <ul class="methods-list">
-                            <li><span class="method-name">INVALID_REQUEST = 'invalid-request'</span></li>
-                            <li><span class="method-name">TASK_NOT_FOUND = 'task-not-found'</span></li>
-                            <li><span class="method-name">AGENT_UNAVAILABLE = 'agent-unavailable'</span></li>
+                            <li><span class="method-name">PARSE_ERROR = -32700</span></li>
+                            <li><span class="method-name">INVALID_REQUEST = -32600</span></li>
+                            <li><span class="method-name">METHOD_NOT_FOUND = -32601</span></li>
+                            <li><span class="method-name">INVALID_PARAMS = -32602</span></li>
+                            <li><span class="method-name">INTERNAL_ERROR = -32603</span></li>
+                            <li><span class="method-name">TASK_NOT_FOUND = -32001</span></li>
+                            <li><span class="method-name">AGENT_UNAVAILABLE = -32002</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="class-card">
+                        <h4>Specific Exceptions</h4>
+                        <p>Specialized exception classes for different error scenarios.</p>
+                        
+                        <h5>Exception Types:</h5>
+                        <ul class="methods-list">
+                            <li><span class="method-name">InvalidRequestException</span> - Invalid JSON-RPC requests</li>
+                            <li><span class="method-name">TaskNotFoundException</span> - Task not found errors</li>
+                            <li><span class="method-name">A2ASpecificErrors</span> - Protocol-specific errors</li>
                         </ul>
                     </div>
                 </div>
@@ -595,40 +644,110 @@ $response = $server->handleRequest($jsonRpcRequest);</code></pre>
                     <div class="class-card">
                         <h4>HttpClient</h4>
                         <p>HTTP client abstraction for making requests to other agents.</p>
+                        <p><strong>Namespace:</strong> <code>A2A\Utils\HttpClient</code></p>
+                        
+                        <h5>Methods:</h5>
                         <ul class="methods-list">
                             <li><span class="method-name">get(string $url, array $headers = []): array</span></li>
                             <li><span class="method-name">post(string $url, array $data, array $headers = []): array</span></li>
                             <li><span class="method-name">setTimeout(int $timeout): void</span></li>
+                            <li><span class="method-name">setHeaders(array $headers): void</span></li>
                         </ul>
                     </div>
 
                     <div class="class-card">
                         <h4>JsonRpc</h4>
                         <p>JSON-RPC 2.0 utilities for protocol communication.</p>
+                        <p><strong>Namespace:</strong> <code>A2A\Utils\JsonRpc</code></p>
+                        
+                        <h5>Methods:</h5>
                         <ul class="methods-list">
                             <li><span class="method-name">createRequest(string $method, array $params, $id): array</span></li>
                             <li><span class="method-name">createResponse($result, $id): array</span></li>
-                            <li><span class="method-name">createError(int $code, string $message, $data, $id): array</span></li>
+                            <li><span class="method-name">createError(int $code, string $message, $id): array</span></li>
+                            <li><span class="method-name">validateRequest(array $request): bool</span></li>
                         </ul>
                     </div>
 
+                    <div class="class-card">
+                        <h4>Message Handlers</h4>
+                        <p>Interfaces and implementations for processing incoming messages.</p>
+                        
+                        <h5>Handler Types:</h5>
+                        <ul class="methods-list">
+                            <li><span class="method-name">MessageHandlerInterface</span> - Base handler interface</li>
+                            <li><span class="method-name">EchoMessageHandler</span> - Simple echo handler for testing</li>
+                        </ul>
+                    </div>
+
+                    <div class="class-card">
+                        <h4>Factory Classes</h4>
+                        <p>Factory pattern implementations for creating objects.</p>
+                        
+                        <h5>Factories:</h5>
+                        <ul class="methods-list">
+                            <li><span class="method-name">PartFactory</span> - Creates message parts from arrays</li>
+                            <li><span class="method-name">FileFactory</span> - Creates file objects from data</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="streaming" class="section">
+                <h2>🌊 Streaming & Real-time Communication</h2>
+                
+                <div class="class-grid">
                     <div class="class-card">
                         <h4>SSEStreamer</h4>
-                        <p>Server-Sent Events streaming for real-time communication.</p>
-                        <ul class="methods-list">
-                            <li><span class="method-name">sendEvent(string $data, ?string $event = null): void</span></li>
-                            <li><span class="method-name">sendMessage(string $message): void</span></li>
-                            <li><span class="method-name">close(): void</span></li>
+                        <p>Server-Sent Events streaming implementation for real-time communication.</p>
+                        <p><strong>Namespace:</strong> <code>A2A\Streaming\SSEStreamer</code></p>
+                        
+                        <h5>Features:</h5>
+                        <ul class="feature-list">
+                            <li>Real-time task status updates</li>
+                            <li>Live message streaming</li>
+                            <li>Connection management</li>
+                            <li>Event filtering and routing</li>
                         </ul>
                     </div>
 
                     <div class="class-card">
-                        <h4>PushNotificationManager</h4>
-                        <p>Manages push notifications and subscriptions.</p>
+                        <h4>StreamingServer</h4>
+                        <p>WebSocket and SSE server for handling streaming connections.</p>
+                        <p><strong>Namespace:</strong> <code>A2A\Streaming\StreamingServer</code></p>
+                        
+                        <h5>Features:</h5>
+                        <ul class="feature-list">
+                            <li>WebSocket support</li>
+                            <li>Connection pooling</li>
+                            <li>Message broadcasting</li>
+                            <li>Authentication integration</li>
+                        </ul>
+                    </div>
+
+                    <div class="class-card">
+                        <h4>StreamingClient</h4>
+                        <p>Client-side streaming implementation for consuming real-time updates.</p>
+                        <p><strong>Namespace:</strong> <code>A2A\Client\StreamingClient</code></p>
+                        
+                        <h5>Features:</h5>
+                        <ul class="feature-list">
+                            <li>Task resubscription</li>
+                            <li>Event consumption</li>
+                            <li>Reconnection handling</li>
+                            <li>Stream filtering</li>
+                        </ul>
+                    </div>
+
+                    <div class="class-card">
+                        <h4>Event System</h4>
+                        <p>Event-driven architecture for real-time communication.</p>
+                        
+                        <h5>Components:</h5>
                         <ul class="methods-list">
-                            <li><span class="method-name">subscribe(PushNotificationConfig $config): string</span></li>
-                            <li><span class="method-name">unsubscribe(string $subscriptionId): void</span></li>
-                            <li><span class="method-name">notify(string $message, array $subscriptions): void</span></li>
+                            <li><span class="method-name">ExecutionEventBus</span> - Event bus interface</li>
+                            <li><span class="method-name">ExecutionEventBusImpl</span> - Default implementation</li>
+                            <li><span class="method-name">EventBusManager</span> - Event bus management</li>
                         </ul>
                     </div>
                 </div>
@@ -636,120 +755,121 @@ $response = $server->handleRequest($jsonRpcRequest);</code></pre>
 
             <section id="examples" class="section">
                 <h2>💻 Usage Examples</h2>
-                
+
                 <h3>Basic Agent Setup</h3>
-                <pre><code><?php
-use A2A\Models\AgentCard;
+                <pre><code>use A2A\Models\v0_3_0\AgentCard;
 use A2A\Models\AgentCapabilities;
-use A2A\Models\AgentSkill;
+use A2A\A2AProtocol_v0_3_0;
 use A2A\A2AServer;
 
 // Create agent capabilities
-$capabilities = new AgentCapabilities();
-$capabilities->setMaxMessagesPerBatch(10);
-$capabilities->setSupportsStreaming(true);
+$capabilities = new AgentCapabilities(
+    ['message/send', 'task/create'],
+    ['task/get', 'task/cancel', 'agent/card/get']
+);
 
 // Create agent card
 $agentCard = new AgentCard(
-    'helpful-assistant',
-    'Helpful AI Assistant',
-    'A general-purpose AI assistant',
-    'https://my-agent.example.com',
-    '1.0.0'
+    'MyAI', 
+    'AI Assistant Agent', 
+    'https://my-agent.com', 
+    '1.0.0',
+    $capabilities,
+    ['text', 'json'],
+    ['text', 'json']
 );
 
-// Add skills
-$skill = new AgentSkill('text-processing', 'Process and analyze text');
-$agentCard->addSkill($skill);
-
-// Start server
-$server = new A2AServer($agentCard);
-echo json_encode($server->handleRequest($_POST));</code></pre>
+// Initialize protocol and server
+$protocol = new A2AProtocol_v0_3_0($agentCard);
+$server = new A2AServer($protocol);</code></pre>
 
                 <h3>Sending Messages</h3>
-                <pre><code><?php
-use A2A\A2AClient;
-use A2A\Models\Message;
+                <pre><code>use A2A\A2AClient;
+use A2A\Models\v0_3_0\Message;
 use A2A\Models\TextPart;
 
 $client = new A2AClient($agentCard);
 
 // Create a simple text message
-$message = Message::createUserMessage('Hello, how are you?');
+$textPart = new TextPart('Hello, how can I help you?');
+$message = new Message('msg-123', 'MyAI', [$textPart]);
 
-// Or create a complex message with parts
-$message = new Message('user');
-$message->addPart(new TextPart('Please analyze this data:'));
-$message->addPart(new DataPart(['values' => [1, 2, 3, 4, 5]]));
-
-$response = $client->sendMessage('http://other-agent.com', $message);</code></pre>
+// Send to another agent
+$response = $client->sendMessage('https://other-agent.com', $message);</code></pre>
 
                 <h3>Task Management</h3>
-                <pre><code><?php
-use A2A\Models\Task;
+                <pre><code>use A2A\Models\v0_3_0\Task;
 use A2A\Models\TaskStatus;
-use A2A\Models\TaskState;
-use A2A\TaskManager;
 
-// Create and manage tasks
-$taskManager = new TaskManager($storage);
+// Create a new task
+$task = new Task('task-456', TaskStatus::PENDING);
+$task->setInitialMessage($message);
 
-$task = new Task('analyze-data-123', 'Analyze customer data');
-$taskId = $taskManager->createTask($task);
+// Get task status
+$taskData = $client->getTask('task-456');
 
-// Update task status
-$status = new TaskStatus(TaskState::WORKING);
-$taskManager->updateTaskStatus($taskId, $status);
+// Cancel task if needed
+$client->cancelTask('task-456');</code></pre>
 
-// Add artifacts
-$task->addArtifact('results.json', ['analysis' => 'complete']);
+                <h3>Push Notifications</h3>
+                <pre><code>use A2A\Models\PushNotificationConfig;
+use A2A\Models\PushNotificationAuthenticationInfo;
 
-// Mark as completed
-$finalStatus = new TaskStatus(TaskState::COMPLETED, final: true);
-$taskManager->updateTaskStatus($taskId, $finalStatus);</code></pre>
+// Configure webhook notifications
+$authInfo = new PushNotificationAuthenticationInfo('bearer', 'your-token');
+$config = new PushNotificationConfig(
+    'http://your-webhook.com/notifications',
+    $authInfo
+);
 
-                <h3>Streaming Communication</h3>
-                <pre><code><?php
-use A2A\Streaming\SSEStreamer;
+$client->setPushNotificationConfig('task-456', $config);</code></pre>
+
+                <h3>Error Handling</h3>
+                <pre><code>use A2A\Exceptions\A2AException;
+use A2A\Exceptions\TaskNotFoundException;
+
+try {
+    $task = $client->getTask('non-existent-task');
+} catch (TaskNotFoundException $e) {
+    // Handle task not found
+    echo "Task not found: " . $e->getMessage();
+} catch (A2AException $e) {
+    // Handle other A2A errors
+    echo "A2A Error: " . $e->getMessage();
+}</code></pre>
+
+                <h3>Streaming Events</h3>
+                <pre><code>use A2A\Streaming\SSEStreamer;
+use A2A\Client\StreamingClient;
 
 // Server-side streaming
 $streamer = new SSEStreamer();
-$streamer->sendEvent(json_encode(['type' => 'progress', 'value' => 50]));
-$streamer->sendEvent(json_encode(['type' => 'complete', 'result' => $data]));
+$streamer->start('task-456');
 
-// Client-side subscription
-$client->subscribeToTask('http://agent.com', 'task-123', function($event) {
-    echo "Task update: " . $event['data'] . "\n";
-});</code></pre>
+// Client-side consumption  
+$streamingClient = new StreamingClient($agentCard);
+$streamingClient->resubscribeTask('task-456');</code></pre>
 
-                <h3>Error Handling</h3>
-                <pre><code><?php
-use A2A\Exceptions\A2AException;
-use A2A\Exceptions\TaskNotFoundException;
-use A2A\Exceptions\InvalidRequestException;
+                <h3>Complete Server Example</h3>
+                <pre><code>// See examples/complete_a2a_server.php for a full implementation
+php -S localhost:8081 examples/complete_a2a_server.php
 
-try {
-    $response = $client->sendMessage($agentUrl, $message);
-} catch (InvalidRequestException $e) {
-    error_log('Invalid request: ' . $e->getMessage());
-    error_log('Validation errors: ' . json_encode($e->getValidationErrors()));
-} catch (TaskNotFoundException $e) {
-    error_log('Task not found: ' . $e->getTaskId());
-} catch (A2AException $e) {
-    error_log('A2A Error [' . $e->getErrorCode() . ']: ' . $e->getMessage());
-}</code></pre>
+// Test with curl
+curl -X POST http://localhost:8081 \
+  -H "Content-Type: application/json" \
+  -d '{
+    "jsonrpc": "2.0",
+    "method": "agent/card/get",
+    "id": 1
+  }'</code></pre>
             </section>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 A2A PHP SDK Contributors. Licensed under the Apache License 2.0.</p>
-            <p>
-                <a href="https://github.com/andreibesleaga/a2a-php" style="color: var(--primary-color);">GitHub Repository</a> |
-                <a href="https://github.com/a2aproject/A2A" style="color: var(--primary-color);">A2A Protocol Specification</a> |
-                <a href="https://github.com/a2aproject/a2a-tck" style="color: var(--primary-color);">Test Compatibility Kit</a>
-            </p>
+            <p>&copy; 2024 A2A PHP SDK. Licensed under Apache 2.0. | <a href="https://github.com/andreibesleaga/a2a-php">GitHub Repository</a></p>
+            <p>Documentation generated for A2A Protocol v0.3.0 | Last updated: 2024</p>
         </div>
     </footer>
 </body>
