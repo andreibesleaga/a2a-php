@@ -26,7 +26,7 @@ The server exposes the JSON-RPC endpoint at `http://localhost:8081/` and publish
 | Quality    | 12 / 12 tests passing |
 | Features   | 15 / 15 tests passing |
 
-Results are produced with the official [A2A Test Compatibility Kit](../a2a-tck) using `python3 run_tck.py --category all`.
+Results are produced with the official [A2A Test Compatibility Kit](https://github.com/a2aproject/a2a-tck) using `python3 run_tck.py --category all`.
 
 ## Implementation highlights
 
