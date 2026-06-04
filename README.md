@@ -1,6 +1,6 @@
 # A2A PHP SDK
 
-A PHP implementation of the A2A (Agent-to-Agent) Protocol v0.3.0. The repository includes a fully compliant sample server, strict JSON-RPC validation logic, task management utilities, streaming support, and push notification handling.
+A PHP implementation of the A2A (Agent-to-Agent) Protocol (v0.3.0). The repository includes the unofficial library implementation and a fully compliant sample server, strict JSON-RPC validation logic, task management utilities, streaming support, and push notification handling.
 
 ## Quick start
 
