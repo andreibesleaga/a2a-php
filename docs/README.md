@@ -10,7 +10,7 @@ A2A PHP is a complete implementation of the A2A Protocol v0.3.0. It provides a J
 - **Strict validation**: All requests are checked for JSON-RPC 2.0 compliance (version, identifiers, and parameter containers). Malformed requests are rejected with precise error codes.
 - **Task lifecycle**: Tasks persist history, artifacts, and metadata through the shared storage layer while exposing idempotent cancellation semantics.
 - **Streaming**: The streaming server publishes JSON-RPC envelopes via SSE for both live message processing and reconnection snapshots.
-- **Push notifications**: The push notification manager stores webhook configurations with list, get, set, and delete operations backed by persistent storage.
+- **Push notifications**: The push notification manager stores webhook configurations with list, get, set, and delete operations backed by persistent storage. On task state changes the server delivers the task snapshot to the configured webhook with `X-A2A-Notification-Token` and `Authorization` headers; the optional `A2A_WEBHOOK_ALLOWLIST` env var restricts allowed webhook hosts (SSRF guard).
 - **Authenticated extended card**: Optional extended agent card data becomes available when a request includes a token that matches `A2A_DEMO_AUTH_TOKEN`.
 
 ## Architecture overview
@@ -18,9 +18,11 @@ A2A PHP is a complete implementation of the A2A Protocol v0.3.0. It provides a J
 ```text
 A2A PHP Architecture
 ├── A2AServer           # HTTP entry point handling JSON-RPC requests
-├── A2AProtocol_v030  # Dispatches protocol methods and orchestrates managers
+├── A2AProtocol_v030    # Validates JSON-RPC and dispatches via HandlerRegistry
+├── Handlers/v030/      # One request handler per JSON-RPC method + HandlerRegistry
 ├── TaskManager         # Creates, updates, and cancels tasks with persistence
 ├── PushNotificationMgr # Persists webhook configurations in shared storage
+├── Notifications/      # PushNotifier: webhook delivery + allowlist enforcement
 ├── StreamingServer     # Emits SSE events for live processing and resubscribe
 ├── Storage/            # File-backed cache built on Illuminate\Cache
 ├── Models/             # AgentCard, Message, Task, TaskStatus, Parts, Artifacts
@@ -44,7 +46,10 @@ A2A PHP Architecture
 | Quality    | All tests passing |
 | Features   | All tests passing |
 
-Compliance is verified with the official TCK (`python3 ../a2a-tck/run_tck.py --category all`).
+Compliance is verified with the official TCK pinned at `0.3.0.beta5`
+(`python3 ../a2a-tck/run_tck.py --sut-url http://localhost:8081 --category all`);
+detailed counts live in `protocol-compliance.md` and the pin procedure in
+`tck-upgrade.md`. CI re-runs the TCK on every pull request.
 
 ## Key behaviours guaranteed
 
@@ -64,7 +69,7 @@ Endpoints:
 
 - `POST /` – JSON-RPC 2.0 endpoint for all protocol methods.
 - `GET /.well-known/agent-card.json` – Public agent card document.
-- `GET /server-info` – Diagnostic endpoint used by examples.
+- `GET /info` – Diagnostic endpoint used by examples.
 
 Set `A2A_DEMO_AUTH_TOKEN` to enable authenticated extended card responses.
 

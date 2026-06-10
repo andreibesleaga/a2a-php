@@ -2,14 +2,13 @@
 
 ## Completion status
 
-The HTTPS/TLS enhancements are active and do not alter the existing HTTP behaviour. All A2A TCK categories continue to pass:
+The HTTPS/TLS enhancements are active and do not alter the existing HTTP
+behaviour. All A2A TCK categories continue to pass — see
+`docs/protocol-compliance.md` for the current per-category results against
+the pinned TCK version (`docs/tck-upgrade.md`).
 
-| Suite       | Result |
-| ----------- | ------ |
-| Mandatory   | 25 / 25 |
-| Capability  | 14 / 14 |
-| Quality     | 12 / 12 |
-| Features    | 15 / 15 |
+> `https_a2a_server.php` is a **demo** entry point. Production deployments
+> must terminate TLS at a hardened reverse proxy — see `SECURITY.md`.
 
 ## What changed
 

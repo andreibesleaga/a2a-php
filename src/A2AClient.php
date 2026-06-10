@@ -247,7 +247,13 @@ class A2AClient
 
         try {
             $response = $this->httpClient->post('', $request);
-            return $response['result']['configs'] ?? [];
+            // The reference server returns the config list directly in
+            // "result"; tolerate servers that wrap it as result.configs.
+            $result = $response['result'] ?? [];
+            if (is_array($result) && array_key_exists('configs', $result)) {
+                return is_array($result['configs']) ? $result['configs'] : [];
+            }
+            return is_array($result) ? $result : [];
         } catch (\Exception $e) {
             $this->logger->error(
                 'Failed to list push notification configs',
@@ -266,7 +272,9 @@ class A2AClient
 
         try {
             $response = $this->httpClient->post('', $request);
-            return isset($response['result']);
+            // A successful delete returns "result": null, so isset() would
+            // misreport success as failure; check for key presence instead.
+            return array_key_exists('result', $response) && !isset($response['error']);
         } catch (\Exception $e) {
             $this->logger->error(
                 'Failed to delete push notification config',

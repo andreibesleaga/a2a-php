@@ -252,4 +252,58 @@ class A2AClientTest extends TestCase
 
         $this->client->sendTask('task-123', $message);
     }
+
+    public function testListPushNotificationConfigsReadsPlainResultArray(): void
+    {
+        // The reference server returns the config list directly in "result".
+        $this->httpClient->method('post')->willReturn([
+            'jsonrpc' => '2.0',
+            'id' => 1,
+            'result' => [
+                ['taskId' => 't1', 'pushNotificationConfig' => ['url' => 'https://h.example/cb']]
+            ]
+        ]);
+
+        $configs = $this->client->listPushNotificationConfigs();
+
+        $this->assertCount(1, $configs);
+        $this->assertSame('t1', $configs[0]['taskId']);
+    }
+
+    public function testListPushNotificationConfigsToleratesWrappedResult(): void
+    {
+        $this->httpClient->method('post')->willReturn([
+            'jsonrpc' => '2.0',
+            'id' => 1,
+            'result' => ['configs' => [['taskId' => 't2', 'pushNotificationConfig' => ['url' => 'https://h.example/cb']]]]
+        ]);
+
+        $configs = $this->client->listPushNotificationConfigs();
+
+        $this->assertCount(1, $configs);
+        $this->assertSame('t2', $configs[0]['taskId']);
+    }
+
+    public function testDeletePushNotificationConfigTreatsNullResultAsSuccess(): void
+    {
+        // Per the API reference, a successful delete returns "result": null.
+        $this->httpClient->method('post')->willReturn([
+            'jsonrpc' => '2.0',
+            'id' => 1,
+            'result' => null
+        ]);
+
+        $this->assertTrue($this->client->deletePushNotificationConfig('t1'));
+    }
+
+    public function testDeletePushNotificationConfigReportsErrorResponseAsFailure(): void
+    {
+        $this->httpClient->method('post')->willReturn([
+            'jsonrpc' => '2.0',
+            'id' => 1,
+            'error' => ['code' => -32001, 'message' => 'Task not found']
+        ]);
+
+        $this->assertFalse($this->client->deletePushNotificationConfig('missing'));
+    }
 }

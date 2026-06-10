@@ -232,3 +232,81 @@
 [2026-06-10 10:19:44] INFO: A2A Server components initialized
 [2026-06-10 10:19:44] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
 [2026-06-10 10:19:44] INFO: Request received {"method":"tasks\/pushNotificationConfig\/delete","id":15}
+[2026-06-10 10:54:51] INFO: A2A Server components initialized
+[2026-06-10 10:54:51] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:51] INFO: A2A Server components initialized
+[2026-06-10 10:54:51] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:51] INFO: Request received {"method":"ping","id":1}
+[2026-06-10 10:54:51] INFO: A2A Server components initialized
+[2026-06-10 10:54:51] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:51] INFO: Request received {"method":"message\/send","id":1}
+[2026-06-10 10:54:51] INFO: Processing message {"from":"unknown","message_id":"e2e-msg-1","role":"user"}
+[2026-06-10 10:54:51] INFO: Message task ready for interaction {"task_id":"bf478099-4e5e-4ecc-98fb-1dce7ddd584a","message_id":"e2e-msg-1","state":"working"}
+[2026-06-10 10:54:51] INFO: Message processed {"from":"unknown","message_id":"e2e-msg-1","task_id":"bf478099-4e5e-4ecc-98fb-1dce7ddd584a","state":"working"}
+[2026-06-10 10:54:51] INFO: A2A Server components initialized
+[2026-06-10 10:54:51] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:51] INFO: Request received {"method":"message\/send","id":1}
+[2026-06-10 10:54:51] INFO: Processing message {"from":"unknown","message_id":"e2e-msg-2","role":"user"}
+[2026-06-10 10:54:51] INFO: Message task ready for interaction {"task_id":"7485f886-9590-48e4-b49d-c795d42524fe","message_id":"e2e-msg-2","state":"working"}
+[2026-06-10 10:54:51] INFO: Message processed {"from":"unknown","message_id":"e2e-msg-2","task_id":"7485f886-9590-48e4-b49d-c795d42524fe","state":"working"}
+[2026-06-10 10:54:51] INFO: A2A Server components initialized
+[2026-06-10 10:54:51] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:51] INFO: Request received {"method":"tasks\/get","id":2}
+[2026-06-10 10:54:51] INFO: A2A Server components initialized
+[2026-06-10 10:54:51] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:51] INFO: Request received {"method":"message\/send","id":3}
+[2026-06-10 10:54:51] INFO: Processing message {"from":"unknown","message_id":"e2e-msg-3","role":"user"}
+[2026-06-10 10:54:51] INFO: Message task ready for interaction {"task_id":"7485f886-9590-48e4-b49d-c795d42524fe","message_id":"e2e-msg-3","state":"working"}
+[2026-06-10 10:54:51] INFO: Message processed {"from":"unknown","message_id":"e2e-msg-3","task_id":"7485f886-9590-48e4-b49d-c795d42524fe","state":"completed"}
+[2026-06-10 10:54:51] INFO: A2A Server components initialized
+[2026-06-10 10:54:51] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:51] INFO: Request received {"method":"tasks\/cancel","id":4}
+[2026-06-10 10:54:51] INFO: A2A Server components initialized
+[2026-06-10 10:54:51] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:51] INFO: Request received {"method":"tasks\/get","id":5}
+[2026-06-10 10:54:51] INFO: A2A Server components initialized
+[2026-06-10 10:54:51] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:51] INFO: Request received {"method":"ping","id":6}
+[2026-06-10 10:54:51] INFO: A2A Server components initialized
+[2026-06-10 10:54:51] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:51] INFO: Request received {"method":"ping","id":7}
+[2026-06-10 10:54:51] ERROR: JSON-RPC request validation failed {"error":"Invalid JSON-RPC version","request":{"method":"ping","id":7}}
+[2026-06-10 10:54:51] INFO: A2A Server components initialized
+[2026-06-10 10:54:52] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:52] INFO: A2A Server components initialized
+[2026-06-10 10:54:52] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:52] INFO: Request received {"method":"definitely\/not\/a\/method","id":8}
+[2026-06-10 10:54:52] WARNING: Unknown method requested {"method":"definitely\/not\/a\/method"}
+[2026-06-10 10:54:52] INFO: A2A Server components initialized
+[2026-06-10 10:54:52] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:52] INFO: Request received {"method":"message\/send","id":9}
+[2026-06-10 10:54:52] WARNING: Message payload validation failed {"error":"Message requires a non-empty string \"messageId\" field","payload":{"kind":"message","role":"user","parts":[{"kind":"text","text":"no id"}]}}
+[2026-06-10 10:54:52] INFO: A2A Server components initialized
+[2026-06-10 10:54:52] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:52] INFO: Request received {"method":"message\/send","id":10}
+[2026-06-10 10:54:52] WARNING: Message payload validation failed {"error":"Message requires a non-empty string \"messageId\" field","payload":{"kind":"message","role":"user","parts":[{"kind":"text","text":"warning probe"}]}}
+[2026-06-10 10:54:52] INFO: A2A Server components initialized
+[2026-06-10 10:54:52] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:52] INFO: Request received {"method":"message\/stream","id":"stream-1"}
+[2026-06-10 10:54:53] INFO: A2A Server components initialized
+[2026-06-10 10:54:53] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:53] INFO: Request received {"method":"message\/send","id":11}
+[2026-06-10 10:54:53] INFO: Processing message {"from":"unknown","message_id":"e2e-push-1","role":"user"}
+[2026-06-10 10:54:53] INFO: Message task ready for interaction {"task_id":"cafe5a9c-487d-4e05-93a9-36f80149c05f","message_id":"e2e-push-1","state":"working"}
+[2026-06-10 10:54:53] INFO: Message processed {"from":"unknown","message_id":"e2e-push-1","task_id":"cafe5a9c-487d-4e05-93a9-36f80149c05f","state":"working"}
+[2026-06-10 10:54:53] INFO: A2A Server components initialized
+[2026-06-10 10:54:53] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:53] INFO: Request received {"method":"tasks\/pushNotificationConfig\/set","id":12}
+[2026-06-10 10:54:53] INFO: A2A Server components initialized
+[2026-06-10 10:54:53] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:53] INFO: Request received {"method":"tasks\/pushNotificationConfig\/get","id":13}
+[2026-06-10 10:54:53] INFO: A2A Server components initialized
+[2026-06-10 10:54:53] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:53] INFO: Request received {"method":"message\/send","id":14}
+[2026-06-10 10:54:53] INFO: Processing message {"from":"unknown","message_id":"e2e-push-2","role":"user"}
+[2026-06-10 10:54:53] INFO: Message task ready for interaction {"task_id":"cafe5a9c-487d-4e05-93a9-36f80149c05f","message_id":"e2e-push-2","state":"working"}
+[2026-06-10 10:54:53] INFO: Push notification delivered {"task_id":"cafe5a9c-487d-4e05-93a9-36f80149c05f","state":"completed"}
+[2026-06-10 10:54:53] INFO: Message processed {"from":"unknown","message_id":"e2e-push-2","task_id":"cafe5a9c-487d-4e05-93a9-36f80149c05f","state":"completed"}
+[2026-06-10 10:54:53] INFO: A2A Server components initialized
+[2026-06-10 10:54:53] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:54:53] INFO: Request received {"method":"tasks\/pushNotificationConfig\/delete","id":15}

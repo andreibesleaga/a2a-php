@@ -15,7 +15,8 @@ The a2a-php SDK implements the A2A (Agent-to-Agent) Protocol in PHP.
 ### 2. Communication Layer
 - **A2AClient**: HTTP client for agent-to-agent communication
 - **A2AServer**: HTTP server for handling incoming requests
-- **A2AProtocol**: Core protocol implementation with all methods
+- **A2AProtocol_v030**: v0.3.0 entry point — validates JSON-RPC and dispatches via HandlerRegistry (`A2AProtocol` is the legacy v0.2.x implementation)
+- **Handlers/v030**: One request-handler class per JSON-RPC method (MessageSendHandler, TaskGetHandler, PushConfigSetHandler, ...) mapped by HandlerRegistry
 - **StreamingClient**: SSE client for real-time streaming
 
 ### 3. Streaming & Events
@@ -30,19 +31,23 @@ The a2a-php SDK implements the A2A (Agent-to-Agent) Protocol in PHP.
 - **DefaultAgentExecutor**: Basic executor with lifecycle management
 - **ResultManager**: Processes events and manages results
 
-### 5. Error Handling
+### 5. Push Notifications
+- **PushNotificationManager**: Stores webhook configurations per task
+- **PushNotifier**: Delivers task snapshots to configured webhooks on state changes (`X-A2A-Notification-Token` / `Authorization` headers) and enforces the optional `A2A_WEBHOOK_ALLOWLIST` SSRF guard
+
+### 6. Error Handling
 - **A2AErrorCodes**: Complete A2A protocol error codes
 - **A2AException**: Base exception class
-- **Specific Exceptions**: TaskNotCancelableException, etc.
+- **Specific Exceptions**: TaskNotCancelableException, etc. (one class per file under `src/Exceptions/`)
 
 ## Data Flow
 
 ```
-Client Request → A2AServer → A2AProtocol → AgentExecutor
-                                              ↓
-EventBus ← TaskStatusUpdateEvent ← Agent Logic
-    ↓
-SSEStreamer → Client (Real-time updates)
+Client Request → A2AServer → A2AProtocol_v030 → HandlerRegistry → Handler
+                                                       ↓
+                  EventBus ← TaskStatusUpdateEvent ← Agent Logic
+                      ↓                                ↓
+        SSEStreamer → Client (SSE)        PushNotifier → Webhook (HTTP POST)
 ```
 
 ## Key Patterns

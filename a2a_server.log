@@ -2716,3 +2716,6 @@
 [2026-06-10 09:57:54] INFO: A2A Server components initialized
 [2026-06-10 09:57:54] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
 [2026-06-10 09:57:54] INFO: Request received {"method":"tasks\/get","id":"tck-ffebbd26-96c1-4580-a264-ed21606b4fa9"}
+[2026-06-10 10:35:20] INFO: A2A Server components initialized
+[2026-06-10 10:35:20] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:35:20] INFO: Request received {"method":"ping","id":1}

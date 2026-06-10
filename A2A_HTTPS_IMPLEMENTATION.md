@@ -6,14 +6,13 @@ The reference server includes optional HTTPS-aware behaviour that lets operators
 
 ## Test status
 
-| Suite       | Result (HTTPS mode) |
-| ----------- | ------------------- |
-| Mandatory   | 25 / 25 passing     |
-| Capability  | 14 / 14 passing     |
-| Quality     | 12 / 12 passing     |
-| Features    | 15 / 15 passing     |
+HTTPS orchestration reuses the same protocol handlers as the HTTP server,
+so compliance remains unchanged — see `docs/protocol-compliance.md` for the
+current per-category TCK results against the pinned kit version
+(`docs/tck-upgrade.md`).
 
-HTTPS orchestration reuses the same protocol handlers as the HTTP server, so compliance remains unchanged.
+> `https_a2a_server.php` is a **demo** entry point; production deployments
+> must terminate TLS at a hardened reverse proxy (see `SECURITY.md`).
 
 ## Key additions
 
