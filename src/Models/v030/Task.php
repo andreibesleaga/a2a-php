@@ -58,7 +58,7 @@ class Task
         $this->status = $status;
     }
 
-    public function getHistory(int $limit = null): array
+    public function getHistory(?int $limit = null): array
     {
         if ($limit === null) {
             return $this->history;
