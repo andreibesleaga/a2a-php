@@ -1,3 +1,7 @@
 /vendor
 composer.phar
 .phpunit.result.cache
+# Runtime logs from the reference server
+a2a_server.log
+examples/a2a_server.log
+*.log
