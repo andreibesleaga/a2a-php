@@ -28,6 +28,12 @@ Against `0.3.0.beta5` the reference server passes **every category**:
 | Quality | 14 passed, 0 failed |
 | Features | 15 passed, 0 failed (1 skipped) |
 
+> Known TCK quirk at `0.3.0.beta5`: the aggregated
+> `--compliance-report` JSON sometimes ingests zero totals and prints
+> "Not A2A Compliant / 0.0%" even when every category passed. The
+> authoritative results are the per-category console summary and the
+> per-category pytest JSONs in `reports/*_results.json`.
+
 ## How to bump the pin
 
 1. Open a dedicated PR that only changes `A2A_TCK_REF` (and, if the new

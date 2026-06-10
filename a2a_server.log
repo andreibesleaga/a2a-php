@@ -2719,3 +2719,815 @@
 [2026-06-10 10:35:20] INFO: A2A Server components initialized
 [2026-06-10 10:35:20] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
 [2026-06-10 10:35:20] INFO: Request received {"method":"ping","id":1}
+[2026-06-10 10:59:23] INFO: A2A Server components initialized
+[2026-06-10 10:59:23] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:23] INFO: A2A Server components initialized
+[2026-06-10 10:59:23] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:23] INFO: Request received {"method":"message\/send","id":"none"}
+[2026-06-10 10:59:23] ERROR: JSON-RPC request validation failed {"error":"Invalid JSON-RPC version","request":{"jsonrpc":"aaa","method":"message\/send","params":[]}}
+[2026-06-10 10:59:23] INFO: A2A Server components initialized
+[2026-06-10 10:59:23] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:23] INFO: Request received {"method":"unknown","id":"none"}
+[2026-06-10 10:59:23] ERROR: JSON-RPC request validation failed {"error":"Missing method","request":{"jsonrpc":"2.0","params":[]}}
+[2026-06-10 10:59:23] INFO: A2A Server components initialized
+[2026-06-10 10:59:23] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:23] INFO: Request received {"method":"message\/ssend","id":"none"}
+[2026-06-10 10:59:23] WARNING: Unknown method requested {"method":"message\/ssend"}
+[2026-06-10 10:59:23] INFO: A2A Server components initialized
+[2026-06-10 10:59:23] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:23] INFO: Request received {"method":"message\/send","id":{"bad":"type"}}
+[2026-06-10 10:59:23] ERROR: JSON-RPC request validation failed {"error":"Invalid request id","request":{"jsonrpc":"2.0","method":"message\/send","params":[],"id":{"bad":"type"}}}
+[2026-06-10 10:59:23] INFO: A2A Server components initialized
+[2026-06-10 10:59:23] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:23] INFO: Request received {"method":"message\/send","id":"none"}
+[2026-06-10 10:59:23] INFO: A2A Server components initialized
+[2026-06-10 10:59:23] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:23] INFO: Request received {"method":"nonexistent\/method","id":"23850d33-7bf7-4186-8110-a90b69a89c40"}
+[2026-06-10 10:59:23] WARNING: Unknown method requested {"method":"nonexistent\/method"}
+[2026-06-10 10:59:23] INFO: A2A Server components initialized
+[2026-06-10 10:59:23] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:23] INFO: Request received {"method":"message\/send","id":"bff7e38f-145e-40df-87e2-ec848d57a4ac"}
+[2026-06-10 10:59:24] INFO: A2A Server components initialized
+[2026-06-10 10:59:24] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:24] INFO: Request received {"method":"message\/send","id":"duplicate-ff43c49f-b288-42a6-b09e-eb71765d11ec"}
+[2026-06-10 10:59:24] INFO: Processing message {"from":"unknown","message_id":"test-protocol-message-id-ef3548fc-e157-4913-b35c-ef3c467aa08a","role":"user"}
+[2026-06-10 10:59:24] INFO: Message task ready for interaction {"task_id":"6f8fff8e-54ec-427a-a4a8-9bc927eb4259","message_id":"test-protocol-message-id-ef3548fc-e157-4913-b35c-ef3c467aa08a","state":"working"}
+[2026-06-10 10:59:24] INFO: Message processed {"from":"unknown","message_id":"test-protocol-message-id-ef3548fc-e157-4913-b35c-ef3c467aa08a","task_id":"6f8fff8e-54ec-427a-a4a8-9bc927eb4259","state":"working"}
+[2026-06-10 10:59:24] INFO: A2A Server components initialized
+[2026-06-10 10:59:24] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:24] INFO: Request received {"method":"message\/send","id":"duplicate-ff43c49f-b288-42a6-b09e-eb71765d11ec"}
+[2026-06-10 10:59:24] INFO: Processing message {"from":"unknown","message_id":"test-protocol-message-id-ef3548fc-e157-4913-b35c-ef3c467aa08a","role":"user"}
+[2026-06-10 10:59:24] INFO: Message task ready for interaction {"task_id":"02809ed0-83b6-4a43-a766-48a28bc23dc5","message_id":"test-protocol-message-id-ef3548fc-e157-4913-b35c-ef3c467aa08a","state":"working"}
+[2026-06-10 10:59:24] INFO: Message processed {"from":"unknown","message_id":"test-protocol-message-id-ef3548fc-e157-4913-b35c-ef3c467aa08a","task_id":"02809ed0-83b6-4a43-a766-48a28bc23dc5","state":"working"}
+[2026-06-10 10:59:24] INFO: A2A Server components initialized
+[2026-06-10 10:59:24] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:24] INFO: Request received {"method":"message\/send","id":"52419383-93b3-4578-b39c-47f894bced40"}
+[2026-06-10 10:59:24] ERROR: JSON-RPC request validation failed {"error":"Invalid JSON-RPC version","request":{"jsonrpc":"1.0","method":"message\/send","params":{"message":{"kind":"message","messageId":"test-protocol-message-id-656f3e0c-e518-46db-b596-24d0c3d7b1ee","role":"user","parts":[{"kind":"text","text":"Hello from protocol violation test!"}]}},"id":"52419383-93b3-4578-b39c-47f894bced40"}}
+[2026-06-10 10:59:24] INFO: A2A Server components initialized
+[2026-06-10 10:59:24] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:24] INFO: Request received {"method":"unknown","id":"17412f7f-6bbc-47eb-b091-7f0a752dc991"}
+[2026-06-10 10:59:24] ERROR: JSON-RPC request validation failed {"error":"Missing method","request":{"jsonrpc":"2.0","params":{"message":{"kind":"message","messageId":"test-protocol-message-id-47ff2dda-6c82-4e7e-9a37-4cbd33b5068f","role":"user","parts":[{"kind":"text","text":"Hello from protocol violation test!"}]}},"id":"17412f7f-6bbc-47eb-b091-7f0a752dc991"}}
+[2026-06-10 10:59:24] INFO: A2A Server components initialized
+[2026-06-10 10:59:24] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:24] INFO: A2A Server components initialized
+[2026-06-10 10:59:24] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:24] INFO: A2A Server components initialized
+[2026-06-10 10:59:24] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:24] INFO: A2A Server components initialized
+[2026-06-10 10:59:24] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:24] INFO: Request received {"method":"agent\/getAuthenticatedExtendedCard","id":"tck-b272ec1d-8be2-4b90-81a7-83cba58cb5eb"}
+[2026-06-10 10:59:24] INFO: A2A Server components initialized
+[2026-06-10 10:59:24] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:24] INFO: Request received {"method":"agent\/getAuthenticatedExtendedCard","id":"tck-b4bf9b56-876d-476c-8784-8a73a9e757b0"}
+[2026-06-10 10:59:24] INFO: A2A Server components initialized
+[2026-06-10 10:59:24] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:24] INFO: Request received {"method":"message\/send","id":"tck-77c789ea-8a06-40fb-807a-7dd318fdb807"}
+[2026-06-10 10:59:24] INFO: Processing message {"from":"unknown","message_id":"mapping-test-message-id-62ec54c0-6e4b-4d2b-88b2-0b0c8f1a25f7","role":"user"}
+[2026-06-10 10:59:24] INFO: Message task ready for interaction {"task_id":"2b2cf082-e971-4d0b-b0ae-238ff24744a8","message_id":"mapping-test-message-id-62ec54c0-6e4b-4d2b-88b2-0b0c8f1a25f7","state":"working"}
+[2026-06-10 10:59:24] INFO: Message processed {"from":"unknown","message_id":"mapping-test-message-id-62ec54c0-6e4b-4d2b-88b2-0b0c8f1a25f7","task_id":"2b2cf082-e971-4d0b-b0ae-238ff24744a8","state":"working"}
+[2026-06-10 10:59:24] INFO: A2A Server components initialized
+[2026-06-10 10:59:24] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:24] INFO: Request received {"method":"tasks\/get","id":"tck-52c177d1-4113-4e1b-b219-0b56fcb78548"}
+[2026-06-10 10:59:24] INFO: A2A Server components initialized
+[2026-06-10 10:59:24] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:24] INFO: Request received {"method":"tasks\/cancel","id":"tck-0018e231-f94b-47ea-87ff-21759f6ea96a"}
+[2026-06-10 10:59:24] INFO: A2A Server components initialized
+[2026-06-10 10:59:24] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:24] INFO: Request received {"method":"message\/send","id":"tck-d1919c6b-94cd-403a-bae1-d52dec5bfbd1"}
+[2026-06-10 10:59:24] INFO: Processing message {"from":"unknown","message_id":"text-message-id-074ed23b-2734-4fc6-b74b-8fefae1473cc","role":"user"}
+[2026-06-10 10:59:24] INFO: Message task ready for interaction {"task_id":"b02ee6a3-f79f-423f-863f-71f211fedae9","message_id":"text-message-id-074ed23b-2734-4fc6-b74b-8fefae1473cc","state":"working"}
+[2026-06-10 10:59:24] INFO: Message processed {"from":"unknown","message_id":"text-message-id-074ed23b-2734-4fc6-b74b-8fefae1473cc","task_id":"b02ee6a3-f79f-423f-863f-71f211fedae9","state":"working"}
+[2026-06-10 10:59:25] INFO: A2A Server components initialized
+[2026-06-10 10:59:25] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:25] INFO: Request received {"method":"message\/send","id":"tck-784fa76c-2015-4fdb-9f1e-52a64a2f0ef5"}
+[2026-06-10 10:59:25] INFO: A2A Server components initialized
+[2026-06-10 10:59:25] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:25] INFO: Request received {"method":"message\/send","id":"tck-23ed6d49-8210-4a57-b018-cf2f10180185"}
+[2026-06-10 10:59:25] INFO: Processing message {"from":"unknown","message_id":"text-message-id-740368cb-5a87-45cd-adfe-4fcb70da765b","role":"user"}
+[2026-06-10 10:59:25] INFO: Message task ready for interaction {"task_id":"194b5fa6-6ff3-42b3-b7da-48d986007f83","message_id":"text-message-id-740368cb-5a87-45cd-adfe-4fcb70da765b","state":"working"}
+[2026-06-10 10:59:25] INFO: Message processed {"from":"unknown","message_id":"text-message-id-740368cb-5a87-45cd-adfe-4fcb70da765b","task_id":"194b5fa6-6ff3-42b3-b7da-48d986007f83","state":"working"}
+[2026-06-10 10:59:25] INFO: A2A Server components initialized
+[2026-06-10 10:59:25] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:25] INFO: Request received {"method":"message\/send","id":"tck-3cbde672-fd84-4241-be5b-aa51f75d4b4b"}
+[2026-06-10 10:59:25] INFO: Processing message {"from":"unknown","message_id":"continuation-message-id-eaacd10e-6fb5-4451-b23f-007d47067472","role":"user"}
+[2026-06-10 10:59:25] INFO: Message task ready for interaction {"task_id":"194b5fa6-6ff3-42b3-b7da-48d986007f83","message_id":"continuation-message-id-eaacd10e-6fb5-4451-b23f-007d47067472","state":"working"}
+[2026-06-10 10:59:25] INFO: Message processed {"from":"unknown","message_id":"continuation-message-id-eaacd10e-6fb5-4451-b23f-007d47067472","task_id":"194b5fa6-6ff3-42b3-b7da-48d986007f83","state":"completed"}
+[2026-06-10 10:59:25] INFO: A2A Server components initialized
+[2026-06-10 10:59:25] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:25] INFO: Request received {"method":"message\/send","id":"tck-3c79734a-fb1f-484a-a1e6-abcf472c23d7"}
+[2026-06-10 10:59:25] INFO: Processing message {"from":"unknown","message_id":"test-history-create-message-id-28ce42ac-d9e8-4c9a-b9c0-705f7b2c2364","role":"user"}
+[2026-06-10 10:59:25] INFO: Message task ready for interaction {"task_id":"a0cdc845-3059-4449-8cca-3cd53512376b","message_id":"test-history-create-message-id-28ce42ac-d9e8-4c9a-b9c0-705f7b2c2364","state":"working"}
+[2026-06-10 10:59:25] INFO: Message processed {"from":"unknown","message_id":"test-history-create-message-id-28ce42ac-d9e8-4c9a-b9c0-705f7b2c2364","task_id":"a0cdc845-3059-4449-8cca-3cd53512376b","state":"working"}
+[2026-06-10 10:59:25] INFO: A2A Server components initialized
+[2026-06-10 10:59:25] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:25] INFO: Request received {"method":"message\/send","id":"tck-e0340bd3-d4ed-4afa-9407-52a7b6056b7b"}
+[2026-06-10 10:59:25] INFO: Processing message {"from":"unknown","message_id":"test-history-message-1-6241317f-83ec-45c9-9bce-eacabc0c263b","role":"user"}
+[2026-06-10 10:59:25] INFO: Message task ready for interaction {"task_id":"a0cdc845-3059-4449-8cca-3cd53512376b","message_id":"test-history-message-1-6241317f-83ec-45c9-9bce-eacabc0c263b","state":"working"}
+[2026-06-10 10:59:25] INFO: Message processed {"from":"unknown","message_id":"test-history-message-1-6241317f-83ec-45c9-9bce-eacabc0c263b","task_id":"a0cdc845-3059-4449-8cca-3cd53512376b","state":"completed"}
+[2026-06-10 10:59:25] INFO: A2A Server components initialized
+[2026-06-10 10:59:25] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:25] INFO: Request received {"method":"message\/send","id":"tck-4eb938dd-5b65-411c-845f-4b6ebc5995ce"}
+[2026-06-10 10:59:25] INFO: Processing message {"from":"unknown","message_id":"test-history-message-2-64822073-c145-44c8-8ebc-1b42aadb0be7","role":"user"}
+[2026-06-10 10:59:25] INFO: Message task ready for interaction {"task_id":"a0cdc845-3059-4449-8cca-3cd53512376b","message_id":"test-history-message-2-64822073-c145-44c8-8ebc-1b42aadb0be7","state":"working"}
+[2026-06-10 10:59:25] INFO: Message processed {"from":"unknown","message_id":"test-history-message-2-64822073-c145-44c8-8ebc-1b42aadb0be7","task_id":"a0cdc845-3059-4449-8cca-3cd53512376b","state":"completed"}
+[2026-06-10 10:59:26] INFO: A2A Server components initialized
+[2026-06-10 10:59:26] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:26] INFO: Request received {"method":"message\/send","id":"tck-2bead0e1-5057-45d2-8e7a-694662c77cdf"}
+[2026-06-10 10:59:26] INFO: Processing message {"from":"unknown","message_id":"test-history-message-3-7971aa4c-6849-41dd-aa8c-aca65b9f71bb","role":"user"}
+[2026-06-10 10:59:26] INFO: Message task ready for interaction {"task_id":"a0cdc845-3059-4449-8cca-3cd53512376b","message_id":"test-history-message-3-7971aa4c-6849-41dd-aa8c-aca65b9f71bb","state":"working"}
+[2026-06-10 10:59:26] INFO: Message processed {"from":"unknown","message_id":"test-history-message-3-7971aa4c-6849-41dd-aa8c-aca65b9f71bb","task_id":"a0cdc845-3059-4449-8cca-3cd53512376b","state":"completed"}
+[2026-06-10 10:59:27] INFO: A2A Server components initialized
+[2026-06-10 10:59:27] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:27] INFO: Request received {"method":"tasks\/get","id":"tck-2dd0e38e-9f39-4261-b422-8f58b092d269"}
+[2026-06-10 10:59:27] INFO: A2A Server components initialized
+[2026-06-10 10:59:27] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:27] INFO: Request received {"method":"tasks\/get","id":"tck-e68bf78e-f871-4647-aec8-41d989a28bc0"}
+[2026-06-10 10:59:27] INFO: A2A Server components initialized
+[2026-06-10 10:59:27] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:27] INFO: Request received {"method":"message\/send","id":"tck-38b337d0-6356-4c66-87bd-07ed47e19a0b"}
+[2026-06-10 10:59:27] INFO: Processing message {"from":"unknown","message_id":"cancel-test-message-id-38416cfc-07fd-4c2d-9d1f-9bc6a7ab6da6","role":"user"}
+[2026-06-10 10:59:27] INFO: Message task ready for interaction {"task_id":"1f2a948b-20fb-4b86-9d47-42a424fc433b","message_id":"cancel-test-message-id-38416cfc-07fd-4c2d-9d1f-9bc6a7ab6da6","state":"working"}
+[2026-06-10 10:59:27] INFO: Message processed {"from":"unknown","message_id":"cancel-test-message-id-38416cfc-07fd-4c2d-9d1f-9bc6a7ab6da6","task_id":"1f2a948b-20fb-4b86-9d47-42a424fc433b","state":"working"}
+[2026-06-10 10:59:27] INFO: A2A Server components initialized
+[2026-06-10 10:59:27] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:27] INFO: Request received {"method":"tasks\/cancel","id":"tck-a92c4073-cd5a-4349-91c3-137f670a587c"}
+[2026-06-10 10:59:27] INFO: A2A Server components initialized
+[2026-06-10 10:59:27] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:27] INFO: Request received {"method":"tasks\/cancel","id":"tck-84c93ac0-7ad1-4dd1-844e-3fe0b3b20e61"}
+[2026-06-10 10:59:27] INFO: A2A Server components initialized
+[2026-06-10 10:59:27] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:27] INFO: Request received {"method":"message\/send","id":"tck-4bab807f-9898-4af6-9b82-c8fbee733240"}
+[2026-06-10 10:59:27] INFO: Processing message {"from":"unknown","message_id":"get-test-message-id-f8432758-644a-4c59-851a-50a724f385e0","role":"user"}
+[2026-06-10 10:59:27] INFO: Message task ready for interaction {"task_id":"757dc9e7-7df9-410c-ab85-7ec37228a6fe","message_id":"get-test-message-id-f8432758-644a-4c59-851a-50a724f385e0","state":"working"}
+[2026-06-10 10:59:27] INFO: Message processed {"from":"unknown","message_id":"get-test-message-id-f8432758-644a-4c59-851a-50a724f385e0","task_id":"757dc9e7-7df9-410c-ab85-7ec37228a6fe","state":"working"}
+[2026-06-10 10:59:27] INFO: A2A Server components initialized
+[2026-06-10 10:59:27] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:27] INFO: Request received {"method":"tasks\/get","id":"tck-ccba3c6e-b016-418d-925f-68e52aecf1dd"}
+[2026-06-10 10:59:27] INFO: A2A Server components initialized
+[2026-06-10 10:59:27] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:27] INFO: Request received {"method":"message\/send","id":"tck-f5d30a45-c743-4b9e-a290-c20e1c1309f6"}
+[2026-06-10 10:59:27] INFO: Processing message {"from":"unknown","message_id":"get-test-message-id-5bf62bfe-d34b-413c-bf65-e35d31cd35d2","role":"user"}
+[2026-06-10 10:59:27] INFO: Message task ready for interaction {"task_id":"9ddc505e-5267-423c-acc5-d53baf00cc36","message_id":"get-test-message-id-5bf62bfe-d34b-413c-bf65-e35d31cd35d2","state":"working"}
+[2026-06-10 10:59:27] INFO: Message processed {"from":"unknown","message_id":"get-test-message-id-5bf62bfe-d34b-413c-bf65-e35d31cd35d2","task_id":"9ddc505e-5267-423c-acc5-d53baf00cc36","state":"working"}
+[2026-06-10 10:59:27] INFO: A2A Server components initialized
+[2026-06-10 10:59:27] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:27] INFO: Request received {"method":"tasks\/get","id":"tck-7005d8bd-3175-4830-b86a-3a87f23c7e4b"}
+[2026-06-10 10:59:27] INFO: A2A Server components initialized
+[2026-06-10 10:59:27] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:27] INFO: Request received {"method":"tasks\/get","id":"tck-92080e57-d59a-465d-91db-bab3d82ffb82"}
+[2026-06-10 10:59:28] INFO: A2A Server components initialized
+[2026-06-10 10:59:28] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:28] INFO: A2A Server components initialized
+[2026-06-10 10:59:28] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:28] INFO: Request received {"method":"agent\/getAuthenticatedExtendedCard","id":"tck-56795cdf-674b-4adb-85b2-427c2e52945b"}
+[2026-06-10 10:59:28] INFO: A2A Server components initialized
+[2026-06-10 10:59:28] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:28] INFO: Request received {"method":"agent\/getAuthenticatedExtendedCard","id":"tck-6f207dde-8660-442b-b8f7-7f9883b31cb0"}
+[2026-06-10 10:59:28] INFO: A2A Server components initialized
+[2026-06-10 10:59:28] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:28] INFO: Request received {"method":"agent\/getAuthenticatedExtendedCard","id":"tck-8a725e86-50eb-40f2-b4d4-a8ab3f833c57"}
+[2026-06-10 10:59:28] INFO: A2A Server components initialized
+[2026-06-10 10:59:28] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:28] INFO: Request received {"method":"agent\/getAuthenticatedExtendedCard","id":"tck-bf750df3-a7c1-4c16-becc-8531c999c199"}
+[2026-06-10 10:59:28] INFO: A2A Server components initialized
+[2026-06-10 10:59:28] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:28] INFO: Request received {"method":"agent\/getAuthenticatedExtendedCard","id":"tck-713f32cc-ef26-47a6-ba38-04368d51f9be"}
+[2026-06-10 10:59:28] INFO: A2A Server components initialized
+[2026-06-10 10:59:28] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:28] INFO: Request received {"method":"agent\/getAuthenticatedExtendedCard","id":"tck-90da450c-e2d5-4216-a37c-7a9258c940b1"}
+[2026-06-10 10:59:28] INFO: A2A Server components initialized
+[2026-06-10 10:59:28] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:28] INFO: Request received {"method":"agent\/getAuthenticatedExtendedCard","id":"tck-562f4a6e-3017-4789-9b3c-92b3939bd506"}
+[2026-06-10 10:59:28] INFO: A2A Server components initialized
+[2026-06-10 10:59:28] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:28] INFO: Request received {"method":"agent\/getAuthenticatedExtendedCard","id":"tck-b8e7345c-7f11-4c66-9705-2d9b1ae1cab7"}
+[2026-06-10 10:59:28] INFO: A2A Server components initialized
+[2026-06-10 10:59:28] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:28] INFO: Request received {"method":"message\/send","id":"tck-898bcf7d-885a-402b-b3de-864bfe132424"}
+[2026-06-10 10:59:28] INFO: Processing message {"from":"unknown","message_id":"enhanced-parts-message-id-5c757689-418e-4c25-9318-922eac42f161","role":"user"}
+[2026-06-10 10:59:28] INFO: Message task ready for interaction {"task_id":"bfc092b6-8122-45cf-b189-0f601fa52648","message_id":"enhanced-parts-message-id-5c757689-418e-4c25-9318-922eac42f161","state":"working"}
+[2026-06-10 10:59:28] INFO: Message processed {"from":"unknown","message_id":"enhanced-parts-message-id-5c757689-418e-4c25-9318-922eac42f161","task_id":"bfc092b6-8122-45cf-b189-0f601fa52648","state":"working"}
+[2026-06-10 10:59:28] INFO: A2A Server components initialized
+[2026-06-10 10:59:28] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:28] INFO: Request received {"method":"message\/send","id":"tck-fb98b3bd-5838-455a-a933-c89b5ba2eab5"}
+[2026-06-10 10:59:28] INFO: Processing message {"from":"unknown","message_id":"enhanced-query-message-id-b7e7897a-762d-4e6d-8114-d3e85d858178","role":"user"}
+[2026-06-10 10:59:28] INFO: Message task ready for interaction {"task_id":"161a75ba-a289-46b9-9857-66ffb8ded5b5","message_id":"enhanced-query-message-id-b7e7897a-762d-4e6d-8114-d3e85d858178","state":"working"}
+[2026-06-10 10:59:28] INFO: Message processed {"from":"unknown","message_id":"enhanced-query-message-id-b7e7897a-762d-4e6d-8114-d3e85d858178","task_id":"161a75ba-a289-46b9-9857-66ffb8ded5b5","state":"working"}
+[2026-06-10 10:59:28] INFO: A2A Server components initialized
+[2026-06-10 10:59:28] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:28] INFO: Request received {"method":"tasks\/get","id":"tck-75042114-29f0-4964-84e2-ea5796504e77"}
+[2026-06-10 10:59:29] INFO: A2A Server components initialized
+[2026-06-10 10:59:29] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:29] INFO: Request received {"method":"agent\/getAuthenticatedExtendedCard","id":"tck-6633c116-6f37-4071-9d10-1c7aa58dc171"}
+[2026-06-10 10:59:29] INFO: A2A Server components initialized
+[2026-06-10 10:59:29] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:29] INFO: Request received {"method":"message\/send","id":"tck-b952b235-2e90-428f-a43e-f9e67c7e2675"}
+[2026-06-10 10:59:29] INFO: A2A Server components initialized
+[2026-06-10 10:59:29] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:29] INFO: Request received {"method":"tasks\/get","id":"tck-7cda6936-8d33-4c21-b0b4-815e02d321b7"}
+[2026-06-10 10:59:29] INFO: A2A Server components initialized
+[2026-06-10 10:59:29] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:29] INFO: Request received {"method":"message\/send","id":"tck-72b9c68e-f05d-4c25-8784-e0814049ec5a"}
+[2026-06-10 10:59:29] INFO: Processing message {"from":"unknown","message_id":"jsonrpc-specific-message-id-822d6b56-2297-40e9-8765-0b73439cb2cd","role":"user"}
+[2026-06-10 10:59:29] INFO: Message task ready for interaction {"task_id":"1d9b2443-c18b-4615-a9b5-6c4869271f1e","message_id":"jsonrpc-specific-message-id-822d6b56-2297-40e9-8765-0b73439cb2cd","state":"working"}
+[2026-06-10 10:59:29] INFO: Message processed {"from":"unknown","message_id":"jsonrpc-specific-message-id-822d6b56-2297-40e9-8765-0b73439cb2cd","task_id":"1d9b2443-c18b-4615-a9b5-6c4869271f1e","state":"working"}
+[2026-06-10 10:59:29] INFO: A2A Server components initialized
+[2026-06-10 10:59:29] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:29] INFO: Request received {"method":"message\/send","id":"tck-3398b947-d14f-44e2-9546-adc2c7d5c842"}
+[2026-06-10 10:59:29] INFO: Processing message {"from":"unknown","message_id":"concurrent-0-message-id-84faa1dc-33c6-4e27-aaa5-750c229b14e7","role":"user"}
+[2026-06-10 10:59:29] INFO: Message task ready for interaction {"task_id":"538dbcbe-5024-4d0e-b97e-9ca1a94f34b0","message_id":"concurrent-0-message-id-84faa1dc-33c6-4e27-aaa5-750c229b14e7","state":"working"}
+[2026-06-10 10:59:29] INFO: Message processed {"from":"unknown","message_id":"concurrent-0-message-id-84faa1dc-33c6-4e27-aaa5-750c229b14e7","task_id":"538dbcbe-5024-4d0e-b97e-9ca1a94f34b0","state":"working"}
+[2026-06-10 10:59:29] INFO: A2A Server components initialized
+[2026-06-10 10:59:29] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:29] INFO: Request received {"method":"message\/send","id":"tck-a9bc73e4-eb33-4f3f-970f-619a9e0b06db"}
+[2026-06-10 10:59:29] INFO: Processing message {"from":"unknown","message_id":"concurrent-1-message-id-8c9af151-dce7-43b5-904f-16138579356d","role":"user"}
+[2026-06-10 10:59:29] INFO: Message task ready for interaction {"task_id":"4efd4163-6a77-467e-8c54-06502edc7dcc","message_id":"concurrent-1-message-id-8c9af151-dce7-43b5-904f-16138579356d","state":"working"}
+[2026-06-10 10:59:29] INFO: Message processed {"from":"unknown","message_id":"concurrent-1-message-id-8c9af151-dce7-43b5-904f-16138579356d","task_id":"4efd4163-6a77-467e-8c54-06502edc7dcc","state":"working"}
+[2026-06-10 10:59:29] INFO: A2A Server components initialized
+[2026-06-10 10:59:29] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:29] INFO: Request received {"method":"message\/send","id":"tck-79345717-cfc5-4f03-80fa-af7b50306235"}
+[2026-06-10 10:59:29] INFO: Processing message {"from":"unknown","message_id":"concurrent-2-message-id-21e834b6-195f-43f9-9c2d-fba53e8d12f8","role":"user"}
+[2026-06-10 10:59:29] INFO: Message task ready for interaction {"task_id":"bca377c8-ce2a-4681-8835-41912b41523c","message_id":"concurrent-2-message-id-21e834b6-195f-43f9-9c2d-fba53e8d12f8","state":"working"}
+[2026-06-10 10:59:29] INFO: Message processed {"from":"unknown","message_id":"concurrent-2-message-id-21e834b6-195f-43f9-9c2d-fba53e8d12f8","task_id":"bca377c8-ce2a-4681-8835-41912b41523c","state":"working"}
+[2026-06-10 10:59:29] INFO: A2A Server components initialized
+[2026-06-10 10:59:29] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:29] INFO: Request received {"method":"message\/send","id":"tck-254cbeec-1452-4d91-a360-12dde19f2036"}
+[2026-06-10 10:59:29] INFO: Processing message {"from":"unknown","message_id":"response-time-message-id-54c542d4-0642-4410-a81d-ea5a267e54d6","role":"user"}
+[2026-06-10 10:59:29] INFO: Message task ready for interaction {"task_id":"e1688e6f-5a3e-4605-aab6-cbe44604a03a","message_id":"response-time-message-id-54c542d4-0642-4410-a81d-ea5a267e54d6","state":"working"}
+[2026-06-10 10:59:29] INFO: Message processed {"from":"unknown","message_id":"response-time-message-id-54c542d4-0642-4410-a81d-ea5a267e54d6","task_id":"e1688e6f-5a3e-4605-aab6-cbe44604a03a","state":"working"}
+[2026-06-10 10:59:29] INFO: A2A Server components initialized
+[2026-06-10 10:59:29] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:29] INFO: A2A Server components initialized
+[2026-06-10 10:59:29] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:29] INFO: Request received {"method":"message\/send","id":"tck-6e4d4705-78f3-4789-9911-42475e27cac9"}
+[2026-06-10 10:59:29] INFO: Processing message {"from":"unknown","message_id":"test-file-message-id-2353f15c-2532-49dc-8e2b-302cd8e29aac","role":"user"}
+[2026-06-10 10:59:29] INFO: Message task ready for interaction {"task_id":"90d2d055-ee01-40ee-ac66-e002b7e324bf","message_id":"test-file-message-id-2353f15c-2532-49dc-8e2b-302cd8e29aac","state":"working"}
+[2026-06-10 10:59:29] INFO: Message processed {"from":"unknown","message_id":"test-file-message-id-2353f15c-2532-49dc-8e2b-302cd8e29aac","task_id":"90d2d055-ee01-40ee-ac66-e002b7e324bf","state":"working"}
+[2026-06-10 10:59:29] INFO: A2A Server components initialized
+[2026-06-10 10:59:29] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:29] INFO: Request received {"method":"message\/send","id":"tck-4ab6efd1-245a-4072-98cc-ec000f0e8102"}
+[2026-06-10 10:59:30] INFO: Processing message {"from":"unknown","message_id":"test-multiple-parts-message-id-288428d5-e58b-4e4c-b156-0836ec744bd1","role":"user"}
+[2026-06-10 10:59:30] INFO: Message task ready for interaction {"task_id":"146a3e4e-5cfa-48e8-9108-99639b8ef53e","message_id":"test-multiple-parts-message-id-288428d5-e58b-4e4c-b156-0836ec744bd1","state":"working"}
+[2026-06-10 10:59:30] INFO: Message processed {"from":"unknown","message_id":"test-multiple-parts-message-id-288428d5-e58b-4e4c-b156-0836ec744bd1","task_id":"146a3e4e-5cfa-48e8-9108-99639b8ef53e","state":"working"}
+[2026-06-10 10:59:30] INFO: A2A Server components initialized
+[2026-06-10 10:59:30] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:30] INFO: Request received {"method":"message\/send","id":"tck-85c82cf5-10f2-4e73-820f-13bd37d643a4"}
+[2026-06-10 10:59:30] INFO: Processing message {"from":"unknown","message_id":"test-message-id-293b351c-d72a-44fd-9eba-91f593fe7b63","role":"user"}
+[2026-06-10 10:59:30] INFO: Message task ready for interaction {"task_id":"bc360006-c006-4cae-bbba-508fa31d5322","message_id":"test-message-id-293b351c-d72a-44fd-9eba-91f593fe7b63","state":"working"}
+[2026-06-10 10:59:30] INFO: Message processed {"from":"unknown","message_id":"test-message-id-293b351c-d72a-44fd-9eba-91f593fe7b63","task_id":"bc360006-c006-4cae-bbba-508fa31d5322","state":"working"}
+[2026-06-10 10:59:30] INFO: A2A Server components initialized
+[2026-06-10 10:59:30] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:30] INFO: Request received {"method":"message\/send","id":"tck-2d808f35-ad2a-4c25-af27-bb2113c0d601"}
+[2026-06-10 10:59:30] INFO: Processing message {"from":"unknown","message_id":"test-contextid-message-id-16947dcd-a3a5-45ea-9807-eac14a4a0894","role":"user"}
+[2026-06-10 10:59:30] INFO: Message task ready for interaction {"task_id":"bc360006-c006-4cae-bbba-508fa31d5322","message_id":"test-contextid-message-id-16947dcd-a3a5-45ea-9807-eac14a4a0894","state":"working"}
+[2026-06-10 10:59:30] INFO: Message processed {"from":"unknown","message_id":"test-contextid-message-id-16947dcd-a3a5-45ea-9807-eac14a4a0894","task_id":"bc360006-c006-4cae-bbba-508fa31d5322","state":"completed"}
+[2026-06-10 10:59:30] INFO: A2A Server components initialized
+[2026-06-10 10:59:30] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:30] INFO: Request received {"method":"message\/send","id":"tck-00c7244b-1653-45f5-9785-217b38857368"}
+[2026-06-10 10:59:30] INFO: Processing message {"from":"unknown","message_id":"test-data-message-id-0b7141f0-49c9-41c9-b541-1f13975e5b84","role":"user"}
+[2026-06-10 10:59:30] INFO: Message task ready for interaction {"task_id":"cb735f4e-de22-4f4a-813d-c5e574ab26b8","message_id":"test-data-message-id-0b7141f0-49c9-41c9-b541-1f13975e5b84","state":"working"}
+[2026-06-10 10:59:30] INFO: Message processed {"from":"unknown","message_id":"test-data-message-id-0b7141f0-49c9-41c9-b541-1f13975e5b84","task_id":"cb735f4e-de22-4f4a-813d-c5e574ab26b8","state":"working"}
+[2026-06-10 10:59:30] INFO: A2A Server components initialized
+[2026-06-10 10:59:30] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:30] INFO: Request received {"method":"message\/send","id":"tck-bdd9e604-b1d8-42ca-bc1b-e817cf5cf0e3"}
+[2026-06-10 10:59:30] INFO: Processing message {"from":"unknown","message_id":"test-data-array-message-id-79c8e659-36fa-40a6-9599-f5322c140c37","role":"user"}
+[2026-06-10 10:59:30] INFO: Message task ready for interaction {"task_id":"05bb4dbf-6835-47bd-89d0-5c61f7a2ad45","message_id":"test-data-array-message-id-79c8e659-36fa-40a6-9599-f5322c140c37","state":"working"}
+[2026-06-10 10:59:30] INFO: Message processed {"from":"unknown","message_id":"test-data-array-message-id-79c8e659-36fa-40a6-9599-f5322c140c37","task_id":"05bb4dbf-6835-47bd-89d0-5c61f7a2ad45","state":"working"}
+[2026-06-10 10:59:30] INFO: A2A Server components initialized
+[2026-06-10 10:59:30] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:30] INFO: Request received {"method":"message\/send","id":"tck-6a89ce40-6908-4dc0-b625-0751c5d36509"}
+[2026-06-10 10:59:30] INFO: Processing message {"from":"unknown","message_id":"test-push-notification-message-id-71123594-3d95-4662-991d-e175c6adae8a","role":"user"}
+[2026-06-10 10:59:30] INFO: Message task ready for interaction {"task_id":"67545860-45ea-4825-b5bc-4b9786512599","message_id":"test-push-notification-message-id-71123594-3d95-4662-991d-e175c6adae8a","state":"working"}
+[2026-06-10 10:59:30] INFO: Message processed {"from":"unknown","message_id":"test-push-notification-message-id-71123594-3d95-4662-991d-e175c6adae8a","task_id":"67545860-45ea-4825-b5bc-4b9786512599","state":"working"}
+[2026-06-10 10:59:30] INFO: A2A Server components initialized
+[2026-06-10 10:59:30] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:30] INFO: Request received {"method":"tasks\/pushNotificationConfig\/set","id":"tck-00c65697-06f5-4674-b7de-21b8fa7b9de0"}
+[2026-06-10 10:59:30] INFO: A2A Server components initialized
+[2026-06-10 10:59:30] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:30] INFO: Request received {"method":"message\/send","id":"tck-d873b68a-8bf4-48df-8224-624cd5be1d49"}
+[2026-06-10 10:59:30] INFO: Processing message {"from":"unknown","message_id":"test-push-notification-message-id-936e673a-c122-4172-beba-1bb4c834e82a","role":"user"}
+[2026-06-10 10:59:30] INFO: Message task ready for interaction {"task_id":"1c1c26a4-d169-4b99-ac97-e3a511ef1ad4","message_id":"test-push-notification-message-id-936e673a-c122-4172-beba-1bb4c834e82a","state":"working"}
+[2026-06-10 10:59:30] INFO: Message processed {"from":"unknown","message_id":"test-push-notification-message-id-936e673a-c122-4172-beba-1bb4c834e82a","task_id":"1c1c26a4-d169-4b99-ac97-e3a511ef1ad4","state":"working"}
+[2026-06-10 10:59:30] INFO: A2A Server components initialized
+[2026-06-10 10:59:30] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:30] INFO: Request received {"method":"tasks\/pushNotificationConfig\/set","id":"tck-3e8e793f-bc84-4e59-8367-a13ea815bd3a"}
+[2026-06-10 10:59:30] INFO: A2A Server components initialized
+[2026-06-10 10:59:30] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:30] INFO: Request received {"method":"tasks\/pushNotificationConfig\/get","id":"tck-140b05f4-1a8a-4c95-8e45-302c07525a1d"}
+[2026-06-10 10:59:30] INFO: A2A Server components initialized
+[2026-06-10 10:59:30] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:30] INFO: Request received {"method":"tasks\/pushNotificationConfig\/set","id":"tck-c8edfa02-c46a-488b-be78-ff9743184430"}
+[2026-06-10 10:59:30] INFO: A2A Server components initialized
+[2026-06-10 10:59:30] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:30] INFO: Request received {"method":"tasks\/pushNotificationConfig\/get","id":"tck-20ff198a-720d-451b-a24b-e603fc5a6bf1"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"message\/send","id":"tck-46d06097-5bc0-41a7-ad87-efceecda4230"}
+[2026-06-10 10:59:31] INFO: Processing message {"from":"unknown","message_id":"test-push-notification-message-id-aab25ce4-73a8-45a0-9f50-1bc1e034306d","role":"user"}
+[2026-06-10 10:59:31] INFO: Message task ready for interaction {"task_id":"81e351cf-2193-4948-b13a-d95a8f065c9e","message_id":"test-push-notification-message-id-aab25ce4-73a8-45a0-9f50-1bc1e034306d","state":"working"}
+[2026-06-10 10:59:31] INFO: Message processed {"from":"unknown","message_id":"test-push-notification-message-id-aab25ce4-73a8-45a0-9f50-1bc1e034306d","task_id":"81e351cf-2193-4948-b13a-d95a8f065c9e","state":"working"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"tasks\/pushNotificationConfig\/set","id":"tck-587f3ec7-8020-461e-a95e-e68facb64b2a"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"tasks\/pushNotificationConfig\/list","id":"tck-f4a50afd-a198-4333-b8d6-ccb7a81c06e7"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"message\/send","id":"tck-24d82765-2873-4bd3-9b3a-ec7b166a81e9"}
+[2026-06-10 10:59:31] INFO: Processing message {"from":"unknown","message_id":"test-empty-list-message-id-a7d90252-c80a-4596-9df5-c9e0ceb714ee","role":"user"}
+[2026-06-10 10:59:31] INFO: Message task ready for interaction {"task_id":"2323fc44-a775-443b-b310-3d46a5e80402","message_id":"test-empty-list-message-id-a7d90252-c80a-4596-9df5-c9e0ceb714ee","state":"working"}
+[2026-06-10 10:59:31] INFO: Message processed {"from":"unknown","message_id":"test-empty-list-message-id-a7d90252-c80a-4596-9df5-c9e0ceb714ee","task_id":"2323fc44-a775-443b-b310-3d46a5e80402","state":"working"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"tasks\/pushNotificationConfig\/list","id":"tck-464621ef-0bd5-46c0-a4ef-ca74576c8553"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"message\/send","id":"tck-48ee99d2-50f3-4e00-b83a-c954f75e80ed"}
+[2026-06-10 10:59:31] INFO: Processing message {"from":"unknown","message_id":"test-push-notification-message-id-17c0d5a2-84a8-45e7-9b38-26f635945455","role":"user"}
+[2026-06-10 10:59:31] INFO: Message task ready for interaction {"task_id":"d58145a6-a324-45f7-9ba1-5fee4a344a9f","message_id":"test-push-notification-message-id-17c0d5a2-84a8-45e7-9b38-26f635945455","state":"working"}
+[2026-06-10 10:59:31] INFO: Message processed {"from":"unknown","message_id":"test-push-notification-message-id-17c0d5a2-84a8-45e7-9b38-26f635945455","task_id":"d58145a6-a324-45f7-9ba1-5fee4a344a9f","state":"working"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"tasks\/pushNotificationConfig\/set","id":"tck-8ba1ea38-42f4-4605-b86c-b818b2365ef4"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"message\/send","id":"tck-d63fb197-c0f8-4526-ae36-b53cf227d081"}
+[2026-06-10 10:59:31] INFO: Processing message {"from":"unknown","message_id":"test-push-notification-message-id-aec236c0-e0d2-4a1c-b52b-9c7facf63327","role":"user"}
+[2026-06-10 10:59:31] INFO: Message task ready for interaction {"task_id":"cf209181-6684-41b2-be8d-d9c7aa8b4f93","message_id":"test-push-notification-message-id-aec236c0-e0d2-4a1c-b52b-9c7facf63327","state":"working"}
+[2026-06-10 10:59:31] INFO: Message processed {"from":"unknown","message_id":"test-push-notification-message-id-aec236c0-e0d2-4a1c-b52b-9c7facf63327","task_id":"cf209181-6684-41b2-be8d-d9c7aa8b4f93","state":"working"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"tasks\/pushNotificationConfig\/delete","id":"tck-2bf05510-16b6-4e34-bed4-69c0fff080dd"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"tasks\/pushNotificationConfig\/delete","id":"tck-1ef29419-8fd9-424b-b8c5-c06cfef2884c"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"message\/send","id":"tck-0af8ad63-7aaa-4ddd-ba0f-a3029402ef29"}
+[2026-06-10 10:59:31] INFO: Processing message {"from":"unknown","message_id":"test-push-delivery-659e32e5-0893-4d05-8510-65d751b8f76a","role":"user"}
+[2026-06-10 10:59:31] INFO: Message task ready for interaction {"task_id":"cdcb2487-0a35-4cdb-9818-7493a606ae05","message_id":"test-push-delivery-659e32e5-0893-4d05-8510-65d751b8f76a","state":"working"}
+[2026-06-10 10:59:31] INFO: Message processed {"from":"unknown","message_id":"test-push-delivery-659e32e5-0893-4d05-8510-65d751b8f76a","task_id":"cdcb2487-0a35-4cdb-9818-7493a606ae05","state":"working"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"tasks\/pushNotificationConfig\/set","id":"tck-774cab43-3e2f-472b-a0ee-ec9bad83fbbb"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"message\/send","id":"tck-09281342-e8b0-4fe9-95b9-e87679983ea3"}
+[2026-06-10 10:59:31] INFO: Processing message {"from":"unknown","message_id":"test-push-trigger-52b4c3d1-ebf5-44b3-9c79-8452e7d47394","role":"user"}
+[2026-06-10 10:59:31] INFO: Message task ready for interaction {"task_id":"cdcb2487-0a35-4cdb-9818-7493a606ae05","message_id":"test-push-trigger-52b4c3d1-ebf5-44b3-9c79-8452e7d47394","state":"working"}
+[2026-06-10 10:59:31] INFO: Push notification delivered {"task_id":"cdcb2487-0a35-4cdb-9818-7493a606ae05","state":"completed"}
+[2026-06-10 10:59:31] INFO: Message processed {"from":"unknown","message_id":"test-push-trigger-52b4c3d1-ebf5-44b3-9c79-8452e7d47394","task_id":"cdcb2487-0a35-4cdb-9818-7493a606ae05","state":"completed"}
+[2026-06-10 10:59:31] INFO: A2A Server components initialized
+[2026-06-10 10:59:31] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:31] INFO: Request received {"method":"message\/send","id":"tck-916de3ef-b26e-4014-a8f2-98f11ba8da47"}
+[2026-06-10 10:59:32] INFO: Processing message {"from":"unknown","message_id":"test-push-delivery-b96247e6-5c00-438c-82ec-b5d3e1892463","role":"user"}
+[2026-06-10 10:59:32] INFO: Message task ready for interaction {"task_id":"15c19e1d-76af-46a1-a5ba-8055afa7d1b5","message_id":"test-push-delivery-b96247e6-5c00-438c-82ec-b5d3e1892463","state":"working"}
+[2026-06-10 10:59:32] INFO: Message processed {"from":"unknown","message_id":"test-push-delivery-b96247e6-5c00-438c-82ec-b5d3e1892463","task_id":"15c19e1d-76af-46a1-a5ba-8055afa7d1b5","state":"working"}
+[2026-06-10 10:59:32] INFO: A2A Server components initialized
+[2026-06-10 10:59:32] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:32] INFO: Request received {"method":"tasks\/pushNotificationConfig\/set","id":"tck-855a33e9-5d3b-4853-be2c-04f477a7e49c"}
+[2026-06-10 10:59:32] INFO: A2A Server components initialized
+[2026-06-10 10:59:32] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:32] INFO: Request received {"method":"message\/send","id":"tck-e2cf6ea6-3dd7-42d4-8b87-90308b055395"}
+[2026-06-10 10:59:32] INFO: Processing message {"from":"unknown","message_id":"test-push-trigger-32204180-11d5-4024-9128-61e8dccdac9c","role":"user"}
+[2026-06-10 10:59:32] INFO: Message task ready for interaction {"task_id":"15c19e1d-76af-46a1-a5ba-8055afa7d1b5","message_id":"test-push-trigger-32204180-11d5-4024-9128-61e8dccdac9c","state":"working"}
+[2026-06-10 10:59:32] INFO: Push notification delivered {"task_id":"15c19e1d-76af-46a1-a5ba-8055afa7d1b5","state":"completed"}
+[2026-06-10 10:59:32] INFO: Message processed {"from":"unknown","message_id":"test-push-trigger-32204180-11d5-4024-9128-61e8dccdac9c","task_id":"15c19e1d-76af-46a1-a5ba-8055afa7d1b5","state":"completed"}
+[2026-06-10 10:59:32] INFO: A2A Server components initialized
+[2026-06-10 10:59:32] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:32] INFO: Request received {"method":"message\/send","id":"tck-368b557a-a50e-4b76-83c1-fc83fe2cd064"}
+[2026-06-10 10:59:32] INFO: Processing message {"from":"unknown","message_id":"test-push-delivery-030fd0f0-1da1-4d30-85b1-bec5410405b8","role":"user"}
+[2026-06-10 10:59:32] INFO: Message task ready for interaction {"task_id":"554a647e-e805-4de5-8476-59bf277815c6","message_id":"test-push-delivery-030fd0f0-1da1-4d30-85b1-bec5410405b8","state":"working"}
+[2026-06-10 10:59:32] INFO: Message processed {"from":"unknown","message_id":"test-push-delivery-030fd0f0-1da1-4d30-85b1-bec5410405b8","task_id":"554a647e-e805-4de5-8476-59bf277815c6","state":"working"}
+[2026-06-10 10:59:32] INFO: A2A Server components initialized
+[2026-06-10 10:59:32] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:32] INFO: Request received {"method":"tasks\/pushNotificationConfig\/set","id":"tck-6abd69e2-e5a9-4ada-9679-2f67a2ab6b12"}
+[2026-06-10 10:59:32] INFO: A2A Server components initialized
+[2026-06-10 10:59:32] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:32] INFO: Request received {"method":"message\/send","id":"tck-45cb08e3-930a-4f29-a074-a2f829ac660c"}
+[2026-06-10 10:59:32] INFO: Processing message {"from":"unknown","message_id":"test-push-trigger-bf566e6f-b797-487e-b160-ecc3c9f7401c","role":"user"}
+[2026-06-10 10:59:32] INFO: Message task ready for interaction {"task_id":"554a647e-e805-4de5-8476-59bf277815c6","message_id":"test-push-trigger-bf566e6f-b797-487e-b160-ecc3c9f7401c","state":"working"}
+[2026-06-10 10:59:32] INFO: Push notification delivered {"task_id":"554a647e-e805-4de5-8476-59bf277815c6","state":"completed"}
+[2026-06-10 10:59:32] INFO: Message processed {"from":"unknown","message_id":"test-push-trigger-bf566e6f-b797-487e-b160-ecc3c9f7401c","task_id":"554a647e-e805-4de5-8476-59bf277815c6","state":"completed"}
+[2026-06-10 10:59:32] INFO: A2A Server components initialized
+[2026-06-10 10:59:32] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:32] INFO: Request received {"method":"message\/send","id":"tck-b3ba72af-7d4e-4531-a91c-f3cfb5983234"}
+[2026-06-10 10:59:32] INFO: Processing message {"from":"unknown","message_id":"test-push-delivery-e1b5630c-64c0-45ad-b706-259faa576ea2","role":"user"}
+[2026-06-10 10:59:32] INFO: Message task ready for interaction {"task_id":"e4fa604a-93a6-4565-beb1-d6be69af37bd","message_id":"test-push-delivery-e1b5630c-64c0-45ad-b706-259faa576ea2","state":"working"}
+[2026-06-10 10:59:32] INFO: Message processed {"from":"unknown","message_id":"test-push-delivery-e1b5630c-64c0-45ad-b706-259faa576ea2","task_id":"e4fa604a-93a6-4565-beb1-d6be69af37bd","state":"working"}
+[2026-06-10 10:59:32] INFO: A2A Server components initialized
+[2026-06-10 10:59:32] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:32] INFO: Request received {"method":"tasks\/pushNotificationConfig\/set","id":"tck-d72d80cc-1d06-49de-8dd6-dde047c69e78"}
+[2026-06-10 10:59:32] INFO: A2A Server components initialized
+[2026-06-10 10:59:32] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:32] INFO: Request received {"method":"message\/send","id":"tck-d2044349-e3fd-41e9-8f02-1405d3bab2b4"}
+[2026-06-10 10:59:32] INFO: Processing message {"from":"unknown","message_id":"test-push-trigger-34ec37f0-f0f2-4a95-85a3-3f29a6d4d118","role":"user"}
+[2026-06-10 10:59:32] INFO: Message task ready for interaction {"task_id":"e4fa604a-93a6-4565-beb1-d6be69af37bd","message_id":"test-push-trigger-34ec37f0-f0f2-4a95-85a3-3f29a6d4d118","state":"working"}
+[2026-06-10 10:59:32] INFO: Push notification delivered {"task_id":"e4fa604a-93a6-4565-beb1-d6be69af37bd","state":"completed"}
+[2026-06-10 10:59:32] INFO: Message processed {"from":"unknown","message_id":"test-push-trigger-34ec37f0-f0f2-4a95-85a3-3f29a6d4d118","task_id":"e4fa604a-93a6-4565-beb1-d6be69af37bd","state":"completed"}
+[2026-06-10 10:59:32] INFO: A2A Server components initialized
+[2026-06-10 10:59:32] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:32] INFO: Request received {"method":"message\/stream","id":"tck-fe71601e-cd55-4b9d-9125-374fcfbfe452"}
+[2026-06-10 10:59:33] INFO: A2A Server components initialized
+[2026-06-10 10:59:33] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:33] INFO: Request received {"method":"message\/stream","id":"tck-2a5d53a1-6f7f-43aa-9d59-ea918813c4c8"}
+[2026-06-10 10:59:33] ERROR: Invalid request parameters {"error":"Message requires a non-empty string \"messageId\" field","method":"message\/stream"}
+[2026-06-10 10:59:33] INFO: A2A Server components initialized
+[2026-06-10 10:59:33] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:33] INFO: Request received {"method":"message\/stream","id":"tck-b9ddc579-8e53-4c0e-9da3-ecb7fa5640d4"}
+[2026-06-10 10:59:34] INFO: A2A Server components initialized
+[2026-06-10 10:59:34] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:34] INFO: Request received {"method":"tasks\/resubscribe","id":"tck-3579b2b1-7265-4a79-bd4d-b9dff3ebab3d"}
+[2026-06-10 10:59:35] INFO: A2A Server components initialized
+[2026-06-10 10:59:35] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:35] INFO: Request received {"method":"tasks\/resubscribe","id":"tck-229c617c-418b-4050-b527-44a414c48959"}
+[2026-06-10 10:59:35] INFO: A2A Server components initialized
+[2026-06-10 10:59:35] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:35] INFO: Request received {"method":"message\/stream","id":"tck-7b0562ea-5e98-457b-a8a2-a1822de9662c"}
+[2026-06-10 10:59:36] INFO: A2A Server components initialized
+[2026-06-10 10:59:36] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:36] INFO: Request received {"method":"message\/stream","id":"tck-a8515972-a000-4cde-95bd-817c32ed3668"}
+[2026-06-10 10:59:37] INFO: A2A Server components initialized
+[2026-06-10 10:59:37] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:37] INFO: A2A Server components initialized
+[2026-06-10 10:59:37] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:37] INFO: A2A Server components initialized
+[2026-06-10 10:59:37] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:37] INFO: Request received {"method":"unknown","id":"none"}
+[2026-06-10 10:59:37] ERROR: JSON-RPC request validation failed {"error":"Invalid JSON-RPC version","request":[{"jsonrpc":"2.0","method":"message\/send","params":{"message":{"kind":"message","messageId":"batch-0-message-id-966498f1-16b4-43fe-a008-35e2495c2be6","role":"user","parts":[{"kind":"text","text":"Batch message 0"}]}},"id":"batch-req-0"},{"jsonrpc":"2.0","method":"message\/send","params":{"message":{"kind":"message","messageId":"batch-1-message-id-a5d80ba5-d15a-4cf4-909a-ebeda48047a7","role":"user","parts":[{"kind":"text","text":"Batch message 1"}]}},"id":"batch-req-1"},{"jsonrpc":"2.0","method":"message\/send","params":{"message":{"kind":"message","messageId":"batch-2-message-id-5635b6e6-766e-4cab-8124-27614255e94b","role":"user","parts":[{"kind":"text","text":"Batch message 2"}]}},"id":"batch-req-2"}]}
+[2026-06-10 10:59:37] INFO: A2A Server components initialized
+[2026-06-10 10:59:37] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:37] INFO: Request received {"method":"message\/send","id":"none"}
+[2026-06-10 10:59:37] INFO: Processing message {"from":"unknown","message_id":"notification-message-id-9d94a6c6-91c2-403f-830f-21d76dcfee1d","role":"user"}
+[2026-06-10 10:59:37] INFO: Message task ready for interaction {"task_id":"4aa83891-0629-4630-abf9-cb9a2db0bfc7","message_id":"notification-message-id-9d94a6c6-91c2-403f-830f-21d76dcfee1d","state":"working"}
+[2026-06-10 10:59:37] INFO: Message processed {"from":"unknown","message_id":"notification-message-id-9d94a6c6-91c2-403f-830f-21d76dcfee1d","task_id":"4aa83891-0629-4630-abf9-cb9a2db0bfc7","state":"working"}
+[2026-06-10 10:59:37] INFO: A2A Server components initialized
+[2026-06-10 10:59:37] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:37] INFO: Request received {"method":"invalid\/method","id":"error-test"}
+[2026-06-10 10:59:37] WARNING: Unknown method requested {"method":"invalid\/method"}
+[2026-06-10 10:59:38] INFO: A2A Server components initialized
+[2026-06-10 10:59:38] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:38] INFO: Request received {"method":"message\/stream","id":"5bf47f77-bdc5-49a8-bb14-096571b20ce5"}
+[2026-06-10 10:59:39] INFO: A2A Server components initialized
+[2026-06-10 10:59:39] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:39] INFO: Request received {"method":"message\/send","id":"tck-976f4da1-616a-4628-8a16-f2445a4e3568"}
+[2026-06-10 10:59:39] WARNING: Message payload validation failed {"error":"Unknown part kind: fileRef","payload":{"kind":"message","messageId":"file-ref-message-id-02b17277-571a-4d35-9348-207962d7e637","role":"user","parts":[{"kind":"text","text":"Please analyze this file"},{"kind":"fileRef","fileRef":{"uri":"https:\/\/example.com\/test-file.txt","mimeType":"text\/plain","name":"test-file.txt"}}]}}
+[2026-06-10 10:59:39] INFO: A2A Server components initialized
+[2026-06-10 10:59:39] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:39] INFO: Request received {"method":"message\/send","id":"tck-85a0f0f2-83bc-429d-9538-c0694905ca6e"}
+[2026-06-10 10:59:39] INFO: Processing message {"from":"unknown","message_id":"binary-data-message-id-55a3faa6-e4a1-475b-be59-05b7b1ff3fce","role":"user"}
+[2026-06-10 10:59:39] INFO: Message task ready for interaction {"task_id":"45d4d08a-a097-43ee-94c3-2964a2714acc","message_id":"binary-data-message-id-55a3faa6-e4a1-475b-be59-05b7b1ff3fce","state":"working"}
+[2026-06-10 10:59:39] INFO: Message processed {"from":"unknown","message_id":"binary-data-message-id-55a3faa6-e4a1-475b-be59-05b7b1ff3fce","task_id":"45d4d08a-a097-43ee-94c3-2964a2714acc","state":"working"}
+[2026-06-10 10:59:40] INFO: A2A Server components initialized
+[2026-06-10 10:59:40] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:40] INFO: A2A Server components initialized
+[2026-06-10 10:59:40] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:40] INFO: Request received {"method":"message\/send","id":"tck-c7df054d-92ce-42f0-bfb9-973914763508"}
+[2026-06-10 10:59:40] INFO: Processing message {"from":"unknown","message_id":"equivalence-message-id-ba53934f-e12e-4d70-982d-792641f642ce","role":"user"}
+[2026-06-10 10:59:40] INFO: Message task ready for interaction {"task_id":"b17ec917-f3b3-41ed-951c-505eef82abcb","message_id":"equivalence-message-id-ba53934f-e12e-4d70-982d-792641f642ce","state":"working"}
+[2026-06-10 10:59:40] INFO: Message processed {"from":"unknown","message_id":"equivalence-message-id-ba53934f-e12e-4d70-982d-792641f642ce","task_id":"b17ec917-f3b3-41ed-951c-505eef82abcb","state":"working"}
+[2026-06-10 10:59:40] INFO: A2A Server components initialized
+[2026-06-10 10:59:40] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:40] INFO: Request received {"method":"message\/send","id":"tck-08531838-29b3-476a-b9a8-a602f68b5115"}
+[2026-06-10 10:59:40] INFO: Processing message {"from":"unknown","message_id":"equivalence-message-id-51beb6b5-ae54-460d-8d8a-a136aadb91b1","role":"user"}
+[2026-06-10 10:59:40] INFO: Message task ready for interaction {"task_id":"6ef382ff-625b-4fbf-b695-435992eb2326","message_id":"equivalence-message-id-51beb6b5-ae54-460d-8d8a-a136aadb91b1","state":"working"}
+[2026-06-10 10:59:40] INFO: Message processed {"from":"unknown","message_id":"equivalence-message-id-51beb6b5-ae54-460d-8d8a-a136aadb91b1","task_id":"6ef382ff-625b-4fbf-b695-435992eb2326","state":"working"}
+[2026-06-10 10:59:40] INFO: A2A Server components initialized
+[2026-06-10 10:59:40] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:40] INFO: Request received {"method":"message\/send","id":"tck-ab27854c-46cc-4400-8229-a14e95576d58"}
+[2026-06-10 10:59:41] INFO: Processing message {"from":"unknown","message_id":"equivalence-message-id-f3c57434-be09-4576-82f4-73af0947550d","role":"user"}
+[2026-06-10 10:59:41] INFO: Message task ready for interaction {"task_id":"6fdf4bf2-ec76-4651-85e1-ed2ddf1249be","message_id":"equivalence-message-id-f3c57434-be09-4576-82f4-73af0947550d","state":"working"}
+[2026-06-10 10:59:41] INFO: Message processed {"from":"unknown","message_id":"equivalence-message-id-f3c57434-be09-4576-82f4-73af0947550d","task_id":"6fdf4bf2-ec76-4651-85e1-ed2ddf1249be","state":"working"}
+[2026-06-10 10:59:41] INFO: A2A Server components initialized
+[2026-06-10 10:59:41] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:41] INFO: Request received {"method":"message\/send","id":"tck-39b8e868-2418-4823-adc3-61d87ffd8d5d"}
+[2026-06-10 10:59:41] INFO: Processing message {"from":"unknown","message_id":"equivalence-message-id-b33456b1-95c6-49b6-9d2a-8364f0a09e3e","role":"user"}
+[2026-06-10 10:59:41] INFO: Message task ready for interaction {"task_id":"d2f226a5-c517-47c9-8e35-ce7c652eab0e","message_id":"equivalence-message-id-b33456b1-95c6-49b6-9d2a-8364f0a09e3e","state":"working"}
+[2026-06-10 10:59:41] INFO: Message processed {"from":"unknown","message_id":"equivalence-message-id-b33456b1-95c6-49b6-9d2a-8364f0a09e3e","task_id":"d2f226a5-c517-47c9-8e35-ce7c652eab0e","state":"working"}
+[2026-06-10 10:59:41] INFO: A2A Server components initialized
+[2026-06-10 10:59:41] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:41] INFO: Request received {"method":"message\/send","id":"tck-b7688db3-75be-49c0-a666-c2361bd8f9cc"}
+[2026-06-10 10:59:41] INFO: Processing message {"from":"unknown","message_id":"equivalence-message-id-ff4ca018-24f0-4a5e-b1e3-3dce62d0453b","role":"user"}
+[2026-06-10 10:59:41] INFO: Message task ready for interaction {"task_id":"f699fdb8-b25a-4282-91cc-5b17e61326bb","message_id":"equivalence-message-id-ff4ca018-24f0-4a5e-b1e3-3dce62d0453b","state":"working"}
+[2026-06-10 10:59:41] INFO: Message processed {"from":"unknown","message_id":"equivalence-message-id-ff4ca018-24f0-4a5e-b1e3-3dce62d0453b","task_id":"f699fdb8-b25a-4282-91cc-5b17e61326bb","state":"working"}
+[2026-06-10 10:59:41] INFO: A2A Server components initialized
+[2026-06-10 10:59:41] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:41] INFO: Request received {"method":"message\/send","id":"tck-d7fccc5e-bc27-4f4b-bc67-f9d5a30d8ce0"}
+[2026-06-10 10:59:41] INFO: Processing message {"from":"unknown","message_id":"equivalence-message-id-b78aa576-c524-470d-a538-6869e9e2b969","role":"user"}
+[2026-06-10 10:59:41] INFO: Message task ready for interaction {"task_id":"074272b8-1314-456f-8943-53ff2c043f25","message_id":"equivalence-message-id-b78aa576-c524-470d-a538-6869e9e2b969","state":"working"}
+[2026-06-10 10:59:41] INFO: Message processed {"from":"unknown","message_id":"equivalence-message-id-b78aa576-c524-470d-a538-6869e9e2b969","task_id":"074272b8-1314-456f-8943-53ff2c043f25","state":"working"}
+[2026-06-10 10:59:42] INFO: A2A Server components initialized
+[2026-06-10 10:59:42] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:42] INFO: A2A Server components initialized
+[2026-06-10 10:59:42] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:42] INFO: Request received {"method":"message\/send","id":"tck-7179639c-a925-4681-b22f-6e4f9e4ae78a"}
+[2026-06-10 10:59:42] INFO: Processing message {"from":"unknown","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","role":"user"}
+[2026-06-10 10:59:42] INFO: Message task ready for interaction {"task_id":"cd8caf3c-82aa-4440-9665-2a0e1da0c2b1","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","state":"working"}
+[2026-06-10 10:59:42] INFO: Message processed {"from":"unknown","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","task_id":"cd8caf3c-82aa-4440-9665-2a0e1da0c2b1","state":"working"}
+[2026-06-10 10:59:42] INFO: A2A Server components initialized
+[2026-06-10 10:59:42] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:42] INFO: Request received {"method":"message\/send","id":"tck-078acb8d-124a-4264-a058-8a0b4d5a04e9"}
+[2026-06-10 10:59:42] INFO: Processing message {"from":"unknown","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","role":"user"}
+[2026-06-10 10:59:42] INFO: Message task ready for interaction {"task_id":"c9e27283-de9a-44de-9f4c-4acfa51cebeb","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","state":"working"}
+[2026-06-10 10:59:42] INFO: Message processed {"from":"unknown","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","task_id":"c9e27283-de9a-44de-9f4c-4acfa51cebeb","state":"working"}
+[2026-06-10 10:59:42] INFO: A2A Server components initialized
+[2026-06-10 10:59:42] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:42] INFO: Request received {"method":"message\/send","id":"tck-cd6e1c77-09b7-46f2-85b5-0e97215aedfe"}
+[2026-06-10 10:59:42] INFO: Processing message {"from":"unknown","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","role":"user"}
+[2026-06-10 10:59:42] INFO: Message task ready for interaction {"task_id":"44a07cee-7687-4666-a65a-c2091b884588","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","state":"working"}
+[2026-06-10 10:59:42] INFO: Message processed {"from":"unknown","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","task_id":"44a07cee-7687-4666-a65a-c2091b884588","state":"working"}
+[2026-06-10 10:59:42] INFO: A2A Server components initialized
+[2026-06-10 10:59:42] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:42] INFO: Request received {"method":"message\/send","id":"tck-d5f6085f-7241-4f5e-8d67-32e5d12c3d80"}
+[2026-06-10 10:59:42] INFO: Processing message {"from":"unknown","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","role":"user"}
+[2026-06-10 10:59:42] INFO: Message task ready for interaction {"task_id":"247031a7-9fce-4161-9b30-b15690e03ace","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","state":"working"}
+[2026-06-10 10:59:42] INFO: Message processed {"from":"unknown","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","task_id":"247031a7-9fce-4161-9b30-b15690e03ace","state":"working"}
+[2026-06-10 10:59:42] INFO: A2A Server components initialized
+[2026-06-10 10:59:42] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:42] INFO: Request received {"method":"message\/send","id":"tck-311dfa19-12bf-4ff0-8bcf-a581df454fef"}
+[2026-06-10 10:59:42] INFO: Processing message {"from":"unknown","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","role":"user"}
+[2026-06-10 10:59:42] INFO: Message task ready for interaction {"task_id":"ee45e2ef-07cf-4bb7-9acb-9d19de312a2e","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","state":"working"}
+[2026-06-10 10:59:42] INFO: Message processed {"from":"unknown","message_id":"test-message-id-7eefa78d-4733-4f26-ad96-8f9aec7b67e6","task_id":"ee45e2ef-07cf-4bb7-9acb-9d19de312a2e","state":"working"}
+[2026-06-10 10:59:42] INFO: A2A Server components initialized
+[2026-06-10 10:59:42] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:42] INFO: Request received {"method":"message\/send","id":"tck-897c186c-2007-42bb-8597-fb644ae1ab94"}
+[2026-06-10 10:59:42] INFO: Processing message {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","role":"user"}
+[2026-06-10 10:59:42] INFO: Message task ready for interaction {"task_id":"0b1afa0b-a5a4-43da-a2a0-e4cb1650647d","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","state":"working"}
+[2026-06-10 10:59:42] INFO: Message processed {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","task_id":"0b1afa0b-a5a4-43da-a2a0-e4cb1650647d","state":"working"}
+[2026-06-10 10:59:42] INFO: A2A Server components initialized
+[2026-06-10 10:59:42] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:42] INFO: Request received {"method":"message\/send","id":"tck-c5378b54-71e5-4e87-897e-e05dade3f286"}
+[2026-06-10 10:59:42] INFO: Processing message {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","role":"user"}
+[2026-06-10 10:59:42] INFO: Message task ready for interaction {"task_id":"15365b1e-12af-4be3-bb6a-dd71eebe66a6","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","state":"working"}
+[2026-06-10 10:59:42] INFO: Message processed {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","task_id":"15365b1e-12af-4be3-bb6a-dd71eebe66a6","state":"working"}
+[2026-06-10 10:59:42] INFO: A2A Server components initialized
+[2026-06-10 10:59:42] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:42] INFO: Request received {"method":"message\/send","id":"tck-9649edfe-9303-43c5-9822-65235e42e583"}
+[2026-06-10 10:59:42] INFO: Processing message {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","role":"user"}
+[2026-06-10 10:59:42] INFO: Message task ready for interaction {"task_id":"ce5ed48e-7040-46a2-9d46-c6dae3b74e4a","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","state":"working"}
+[2026-06-10 10:59:42] INFO: Message processed {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","task_id":"ce5ed48e-7040-46a2-9d46-c6dae3b74e4a","state":"working"}
+[2026-06-10 10:59:42] INFO: A2A Server components initialized
+[2026-06-10 10:59:43] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:43] INFO: Request received {"method":"message\/send","id":"tck-314c23e4-afb4-497d-b5eb-43645b9ef49f"}
+[2026-06-10 10:59:43] INFO: Processing message {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","role":"user"}
+[2026-06-10 10:59:43] INFO: Message task ready for interaction {"task_id":"b85e678f-c61d-45ca-a8c5-7345143cd6be","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","state":"working"}
+[2026-06-10 10:59:43] INFO: Message processed {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","task_id":"b85e678f-c61d-45ca-a8c5-7345143cd6be","state":"working"}
+[2026-06-10 10:59:43] INFO: A2A Server components initialized
+[2026-06-10 10:59:43] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:43] INFO: Request received {"method":"message\/send","id":"tck-a7de1f32-c81f-40ed-8187-557dc3c51447"}
+[2026-06-10 10:59:43] INFO: Processing message {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","role":"user"}
+[2026-06-10 10:59:43] INFO: Message task ready for interaction {"task_id":"8a8cf08f-d37c-4eab-a3fd-23d32dfd3e14","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","state":"working"}
+[2026-06-10 10:59:43] INFO: Message processed {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","task_id":"8a8cf08f-d37c-4eab-a3fd-23d32dfd3e14","state":"working"}
+[2026-06-10 10:59:43] INFO: A2A Server components initialized
+[2026-06-10 10:59:43] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:43] INFO: Request received {"method":"message\/send","id":"tck-b6aa6468-a31c-409c-9f62-7d425f993685"}
+[2026-06-10 10:59:43] INFO: Processing message {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","role":"user"}
+[2026-06-10 10:59:43] INFO: Message task ready for interaction {"task_id":"ef71ec3c-3a5f-4464-a730-304a4d7faf93","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","state":"working"}
+[2026-06-10 10:59:43] INFO: Message processed {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","task_id":"ef71ec3c-3a5f-4464-a730-304a4d7faf93","state":"working"}
+[2026-06-10 10:59:43] INFO: A2A Server components initialized
+[2026-06-10 10:59:43] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:43] INFO: Request received {"method":"message\/send","id":"tck-93dcf8d7-7ec5-488d-a97e-508f1fc2ee98"}
+[2026-06-10 10:59:43] INFO: Processing message {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","role":"user"}
+[2026-06-10 10:59:43] INFO: Message task ready for interaction {"task_id":"2536c54a-ef95-44b6-a328-63fa8867b701","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","state":"working"}
+[2026-06-10 10:59:43] INFO: Message processed {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","task_id":"2536c54a-ef95-44b6-a328-63fa8867b701","state":"working"}
+[2026-06-10 10:59:43] INFO: A2A Server components initialized
+[2026-06-10 10:59:43] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:43] INFO: Request received {"method":"message\/send","id":"tck-7c8ae0a9-4c3b-4873-a412-f155959f0867"}
+[2026-06-10 10:59:43] INFO: Processing message {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","role":"user"}
+[2026-06-10 10:59:43] INFO: Message task ready for interaction {"task_id":"ea45dc85-32ce-4a4d-afeb-91edf22fcda2","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","state":"working"}
+[2026-06-10 10:59:43] INFO: Message processed {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","task_id":"ea45dc85-32ce-4a4d-afeb-91edf22fcda2","state":"working"}
+[2026-06-10 10:59:43] INFO: A2A Server components initialized
+[2026-06-10 10:59:43] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:43] INFO: Request received {"method":"message\/send","id":"tck-5e4977c1-5421-43f0-9036-9fcbbf427988"}
+[2026-06-10 10:59:43] INFO: Processing message {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","role":"user"}
+[2026-06-10 10:59:43] INFO: Message task ready for interaction {"task_id":"7ee08fa1-fb9b-46a2-a7fa-a67f75f71461","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","state":"working"}
+[2026-06-10 10:59:43] INFO: Message processed {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","task_id":"7ee08fa1-fb9b-46a2-a7fa-a67f75f71461","state":"working"}
+[2026-06-10 10:59:43] INFO: A2A Server components initialized
+[2026-06-10 10:59:43] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:43] INFO: Request received {"method":"message\/send","id":"tck-2bf8c7c2-d2ee-48c6-982b-32f513f274cf"}
+[2026-06-10 10:59:43] INFO: Processing message {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","role":"user"}
+[2026-06-10 10:59:43] INFO: Message task ready for interaction {"task_id":"505b9aad-e893-4ae5-8e95-df330cec2a4f","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","state":"working"}
+[2026-06-10 10:59:43] INFO: Message processed {"from":"unknown","message_id":"test-message-id-f747d561-fada-4dec-a3c0-dbb8a8ddfa28","task_id":"505b9aad-e893-4ae5-8e95-df330cec2a4f","state":"working"}
+[2026-06-10 10:59:43] INFO: A2A Server components initialized
+[2026-06-10 10:59:43] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:43] INFO: Request received {"method":"message\/send","id":"tck-16c735e5-2b4e-4ac9-9ba9-23139edfc2c9"}
+[2026-06-10 10:59:43] INFO: Processing message {"from":"unknown","message_id":"test-message-id-8f33bc94-4759-41cf-86e8-71519659d9ec","role":"user"}
+[2026-06-10 10:59:43] INFO: Message task ready for interaction {"task_id":"7483b8a8-6dbf-4d39-8e85-bcb6d323cd66","message_id":"test-message-id-8f33bc94-4759-41cf-86e8-71519659d9ec","state":"working"}
+[2026-06-10 10:59:43] INFO: Message processed {"from":"unknown","message_id":"test-message-id-8f33bc94-4759-41cf-86e8-71519659d9ec","task_id":"7483b8a8-6dbf-4d39-8e85-bcb6d323cd66","state":"working"}
+[2026-06-10 10:59:43] INFO: A2A Server components initialized
+[2026-06-10 10:59:43] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:43] INFO: Request received {"method":"tasks\/get","id":"tck-2a53fc5e-faef-4ec7-bebd-db24d9292c24"}
+[2026-06-10 10:59:43] INFO: A2A Server components initialized
+[2026-06-10 10:59:43] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:43] INFO: Request received {"method":"message\/send","id":"tck-1d354442-83c6-417a-81d1-8ec95385414d"}
+[2026-06-10 10:59:43] INFO: Processing message {"from":"unknown","message_id":"test-update-message-id-2b2cb79b-9ac9-43ee-801c-25185ee6b90d","role":"user"}
+[2026-06-10 10:59:43] INFO: Message task ready for interaction {"task_id":"7483b8a8-6dbf-4d39-8e85-bcb6d323cd66","message_id":"test-update-message-id-2b2cb79b-9ac9-43ee-801c-25185ee6b90d","state":"working"}
+[2026-06-10 10:59:43] INFO: Message processed {"from":"unknown","message_id":"test-update-message-id-2b2cb79b-9ac9-43ee-801c-25185ee6b90d","task_id":"7483b8a8-6dbf-4d39-8e85-bcb6d323cd66","state":"completed"}
+[2026-06-10 10:59:43] INFO: A2A Server components initialized
+[2026-06-10 10:59:43] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:43] INFO: Request received {"method":"tasks\/cancel","id":"tck-34a89b21-29e1-4d2a-a4ba-bc372591b884"}
+[2026-06-10 10:59:43] INFO: A2A Server components initialized
+[2026-06-10 10:59:43] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:43] INFO: Request received {"method":"message\/send","id":"tck-740127d5-ba1f-45b1-ad49-a7cf382c1f3e"}
+[2026-06-10 10:59:43] INFO: Processing message {"from":"unknown","message_id":"test-long-string-message-id-a7afe8eb-66e1-4d2c-8429-6602e277d361","role":"user"}
+[2026-06-10 10:59:43] INFO: Message task ready for interaction {"task_id":"16c33cc8-0d58-43df-89ec-cf6762eea96f","message_id":"test-long-string-message-id-a7afe8eb-66e1-4d2c-8429-6602e277d361","state":"working"}
+[2026-06-10 10:59:43] INFO: Message processed {"from":"unknown","message_id":"test-long-string-message-id-a7afe8eb-66e1-4d2c-8429-6602e277d361","task_id":"16c33cc8-0d58-43df-89ec-cf6762eea96f","state":"working"}
+[2026-06-10 10:59:43] INFO: A2A Server components initialized
+[2026-06-10 10:59:43] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:43] INFO: Request received {"method":"message\/send","id":"tck-1040bbc8-ccdd-4cd5-ab0c-397a178a60c1"}
+[2026-06-10 10:59:43] INFO: A2A Server components initialized
+[2026-06-10 10:59:44] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:44] INFO: Request received {"method":"message\/send","id":"tck-0f5736e7-9b3c-48c7-83c4-2e71a584a960"}
+[2026-06-10 10:59:44] INFO: Processing message {"from":"unknown","message_id":"test-null-fields-message-id-d8c71b26-bcdf-42e3-b5bc-25b1e79b62bf","role":"user"}
+[2026-06-10 10:59:44] INFO: Message task ready for interaction {"task_id":"350d2f6c-1f9c-45e9-956a-7b620cd5088d","message_id":"test-null-fields-message-id-d8c71b26-bcdf-42e3-b5bc-25b1e79b62bf","state":"working"}
+[2026-06-10 10:59:44] INFO: Message processed {"from":"unknown","message_id":"test-null-fields-message-id-d8c71b26-bcdf-42e3-b5bc-25b1e79b62bf","task_id":"350d2f6c-1f9c-45e9-956a-7b620cd5088d","state":"working"}
+[2026-06-10 10:59:44] INFO: A2A Server components initialized
+[2026-06-10 10:59:44] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:44] INFO: Request received {"method":"message\/send","id":"tck-d3a7b470-00c6-4642-a3f4-b75ab7267d31"}
+[2026-06-10 10:59:44] INFO: A2A Server components initialized
+[2026-06-10 10:59:44] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:44] INFO: Request received {"method":"message\/send","id":"tck-9e2f3b4c-f4e5-40e6-863e-97ba24824ef7"}
+[2026-06-10 10:59:44] INFO: Processing message {"from":"unknown","message_id":"test-extra-fields-message-id-700560de-7a52-4c26-aad2-073cefeb6711","role":"user"}
+[2026-06-10 10:59:44] INFO: Message task ready for interaction {"task_id":"d5218461-3e09-4cb1-ae47-e1d19740d6cd","message_id":"test-extra-fields-message-id-700560de-7a52-4c26-aad2-073cefeb6711","state":"working"}
+[2026-06-10 10:59:44] INFO: Message processed {"from":"unknown","message_id":"test-extra-fields-message-id-700560de-7a52-4c26-aad2-073cefeb6711","task_id":"d5218461-3e09-4cb1-ae47-e1d19740d6cd","state":"working"}
+[2026-06-10 10:59:44] INFO: A2A Server components initialized
+[2026-06-10 10:59:44] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:44] INFO: Request received {"method":"message\/send","id":"tck-670260a4-f0a3-4a09-bfb8-89bd4e9ad2ee"}
+[2026-06-10 10:59:44] INFO: Processing message {"from":"unknown","message_id":"test-unicode-message-id-8ecd36e1-d564-448a-a84c-058fe1137f62","role":"user"}
+[2026-06-10 10:59:44] INFO: Message task ready for interaction {"task_id":"018c1b28-6369-40d2-9cbd-a71672a87473","message_id":"test-unicode-message-id-8ecd36e1-d564-448a-a84c-058fe1137f62","state":"working"}
+[2026-06-10 10:59:44] INFO: Message processed {"from":"unknown","message_id":"test-unicode-message-id-8ecd36e1-d564-448a-a84c-058fe1137f62","task_id":"018c1b28-6369-40d2-9cbd-a71672a87473","state":"working"}
+[2026-06-10 10:59:44] INFO: A2A Server components initialized
+[2026-06-10 10:59:44] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:44] INFO: Request received {"method":"tasks\/get","id":"tck-7b96c9e8-006d-46db-a85d-df530c582e96"}
+[2026-06-10 10:59:44] INFO: A2A Server components initialized
+[2026-06-10 10:59:44] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:44] INFO: Request received {"method":"message\/send","id":"tck-bf5b57ad-55a9-4d60-b512-1f1e5d09f441"}
+[2026-06-10 10:59:44] INFO: Processing message {"from":"unknown","message_id":"test-simple-task-message-id-02dfeb4f-6aa3-4cf8-9971-728932a536a8","role":"user"}
+[2026-06-10 10:59:44] INFO: Message task ready for interaction {"task_id":"0afb7591-4e0a-4886-b4c8-be1bd2676968","message_id":"test-simple-task-message-id-02dfeb4f-6aa3-4cf8-9971-728932a536a8","state":"working"}
+[2026-06-10 10:59:44] INFO: Message processed {"from":"unknown","message_id":"test-simple-task-message-id-02dfeb4f-6aa3-4cf8-9971-728932a536a8","task_id":"0afb7591-4e0a-4886-b4c8-be1bd2676968","state":"working"}
+[2026-06-10 10:59:44] INFO: A2A Server components initialized
+[2026-06-10 10:59:44] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:44] INFO: Request received {"method":"tasks\/get","id":"tck-8c46fdc2-638d-42d0-95e3-582ba668383e"}
+[2026-06-10 10:59:44] INFO: A2A Server components initialized
+[2026-06-10 10:59:44] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:44] INFO: Request received {"method":"tasks\/get","id":"tck-84ed2843-7297-4312-be09-389db700d9d4"}
+[2026-06-10 10:59:44] INFO: A2A Server components initialized
+[2026-06-10 10:59:44] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:44] INFO: Request received {"method":"tasks\/get","id":"tck-2235d3af-b5a4-48aa-8f56-d9b35b3e9b88"}
+[2026-06-10 10:59:44] INFO: A2A Server components initialized
+[2026-06-10 10:59:44] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:44] INFO: Request received {"method":"message\/send","id":"tck-38b6855d-b471-4353-88c1-cb643e1346a0"}
+[2026-06-10 10:59:44] INFO: Processing message {"from":"unknown","message_id":"test-resilience-message-id-519a0596-d361-4e5d-8734-453eeeff6cb6","role":"user"}
+[2026-06-10 10:59:44] INFO: Message task ready for interaction {"task_id":"e371757d-2fb1-4767-a8e0-e16ceeccb5e1","message_id":"test-resilience-message-id-519a0596-d361-4e5d-8734-453eeeff6cb6","state":"working"}
+[2026-06-10 10:59:44] INFO: Message processed {"from":"unknown","message_id":"test-resilience-message-id-519a0596-d361-4e5d-8734-453eeeff6cb6","task_id":"e371757d-2fb1-4767-a8e0-e16ceeccb5e1","state":"working"}
+[2026-06-10 10:59:50] INFO: A2A Server components initialized
+[2026-06-10 10:59:50] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:50] INFO: Request received {"method":"message\/send","id":"tck-c22843fe-8dc6-442b-a75a-a335f49a7620"}
+[2026-06-10 10:59:50] INFO: Processing message {"from":"unknown","message_id":"test-resilience-message-id-ccec586a-1909-42d9-a799-e4d196a48eb9","role":"user"}
+[2026-06-10 10:59:50] INFO: Message task ready for interaction {"task_id":"f6ee135f-bd39-4816-970f-7c6995747a4d","message_id":"test-resilience-message-id-ccec586a-1909-42d9-a799-e4d196a48eb9","state":"working"}
+[2026-06-10 10:59:50] INFO: Message processed {"from":"unknown","message_id":"test-resilience-message-id-ccec586a-1909-42d9-a799-e4d196a48eb9","task_id":"f6ee135f-bd39-4816-970f-7c6995747a4d","state":"working"}
+[2026-06-10 10:59:50] INFO: A2A Server components initialized
+[2026-06-10 10:59:50] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:50] INFO: Request received {"method":"message\/send","id":"tck-0212f2aa-5027-4f73-85ec-454fce430af4"}
+[2026-06-10 10:59:50] INFO: Processing message {"from":"unknown","message_id":"test-update-message-id-b0e131a0-5072-4b0d-80d2-ba0649a865d2","role":"user"}
+[2026-06-10 10:59:50] INFO: Message task ready for interaction {"task_id":"f6ee135f-bd39-4816-970f-7c6995747a4d","message_id":"test-update-message-id-b0e131a0-5072-4b0d-80d2-ba0649a865d2","state":"working"}
+[2026-06-10 10:59:50] INFO: Message processed {"from":"unknown","message_id":"test-update-message-id-b0e131a0-5072-4b0d-80d2-ba0649a865d2","task_id":"f6ee135f-bd39-4816-970f-7c6995747a4d","state":"completed"}
+[2026-06-10 10:59:50] INFO: A2A Server components initialized
+[2026-06-10 10:59:51] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:51] INFO: Request received {"method":"message\/send","id":"tck-3f57bca6-4650-43a1-bafb-7d9aef299ee6"}
+[2026-06-10 10:59:51] INFO: Processing message {"from":"unknown","message_id":"test-update-message-id-36a1f965-22b9-452a-ba75-df19c67b704e","role":"user"}
+[2026-06-10 10:59:51] INFO: Message task ready for interaction {"task_id":"f6ee135f-bd39-4816-970f-7c6995747a4d","message_id":"test-update-message-id-36a1f965-22b9-452a-ba75-df19c67b704e","state":"working"}
+[2026-06-10 10:59:51] INFO: Message processed {"from":"unknown","message_id":"test-update-message-id-36a1f965-22b9-452a-ba75-df19c67b704e","task_id":"f6ee135f-bd39-4816-970f-7c6995747a4d","state":"completed"}
+[2026-06-10 10:59:53] INFO: A2A Server components initialized
+[2026-06-10 10:59:53] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:53] INFO: Request received {"method":"message\/send","id":"tck-e84e7d41-4378-4a4e-bb26-42368c388fdd"}
+[2026-06-10 10:59:53] INFO: Processing message {"from":"unknown","message_id":"test-update-message-id-42dba41f-e79c-47fd-999f-fab75d636fa3","role":"user"}
+[2026-06-10 10:59:53] INFO: Message task ready for interaction {"task_id":"f6ee135f-bd39-4816-970f-7c6995747a4d","message_id":"test-update-message-id-42dba41f-e79c-47fd-999f-fab75d636fa3","state":"working"}
+[2026-06-10 10:59:53] INFO: Message processed {"from":"unknown","message_id":"test-update-message-id-42dba41f-e79c-47fd-999f-fab75d636fa3","task_id":"f6ee135f-bd39-4816-970f-7c6995747a4d","state":"completed"}
+[2026-06-10 10:59:53] INFO: A2A Server components initialized
+[2026-06-10 10:59:53] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:53] INFO: Request received {"method":"message\/send","id":"tck-31dc86e2-448b-436a-89ab-e7191f7859e2"}
+[2026-06-10 10:59:53] INFO: Processing message {"from":"unknown","message_id":"test-update-message-id-ed5b6119-4dc6-40a7-9691-5ba6aa7e1c25","role":"user"}
+[2026-06-10 10:59:53] INFO: Message task ready for interaction {"task_id":"f6ee135f-bd39-4816-970f-7c6995747a4d","message_id":"test-update-message-id-ed5b6119-4dc6-40a7-9691-5ba6aa7e1c25","state":"working"}
+[2026-06-10 10:59:53] INFO: Message processed {"from":"unknown","message_id":"test-update-message-id-ed5b6119-4dc6-40a7-9691-5ba6aa7e1c25","task_id":"f6ee135f-bd39-4816-970f-7c6995747a4d","state":"completed"}
+[2026-06-10 10:59:53] INFO: A2A Server components initialized
+[2026-06-10 10:59:53] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:53] INFO: Request received {"method":"tasks\/get","id":"tck-5b9046cf-114e-45f8-bc09-0935cbbee838"}
+[2026-06-10 10:59:53] INFO: A2A Server components initialized
+[2026-06-10 10:59:53] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:53] INFO: Request received {"method":"message\/send","id":"tck-b662e09b-9042-4e7a-8385-6fb13d2763e6"}
+[2026-06-10 10:59:53] INFO: Processing message {"from":"unknown","message_id":"test-state-message-id-74a37e6d-655b-49e4-aa46-f31e8f746092","role":"user"}
+[2026-06-10 10:59:53] INFO: Message task ready for interaction {"task_id":"3cb61df8-7800-4bd6-8197-f056c535b26f","message_id":"test-state-message-id-74a37e6d-655b-49e4-aa46-f31e8f746092","state":"working"}
+[2026-06-10 10:59:53] INFO: Message processed {"from":"unknown","message_id":"test-state-message-id-74a37e6d-655b-49e4-aa46-f31e8f746092","task_id":"3cb61df8-7800-4bd6-8197-f056c535b26f","state":"working"}
+[2026-06-10 10:59:53] INFO: A2A Server components initialized
+[2026-06-10 10:59:53] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:53] INFO: Request received {"method":"tasks\/get","id":"tck-78f6476f-df23-4511-a179-f41c88a37c06"}
+[2026-06-10 10:59:53] INFO: A2A Server components initialized
+[2026-06-10 10:59:53] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:53] INFO: Request received {"method":"message\/send","id":"tck-fa273671-ffe4-46d9-b767-86fdf1ef1acc"}
+[2026-06-10 10:59:53] INFO: Processing message {"from":"unknown","message_id":"test-followup-message-id-30e3208d-245d-41d3-a1ad-da7aa390d00e","role":"user"}
+[2026-06-10 10:59:53] INFO: Message task ready for interaction {"task_id":"3cb61df8-7800-4bd6-8197-f056c535b26f","message_id":"test-followup-message-id-30e3208d-245d-41d3-a1ad-da7aa390d00e","state":"working"}
+[2026-06-10 10:59:53] INFO: Message processed {"from":"unknown","message_id":"test-followup-message-id-30e3208d-245d-41d3-a1ad-da7aa390d00e","task_id":"3cb61df8-7800-4bd6-8197-f056c535b26f","state":"completed"}
+[2026-06-10 10:59:54] INFO: A2A Server components initialized
+[2026-06-10 10:59:54] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:54] INFO: Request received {"method":"tasks\/get","id":"tck-13638c64-6ab3-426e-b4be-ca0a4d16de92"}
+[2026-06-10 10:59:54] INFO: A2A Server components initialized
+[2026-06-10 10:59:54] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:54] INFO: Request received {"method":"message\/send","id":"tck-232ae1e0-0c56-445f-865b-f53c11c740d9"}
+[2026-06-10 10:59:54] INFO: Processing message {"from":"unknown","message_id":"test-cancel-message-id-a94db3ff-b762-49c8-b2e4-6f130e9111cf","role":"user"}
+[2026-06-10 10:59:54] INFO: Message task ready for interaction {"task_id":"912659fd-a8f8-4aa6-9c04-be116abf8aa4","message_id":"test-cancel-message-id-a94db3ff-b762-49c8-b2e4-6f130e9111cf","state":"working"}
+[2026-06-10 10:59:54] INFO: Message processed {"from":"unknown","message_id":"test-cancel-message-id-a94db3ff-b762-49c8-b2e4-6f130e9111cf","task_id":"912659fd-a8f8-4aa6-9c04-be116abf8aa4","state":"working"}
+[2026-06-10 10:59:54] INFO: A2A Server components initialized
+[2026-06-10 10:59:54] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:54] INFO: Request received {"method":"tasks\/cancel","id":"tck-448091d1-9c47-4afb-aca7-87fe0770fe8f"}
+[2026-06-10 10:59:54] INFO: A2A Server components initialized
+[2026-06-10 10:59:54] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:54] INFO: Request received {"method":"tasks\/cancel","id":"tck-73ff9ed7-7323-42fb-a6f5-87dcbbdf4ec1"}
+[2026-06-10 10:59:55] INFO: A2A Server components initialized
+[2026-06-10 10:59:55] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:55] INFO: A2A Server components initialized
+[2026-06-10 10:59:55] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:55] INFO: Request received {"method":"message\/send","id":"tck-80ab702d-5de1-40bb-89c8-daebd017b961"}
+[2026-06-10 10:59:55] WARNING: Message payload validation failed {"error":"Unknown part kind: unsupported_type","payload":{"kind":"message","messageId":"test-unsupported-part-message-id-7fad9a19-265f-4d3a-9455-23824e65430d","role":"user","parts":[{"type":"unsupported_type","text":"This should be rejected"}]}}
+[2026-06-10 10:59:55] INFO: A2A Server components initialized
+[2026-06-10 10:59:55] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:55] INFO: Request received {"method":"message\/send","id":"tck-255e7a79-18a0-4109-911c-9bc0623058b5"}
+[2026-06-10 10:59:55] INFO: Processing message {"from":"unknown","message_id":"test-invalid-file-message-id-55918d3d-b29f-4255-a691-e3688cd770fc","role":"user"}
+[2026-06-10 10:59:55] INFO: Message task ready for interaction {"task_id":"8328962c-8bce-477f-bb57-b66019a66367","message_id":"test-invalid-file-message-id-55918d3d-b29f-4255-a691-e3688cd770fc","state":"working"}
+[2026-06-10 10:59:55] INFO: Message processed {"from":"unknown","message_id":"test-invalid-file-message-id-55918d3d-b29f-4255-a691-e3688cd770fc","task_id":"8328962c-8bce-477f-bb57-b66019a66367","state":"working"}
+[2026-06-10 10:59:55] INFO: A2A Server components initialized
+[2026-06-10 10:59:55] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:55] INFO: Request received {"method":"message\/send","id":"tck-b5a0b7cb-4bc7-42ef-b0b5-da817c3466c0"}
+[2026-06-10 10:59:56] INFO: A2A Server components initialized
+[2026-06-10 10:59:56] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:56] INFO: Request received {"method":"message\/send","id":"tck-daa937c8-7a3b-4135-80f2-9fe180c4b9c3"}
+[2026-06-10 10:59:56] INFO: Processing message {"from":"unknown","message_id":"test-large-message-id-ec72cc8c-59d6-41f0-9850-b968ee7f7dcb","role":"user"}
+[2026-06-10 10:59:56] INFO: Message task ready for interaction {"task_id":"1eb4277e-48ef-4864-834f-724392a9e044","message_id":"test-large-message-id-ec72cc8c-59d6-41f0-9850-b968ee7f7dcb","state":"working"}
+[2026-06-10 10:59:56] INFO: Message processed {"from":"unknown","message_id":"test-large-message-id-ec72cc8c-59d6-41f0-9850-b968ee7f7dcb","task_id":"1eb4277e-48ef-4864-834f-724392a9e044","state":"working"}
+[2026-06-10 10:59:56] INFO: A2A Server components initialized
+[2026-06-10 10:59:56] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:56] INFO: Request received {"method":"message\/send","id":"tck-2766458a-d5a4-4eec-b573-7b27c26c1e4e"}
+[2026-06-10 10:59:56] WARNING: Message payload validation failed {"error":"Message requires a non-empty string \"messageId\" field","payload":{"kind":"message","role":"user","parts":[{"kind":"text","text":"Message without messageId"}]}}
+[2026-06-10 10:59:56] INFO: A2A Server components initialized
+[2026-06-10 10:59:56] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:56] INFO: Request received {"method":"message\/send","id":"tck-8f77191c-e004-4425-8b6a-af88ef3abeec"}
+[2026-06-10 10:59:56] WARNING: Message payload validation failed {"error":"Message requires a non-empty string \"role\" field","payload":{"kind":"message","messageId":"test-no-role-message-id-b0d8cfaa-fbdf-45e9-9ed1-508d827782ed","parts":[{"kind":"text","text":"Message without role"}]}}
+[2026-06-10 10:59:56] INFO: A2A Server components initialized
+[2026-06-10 10:59:56] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:56] INFO: Request received {"method":"message\/send","id":"tck-606e5a9c-b7b9-43a5-9db2-e641fb99322a"}
+[2026-06-10 10:59:56] INFO: A2A Server components initialized
+[2026-06-10 10:59:56] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:56] INFO: Request received {"method":"message\/send","id":"tck-b2fef476-44e3-414d-8bd1-dd3b18b1a440"}
+[2026-06-10 10:59:56] INFO: Processing message {"from":"unknown","message_id":"test-no-mimetype-message-id-5f8c5dee-4e4f-4902-8257-902f8c4944e8","role":"user"}
+[2026-06-10 10:59:56] INFO: Message task ready for interaction {"task_id":"e4c9c858-c764-4237-83b3-e949572e3b53","message_id":"test-no-mimetype-message-id-5f8c5dee-4e4f-4902-8257-902f8c4944e8","state":"working"}
+[2026-06-10 10:59:56] INFO: Message processed {"from":"unknown","message_id":"test-no-mimetype-message-id-5f8c5dee-4e4f-4902-8257-902f8c4944e8","task_id":"e4c9c858-c764-4237-83b3-e949572e3b53","state":"working"}
+[2026-06-10 10:59:56] INFO: A2A Server components initialized
+[2026-06-10 10:59:56] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:56] INFO: Request received {"method":"message\/send","id":"tck-15073db9-2aaf-4253-a864-2ea8a139a0c4"}
+[2026-06-10 10:59:56] WARNING: Message payload validation failed {"error":"Message requires a non-empty string \"messageId\" field","payload":{"kind":"message","parts":[{"kind":"text","text":"Hello from reference task ID test!"}]}}
+[2026-06-10 10:59:56] INFO: A2A Server components initialized
+[2026-06-10 10:59:56] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:56] INFO: Request received {"method":"message\/send","id":"tck-e012fb21-3375-48fb-be5c-15ec273414cb"}
+[2026-06-10 10:59:56] WARNING: Message payload validation failed {"error":"Message requires a non-empty string \"messageId\" field","payload":{"kind":"message","parts":[{"kind":"text","text":"This message references a non-existent task"}],"referenceTaskIds":["non-existent-task-id"]}}
+[2026-06-10 10:59:56] INFO: A2A Server components initialized
+[2026-06-10 10:59:56] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:56] INFO: Request received {"method":"message\/send","id":"tck-ad8fd75f-d13d-4420-9b42-6e4e3c97d88d"}
+[2026-06-10 10:59:56] INFO: Processing message {"from":"unknown","message_id":"test-sdk-message-id-acf879df-c2da-4a01-b5f7-b84c64721436","role":"user"}
+[2026-06-10 10:59:56] INFO: Message task ready for interaction {"task_id":"5b7cd52f-0adc-4099-81fa-b5b4ac7305b6","message_id":"test-sdk-message-id-acf879df-c2da-4a01-b5f7-b84c64721436","state":"working"}
+[2026-06-10 10:59:56] INFO: Message processed {"from":"unknown","message_id":"test-sdk-message-id-acf879df-c2da-4a01-b5f7-b84c64721436","task_id":"5b7cd52f-0adc-4099-81fa-b5b4ac7305b6","state":"working"}
+[2026-06-10 10:59:56] INFO: A2A Server components initialized
+[2026-06-10 10:59:56] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:56] INFO: Request received {"method":"message\/send","id":"tck-46ded1b3-7c21-430c-9f75-54bd17f17a80"}
+[2026-06-10 10:59:56] INFO: Processing message {"from":"unknown","message_id":"sdk-test-msg-1-808b2aba-f8b5-42b9-83cd-4d502a61d7f5","role":"user"}
+[2026-06-10 10:59:56] INFO: Message task ready for interaction {"task_id":"5b7cd52f-0adc-4099-81fa-b5b4ac7305b6","message_id":"sdk-test-msg-1-808b2aba-f8b5-42b9-83cd-4d502a61d7f5","state":"working"}
+[2026-06-10 10:59:56] INFO: Message processed {"from":"unknown","message_id":"sdk-test-msg-1-808b2aba-f8b5-42b9-83cd-4d502a61d7f5","task_id":"5b7cd52f-0adc-4099-81fa-b5b4ac7305b6","state":"completed"}
+[2026-06-10 10:59:57] INFO: A2A Server components initialized
+[2026-06-10 10:59:57] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:57] INFO: Request received {"method":"message\/send","id":"tck-42d1c22b-bef3-4892-8c1f-d85b070edb84"}
+[2026-06-10 10:59:57] INFO: Processing message {"from":"unknown","message_id":"sdk-test-msg-2-f1a8a8d0-0938-46bb-91a0-6f3be3759856","role":"user"}
+[2026-06-10 10:59:57] INFO: Message task ready for interaction {"task_id":"5b7cd52f-0adc-4099-81fa-b5b4ac7305b6","message_id":"sdk-test-msg-2-f1a8a8d0-0938-46bb-91a0-6f3be3759856","state":"working"}
+[2026-06-10 10:59:57] INFO: Message processed {"from":"unknown","message_id":"sdk-test-msg-2-f1a8a8d0-0938-46bb-91a0-6f3be3759856","task_id":"5b7cd52f-0adc-4099-81fa-b5b4ac7305b6","state":"completed"}
+[2026-06-10 10:59:57] INFO: A2A Server components initialized
+[2026-06-10 10:59:57] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:57] INFO: Request received {"method":"message\/send","id":"tck-16976b28-12ce-4ffd-8c92-7927e56c4b70"}
+[2026-06-10 10:59:57] INFO: Processing message {"from":"unknown","message_id":"sdk-test-msg-3-6c24ac98-a62c-4004-85e5-dff09893c03f","role":"user"}
+[2026-06-10 10:59:57] INFO: Message task ready for interaction {"task_id":"5b7cd52f-0adc-4099-81fa-b5b4ac7305b6","message_id":"sdk-test-msg-3-6c24ac98-a62c-4004-85e5-dff09893c03f","state":"working"}
+[2026-06-10 10:59:57] INFO: Message processed {"from":"unknown","message_id":"sdk-test-msg-3-6c24ac98-a62c-4004-85e5-dff09893c03f","task_id":"5b7cd52f-0adc-4099-81fa-b5b4ac7305b6","state":"completed"}
+[2026-06-10 10:59:57] INFO: A2A Server components initialized
+[2026-06-10 10:59:57] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:57] INFO: Request received {"method":"message\/send","id":"tck-fc51e33b-682e-4d20-9c34-10d4f6b9be65"}
+[2026-06-10 10:59:57] INFO: Processing message {"from":"unknown","message_id":"sdk-test-msg-4-ffe786a2-11c4-4645-88d0-96843b99c1b1","role":"user"}
+[2026-06-10 10:59:57] INFO: Message task ready for interaction {"task_id":"5b7cd52f-0adc-4099-81fa-b5b4ac7305b6","message_id":"sdk-test-msg-4-ffe786a2-11c4-4645-88d0-96843b99c1b1","state":"working"}
+[2026-06-10 10:59:57] INFO: Message processed {"from":"unknown","message_id":"sdk-test-msg-4-ffe786a2-11c4-4645-88d0-96843b99c1b1","task_id":"5b7cd52f-0adc-4099-81fa-b5b4ac7305b6","state":"completed"}
+[2026-06-10 10:59:58] INFO: A2A Server components initialized
+[2026-06-10 10:59:58] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:58] INFO: Request received {"method":"message\/send","id":"tck-1c42aea3-84f6-4de1-aa9c-95704145b15f"}
+[2026-06-10 10:59:58] INFO: Processing message {"from":"unknown","message_id":"sdk-test-msg-5-9faa9c2a-1956-4b35-b3e3-cd822cede5f8","role":"user"}
+[2026-06-10 10:59:58] INFO: Message task ready for interaction {"task_id":"5b7cd52f-0adc-4099-81fa-b5b4ac7305b6","message_id":"sdk-test-msg-5-9faa9c2a-1956-4b35-b3e3-cd822cede5f8","state":"working"}
+[2026-06-10 10:59:58] INFO: Message processed {"from":"unknown","message_id":"sdk-test-msg-5-9faa9c2a-1956-4b35-b3e3-cd822cede5f8","task_id":"5b7cd52f-0adc-4099-81fa-b5b4ac7305b6","state":"completed"}
+[2026-06-10 10:59:58] INFO: A2A Server components initialized
+[2026-06-10 10:59:58] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
+[2026-06-10 10:59:58] INFO: Request received {"method":"tasks\/get","id":"tck-4ca5f21e-baa4-4149-ac27-cdf08c6fa996"}
+[2026-06-10 10:59:58] INFO: A2A Server components initialized
+[2026-06-10 10:59:58] INFO: Agent card configured {"agent_id":"complete-a2a-server","version":"1.0.0"}
