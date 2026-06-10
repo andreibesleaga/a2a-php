@@ -1,1501 +1,1825 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Method A2A\\\\A2AClient\\:\\:listPushNotificationConfigs\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AClient\:\:listPushNotificationConfigs\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AClient.php
 
 		-
-			message: "#^Method A2A\\\\A2AClient\\:\\:sendMessage\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AClient\:\:sendMessage\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AClient.php
 
 		-
-			message: "#^Method A2A\\\\A2AClient\\:\\:sendTask\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AClient\:\:sendTask\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AClient.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:createTask\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:createTask\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleCancelTask\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleCancelTask\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleCancelTask\\(\\) has parameter \\$requestId with no type specified\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleCancelTask\(\) has parameter \$requestId with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleCancelTask\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleCancelTask\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleDeletePushConfig\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleDeletePushConfig\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleDeletePushConfig\\(\\) has parameter \\$requestId with no type specified\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleDeletePushConfig\(\) has parameter \$requestId with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleDeletePushConfig\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleDeletePushConfig\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleGetAuthenticatedExtendedCard\\(\\) has parameter \\$requestId with no type specified\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleGetAuthenticatedExtendedCard\(\) has parameter \$requestId with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleGetAuthenticatedExtendedCard\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleGetAuthenticatedExtendedCard\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleGetPushConfig\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleGetPushConfig\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleGetPushConfig\\(\\) has parameter \\$requestId with no type specified\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleGetPushConfig\(\) has parameter \$requestId with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleGetPushConfig\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleGetPushConfig\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleGetTask\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleGetTask\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleGetTask\\(\\) has parameter \\$requestId with no type specified\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleGetTask\(\) has parameter \$requestId with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleGetTask\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleGetTask\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleListPushConfig\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleListPushConfig\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleListPushConfig\\(\\) has parameter \\$requestId with no type specified\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleListPushConfig\(\) has parameter \$requestId with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleListPushConfig\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleListPushConfig\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleMessage\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleMessage\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleMessage\\(\\) has parameter \\$requestId with no type specified\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleMessage\(\) has parameter \$requestId with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleMessage\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleMessage\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleRequest\\(\\) has parameter \\$request with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleRequest\(\) has parameter \$request with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleRequest\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleRequest\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleResubscribeTask\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleResubscribeTask\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleResubscribeTask\\(\\) has parameter \\$requestId with no type specified\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleResubscribeTask\(\) has parameter \$requestId with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleResubscribeTask\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleResubscribeTask\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleSendTask\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleSendTask\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleSendTask\\(\\) has parameter \\$requestId with no type specified\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleSendTask\(\) has parameter \$requestId with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleSendTask\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleSendTask\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleSetPushConfig\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleSetPushConfig\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleSetPushConfig\\(\\) has parameter \\$requestId with no type specified\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleSetPushConfig\(\) has parameter \$requestId with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:handleSetPushConfig\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:handleSetPushConfig\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:processMessage\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:processMessage\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol\\:\\:sendMessage\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol\:\:sendMessage\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Parameter \\#1 \\$message of method A2A\\\\Models\\\\v030\\\\Task\\:\\:addToHistory\\(\\) expects A2A\\\\Models\\\\v030\\\\Message, A2A\\\\Models\\\\Message given\\.$#"
+			message: '#^Parameter \#1 \$message of method A2A\\Models\\v030\\Task\:\:addToHistory\(\) expects A2A\\Models\\v030\\Message, A2A\\Models\\Message given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Parameter \\#1 \\$status of method A2A\\\\Models\\\\v030\\\\Task\\:\\:setStatus\\(\\) expects A2A\\\\Models\\\\TaskStatus, A2A\\\\Models\\\\TaskState\\:\\:COMPLETED given\\.$#"
+			message: '#^Parameter \#1 \$status of method A2A\\Models\\v030\\Task\:\:setStatus\(\) expects A2A\\Models\\TaskStatus, A2A\\Models\\TaskState\:\:COMPLETED given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Parameter \\#1 \\$status of method A2A\\\\Models\\\\v030\\\\Task\\:\\:setStatus\\(\\) expects A2A\\\\Models\\\\TaskStatus, A2A\\\\Models\\\\TaskState\\:\\:FAILED given\\.$#"
+			message: '#^Parameter \#1 \$status of method A2A\\Models\\v030\\Task\:\:setStatus\(\) expects A2A\\Models\\TaskStatus, A2A\\Models\\TaskState\:\:FAILED given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Parameter \\#1 \\$status of method A2A\\\\Models\\\\v030\\\\Task\\:\\:setStatus\\(\\) expects A2A\\\\Models\\\\TaskStatus, A2A\\\\Models\\\\TaskState\\:\\:WORKING given\\.$#"
+			message: '#^Parameter \#1 \$status of method A2A\\Models\\v030\\Task\:\:setStatus\(\) expects A2A\\Models\\TaskStatus, A2A\\Models\\TaskState\:\:WORKING given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Property A2A\\\\A2AProtocol\\:\\:\\$messageHandlers type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\A2AProtocol\:\:\$messageHandlers type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol_v030\\:\\:createTask\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol_v030\:\:createTask\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol_v030.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol_v030\\:\\:handleRequest\\(\\) has parameter \\$request with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol_v030\:\:handleRequest\(\) has parameter \$request with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol_v030.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol_v030\\:\\:handleRequest\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol_v030\:\:handleRequest\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol_v030.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol_v030\\:\\:processMessage\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol_v030\:\:processMessage\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol_v030.php
 
 		-
-			message: "#^Method A2A\\\\A2AProtocol_v030\\:\\:sendMessage\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AProtocol_v030\:\:sendMessage\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AProtocol_v030.php
 
 		-
-			message: "#^Method A2A\\\\A2AServer\\:\\:handleRequest\\(\\) has parameter \\$request with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AServer\:\:handleRequest\(\) has parameter \$request with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AServer.php
 
 		-
-			message: "#^Method A2A\\\\A2AServer\\:\\:handleRequest\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\A2AServer\:\:handleRequest\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/A2AServer.php
 
 		-
-			message: "#^Method A2A\\\\Client\\\\GrpcClient\\:\\:getGrpcInfo\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Client\\GrpcClient\:\:getGrpcInfo\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Client/GrpcClient.php
 
 		-
-			message: "#^Method A2A\\\\Client\\\\GrpcClient\\:\\:listPushNotificationConfigs\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Client\\GrpcClient\:\:listPushNotificationConfigs\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Client/GrpcClient.php
 
 		-
-			message: "#^Method A2A\\\\Client\\\\GrpcClient\\:\\:sendMessage\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Client\\GrpcClient\:\:sendMessage\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Client/GrpcClient.php
 
 		-
-			message: "#^Method A2A\\\\Client\\\\StreamingClient\\:\\:streamRequest\\(\\) has parameter \\$request with no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Client\\GrpcClient\:\:\$grpcClient \(object\|null\) is never assigned object so it can be removed from the property type\.$#'
+			identifier: property.unusedType
+			count: 1
+			path: src/Client/GrpcClient.php
+
+		-
+			message: '#^Method A2A\\Client\\StreamingClient\:\:streamRequest\(\) has parameter \$request with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Client/StreamingClient.php
 
 		-
-			message: "#^Property A2A\\\\Client\\\\StreamingClient\\:\\:\\$agentCard is never read, only written\\.$#"
+			message: '#^Property A2A\\Client\\StreamingClient\:\:\$agentCard is never read, only written\.$#'
+			identifier: property.onlyWritten
 			count: 1
 			path: src/Client/StreamingClient.php
 
 		-
-			message: "#^Property A2A\\\\Client\\\\StreamingClient\\:\\:\\$logger is never read, only written\\.$#"
+			message: '#^Property A2A\\Client\\StreamingClient\:\:\$logger is never read, only written\.$#'
+			identifier: property.onlyWritten
 			count: 1
 			path: src/Client/StreamingClient.php
 
 		-
-			message: "#^Property A2A\\\\Events\\\\EventBusManager\\:\\:\\$eventBuses type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Events\\EventBusManager\:\:\$eventBuses type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Events/EventBusManager.php
 
 		-
-			message: "#^Property A2A\\\\Events\\\\ExecutionEventBusImpl\\:\\:\\$subscribers type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Events\\ExecutionEventBusImpl\:\:\$subscribers type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Events/ExecutionEventBusImpl.php
 
 		-
-			message: "#^Property A2A\\\\Execution\\\\DefaultAgentExecutor\\:\\:\\$cancelledTasks type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Execution\\DefaultAgentExecutor\:\:\$cancelledTasks type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Execution/DefaultAgentExecutor.php
 
 		-
-			message: "#^Method A2A\\\\Execution\\\\ResultManager\\:\\:getResult\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Execution\\ResultManager\:\:getResult\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Execution/ResultManager.php
 
 		-
-			message: "#^Property A2A\\\\Execution\\\\ResultManager\\:\\:\\$results type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Execution\\ResultManager\:\:\$results type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Execution/ResultManager.php
 
 		-
-			message: "#^Method A2A\\\\Handlers\\\\EchoMessageHandler\\:\\:handle\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Handlers\\EchoMessageHandler\:\:handle\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Handlers/EchoMessageHandler.php
 
 		-
-			message: "#^Method A2A\\\\Handlers\\\\v030\\\\MessageSendHandler\\:\\:__construct\\(\\) has parameter \\$processMessage with no value type specified in iterable type array\\.$#"
+			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
 			count: 1
 			path: src/Handlers/v030/MessageSendHandler.php
 
 		-
-			message: "#^Method A2A\\\\Handlers\\\\v030\\\\MessageSendHandler\\:\\:createStatusMessageFromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Call to function is_array\(\) with array\<mixed\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
 			count: 1
 			path: src/Handlers/v030/MessageSendHandler.php
 
 		-
-			message: "#^Parameter \\#2 \\$message of class A2A\\\\Models\\\\TaskStatus constructor expects A2A\\\\Models\\\\Message\\|null, A2A\\\\Models\\\\v030\\\\Message\\|null given\\.$#"
+			message: '#^Method A2A\\Handlers\\v030\\MessageSendHandler\:\:__construct\(\) has parameter \$processMessage with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Handlers/v030/MessageSendHandler.php
 
 		-
-			message: "#^Property A2A\\\\Handlers\\\\v030\\\\MessageSendHandler\\:\\:\\$processMessage type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Handlers\\v030\\MessageSendHandler\:\:createStatusMessageFromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Handlers/v030/MessageSendHandler.php
 
 		-
-			message: "#^Method A2A\\\\Handlers\\\\v030\\\\TaskSendHandler\\:\\:__construct\\(\\) has parameter \\$processMessage with no value type specified in iterable type array\\.$#"
+			message: '#^Parameter \#2 \$message of class A2A\\Models\\TaskStatus constructor expects A2A\\Models\\Message\|null, A2A\\Models\\v030\\Message\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/Handlers/v030/MessageSendHandler.php
+
+		-
+			message: '#^Property A2A\\Handlers\\v030\\MessageSendHandler\:\:\$processMessage type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Handlers/v030/MessageSendHandler.php
+
+		-
+			message: '#^Method A2A\\Handlers\\v030\\TaskSendHandler\:\:__construct\(\) has parameter \$processMessage with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Handlers/v030/TaskSendHandler.php
 
 		-
-			message: "#^Property A2A\\\\Handlers\\\\v030\\\\TaskSendHandler\\:\\:\\$processMessage type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Handlers\\v030\\TaskSendHandler\:\:\$processMessage type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Handlers/v030/TaskSendHandler.php
 
 		-
-			message: "#^Method A2A\\\\Interfaces\\\\MessageHandlerInterface\\:\\:handle\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Interfaces\\MessageHandlerInterface\:\:handle\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Interfaces/MessageHandlerInterface.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCapabilities\\:\\:__construct\\(\\) has parameter \\$extensions with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCapabilities\:\:__construct\(\) has parameter \$extensions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCapabilities.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCapabilities\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCapabilities\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCapabilities.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCapabilities\\:\\:getExtensions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCapabilities\:\:getExtensions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCapabilities.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCapabilities\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCapabilities\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCapabilities.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\AgentCapabilities\\:\\:\\$extensions type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\AgentCapabilities\:\:\$extensions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCapabilities.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:__construct\\(\\) has parameter \\$defaultInputModes with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:__construct\(\) has parameter \$defaultInputModes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:__construct\\(\\) has parameter \\$defaultOutputModes with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:__construct\(\) has parameter \$defaultOutputModes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:__construct\\(\\) has parameter \\$skills with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:__construct\(\) has parameter \$skills with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:getAdditionalInterfaces\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:getAdditionalInterfaces\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:getDefaultInputModes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:getDefaultInputModes\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:getDefaultOutputModes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:getDefaultOutputModes\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:getSignatures\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:getSignatures\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:getSkills\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:getSkills\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:setAdditionalInterfaces\\(\\) has parameter \\$additionalInterfaces with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:setAdditionalInterfaces\(\) has parameter \$additionalInterfaces with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:setSecurity\\(\\) has parameter \\$security with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:setSecurity\(\) has parameter \$security with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:setSecuritySchemes\\(\\) has parameter \\$securitySchemes with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:setSecuritySchemes\(\) has parameter \$securitySchemes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:setSignatures\\(\\) has parameter \\$signatures with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:setSignatures\(\) has parameter \$signatures with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCard\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCard\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\AgentCard\\:\\:\\$defaultInputModes type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\AgentCard\:\:\$defaultInputModes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\AgentCard\\:\\:\\$defaultOutputModes type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\AgentCard\:\:\$defaultOutputModes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\AgentCard\\:\\:\\$security type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\AgentCard\:\:\$security type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\AgentCard\\:\\:\\$skills type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\AgentCard\:\:\$skills type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCardSignature\\:\\:__construct\\(\\) has parameter \\$header with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCardSignature\:\:__construct\(\) has parameter \$header with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCardSignature.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCardSignature\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCardSignature\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCardSignature.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCardSignature\\:\\:getHeader\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCardSignature\:\:getHeader\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCardSignature.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentCardSignature\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentCardSignature\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCardSignature.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\AgentCardSignature\\:\\:\\$header type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\AgentCardSignature\:\:\$header type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentCardSignature.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentExtension\\:\\:__construct\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentExtension\:\:__construct\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentExtension.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentExtension\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentExtension\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentExtension.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentExtension\\:\\:getParams\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentExtension\:\:getParams\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentExtension.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentExtension\\:\\:setParams\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentExtension\:\:setParams\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentExtension.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentExtension\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentExtension\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentExtension.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\AgentExtension\\:\\:\\$params type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\AgentExtension\:\:\$params type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentExtension.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentInterface\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentInterface\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentInterface.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentInterface\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentInterface\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentInterface.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentProvider\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentProvider\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentProvider.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentProvider\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentProvider\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentProvider.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentSkill\\:\\:__construct\\(\\) has parameter \\$tags with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentSkill\:\:__construct\(\) has parameter \$tags with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentSkill\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentSkill\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentSkill\\:\\:getExamples\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentSkill\:\:getExamples\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentSkill\\:\\:getInputModes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentSkill\:\:getInputModes\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentSkill\\:\\:getOutputModes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentSkill\:\:getOutputModes\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentSkill\\:\\:getTags\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentSkill\:\:getTags\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentSkill\\:\\:setExamples\\(\\) has parameter \\$examples with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentSkill\:\:setExamples\(\) has parameter \$examples with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentSkill\\:\\:setInputModes\\(\\) has parameter \\$inputModes with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentSkill\:\:setInputModes\(\) has parameter \$inputModes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentSkill\\:\\:setOutputModes\\(\\) has parameter \\$outputModes with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentSkill\:\:setOutputModes\(\) has parameter \$outputModes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\AgentSkill\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\AgentSkill\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\AgentSkill\\:\\:\\$examples type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\AgentSkill\:\:\$examples type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\AgentSkill\\:\\:\\$inputModes type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\AgentSkill\:\:\$inputModes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\AgentSkill\\:\\:\\$outputModes type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\AgentSkill\:\:\$outputModes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\AgentSkill\\:\\:\\$tags type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\AgentSkill\:\:\$tags type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/AgentSkill.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Artifact\\:\\:__construct\\(\\) has parameter \\$extensions with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Artifact\:\:__construct\(\) has parameter \$extensions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Artifact.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Artifact\\:\\:__construct\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Artifact\:\:__construct\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Artifact.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Artifact\\:\\:__construct\\(\\) has parameter \\$parts with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Artifact\:\:__construct\(\) has parameter \$parts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Artifact.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Artifact\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Artifact\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Artifact.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Artifact\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Artifact\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Artifact.php
 
 		-
-			message: "#^Parameter \\#1 \\$callback of function array_map expects \\(callable\\(A2A\\\\Models\\\\Part\\)\\: mixed\\)\\|null, Closure\\(A2A\\\\Models\\\\PartInterface\\)\\: array given\\.$#"
+			message: '#^Parameter \#1 \$callback of function array_map expects \(callable\(A2A\\Models\\Part\)\: mixed\)\|null, Closure\(A2A\\Models\\PartInterface\)\: array given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/Models/Artifact.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\Artifact\\:\\:\\$extensions type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\Artifact\:\:\$extensions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Artifact.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\Artifact\\:\\:\\$metadata type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\Artifact\:\:\$metadata type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Artifact.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\DataPart\\:\\:__construct\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\DataPart\:\:__construct\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/DataPart.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\DataPart\\:\\:__construct\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\DataPart\:\:__construct\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/DataPart.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\DataPart\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\DataPart\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/DataPart.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\DataPart\\:\\:getData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\DataPart\:\:getData\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/DataPart.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\DataPart\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\DataPart\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/DataPart.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\DataPart\\:\\:\\$data type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\DataPart\:\:\$data type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/DataPart.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\DataPart\\:\\:\\$metadata type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\DataPart\:\:\$metadata type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/DataPart.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\FileBase\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\FileBase\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/FileBase.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\FileFactory\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\FileFactory\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/FileFactory.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\FileFactory\\:\\:fromArray\\(\\) should return A2A\\\\Models\\\\FileInterface but returns A2A\\\\Models\\\\FileWithBytes\\.$#"
+			message: '#^Method A2A\\Models\\FileFactory\:\:fromArray\(\) should return A2A\\Models\\FileInterface but returns A2A\\Models\\FileWithBytes\.$#'
+			identifier: return.type
 			count: 1
 			path: src/Models/FileFactory.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\FileFactory\\:\\:fromArray\\(\\) should return A2A\\\\Models\\\\FileInterface but returns A2A\\\\Models\\\\FileWithUri\\.$#"
+			message: '#^Method A2A\\Models\\FileFactory\:\:fromArray\(\) should return A2A\\Models\\FileInterface but returns A2A\\Models\\FileWithUri\.$#'
+			identifier: return.type
 			count: 2
 			path: src/Models/FileFactory.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\FileInterface\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\FileInterface\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/FileInterface.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\FilePart\\:\\:__construct\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\FilePart\:\:__construct\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/FilePart.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\FilePart\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\FilePart\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/FilePart.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\FilePart\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\FilePart\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/FilePart.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\FilePart\\:\\:\\$metadata type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\FilePart\:\:\$metadata type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/FilePart.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\FileWithBytes\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\FileWithBytes\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/FileWithBytes.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\FileWithBytes\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\FileWithBytes\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/FileWithBytes.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\FileWithUri\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\FileWithUri\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/FileWithUri.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\FileWithUri\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\FileWithUri\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/FileWithUri.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Message\\:\\:__construct\\(\\) has parameter \\$parts with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Message\:\:__construct\(\) has parameter \$parts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Message\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Message\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Message\\:\\:getExtensions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Message\:\:getExtensions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Message\\:\\:getMetadata\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Message\:\:getMetadata\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Message\\:\\:getParts\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Message\:\:getParts\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Message\\:\\:getReferenceTaskIds\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Message\:\:getReferenceTaskIds\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Message\\:\\:setExtensions\\(\\) has parameter \\$extensions with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Message\:\:setExtensions\(\) has parameter \$extensions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Message\\:\\:setMetadata\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Message\:\:setMetadata\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Message\\:\\:setReferenceTaskIds\\(\\) has parameter \\$referenceTaskIds with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Message\:\:setReferenceTaskIds\(\) has parameter \$referenceTaskIds with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Message\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Message\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Message.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\Message\\:\\:\\$extensions type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\Message\:\:\$extensions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Message.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\Message\\:\\:\\$metadata type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\Message\:\:\$metadata type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Message.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\Message\\:\\:\\$referenceTaskIds type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\Message\:\:\$referenceTaskIds type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\MessageV2\\:\\:__construct\\(\\) has parameter \\$parts with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\MessageV2\:\:__construct\(\) has parameter \$parts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\MessageV2\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\MessageV2\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\MessageV2\\:\\:getExtensions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\MessageV2\:\:getExtensions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\MessageV2\\:\\:getMetadata\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\MessageV2\:\:getMetadata\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\MessageV2\\:\\:getParts\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\MessageV2\:\:getParts\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\MessageV2\\:\\:getReferenceTaskIds\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\MessageV2\:\:getReferenceTaskIds\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\MessageV2\\:\\:setExtensions\\(\\) has parameter \\$extensions with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\MessageV2\:\:setExtensions\(\) has parameter \$extensions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\MessageV2\\:\\:setMetadata\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\MessageV2\:\:setMetadata\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\MessageV2\\:\\:setMetadataValue\\(\\) has parameter \\$value with no type specified\\.$#"
+			message: '#^Method A2A\\Models\\MessageV2\:\:setMetadataValue\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\MessageV2\\:\\:setReferenceTaskIds\\(\\) has parameter \\$referenceTaskIds with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\MessageV2\:\:setReferenceTaskIds\(\) has parameter \$referenceTaskIds with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\MessageV2\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\MessageV2\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\MessageV2\\:\\:\\$extensions type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\MessageV2\:\:\$extensions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\MessageV2\\:\\:\\$metadata type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\MessageV2\:\:\$metadata type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\MessageV2\\:\\:\\$parts type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\MessageV2\:\:\$parts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\MessageV2\\:\\:\\$referenceTaskIds type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\MessageV2\:\:\$referenceTaskIds type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/MessageV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Part\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Part\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Part.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\PartFactory\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\PartFactory\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/PartFactory.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\PartInterface\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\PartInterface\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/PartInterface.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\PushNotificationAuthenticationInfo\\:\\:__construct\\(\\) has parameter \\$schemes with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\PushNotificationAuthenticationInfo\:\:__construct\(\) has parameter \$schemes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/PushNotificationAuthenticationInfo.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\PushNotificationAuthenticationInfo\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\PushNotificationAuthenticationInfo\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/PushNotificationAuthenticationInfo.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\PushNotificationAuthenticationInfo\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\PushNotificationAuthenticationInfo\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/PushNotificationAuthenticationInfo.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\PushNotificationConfig\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\PushNotificationConfig\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/PushNotificationConfig.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\PushNotificationConfig\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\PushNotificationConfig\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/PushNotificationConfig.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\RequestContext\\:\\:__construct\\(\\) has parameter \\$referenceTasks with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\RequestContext\:\:__construct\(\) has parameter \$referenceTasks with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/RequestContext.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\RequestContext\\:\\:\\$referenceTasks type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\RequestContext\:\:\$referenceTasks type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/RequestContext.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Security\\\\APIKeySecurityScheme\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Security\\APIKeySecurityScheme\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Security/APIKeySecurityScheme.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Security\\\\HTTPAuthSecurityScheme\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Security\\HTTPAuthSecurityScheme\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Security/HTTPAuthSecurityScheme.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Security\\\\MutualTLSSecurityScheme\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Security\\MutualTLSSecurityScheme\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Security/MutualTLSSecurityScheme.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Security\\\\OAuth2SecurityScheme\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Security\\OAuth2SecurityScheme\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Security/OAuth2SecurityScheme.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Security\\\\OAuthFlow\\:\\:__construct\\(\\) has parameter \\$scopes with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Security\\OAuthFlow\:\:__construct\(\) has parameter \$scopes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Security/OAuthFlow.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Security\\\\OAuthFlow\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Security\\OAuthFlow\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Security/OAuthFlow.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Security\\\\OAuthFlow\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Security\\OAuthFlow\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Security/OAuthFlow.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\Security\\\\OAuthFlow\\:\\:\\$scopes type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\Security\\OAuthFlow\:\:\$scopes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Security/OAuthFlow.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Security\\\\OAuthFlows\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Security\\OAuthFlows\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Security/OAuthFlows.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Security\\\\OAuthFlows\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Security\\OAuthFlows\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Security/OAuthFlows.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Security\\\\OpenIdConnectSecurityScheme\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Security\\OpenIdConnectSecurityScheme\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Security/OpenIdConnectSecurityScheme.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Task\\:\\:__construct\\(\\) has parameter \\$artifacts with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Task\:\:__construct\(\) has parameter \$artifacts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Task\\:\\:__construct\\(\\) has parameter \\$history with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Task\:\:__construct\(\) has parameter \$history with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Task\\:\\:__construct\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Task\:\:__construct\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Task\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Task\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Task\\:\\:getArtifacts\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Task\:\:getArtifacts\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Task\\:\\:getHistory\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Task\:\:getHistory\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Task\\:\\:getMetadata\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Task\:\:getMetadata\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Task\\:\\:setMetadata\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Task\:\:setMetadata\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\Task\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\Task\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Task.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\Task\\:\\:\\$artifacts type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\Task\:\:\$artifacts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Task.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\Task\\:\\:\\$history type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\Task\:\:\$history type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Task.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\Task\\:\\:\\$metadata type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\Task\:\:\$metadata type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskArtifactUpdateEvent\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskArtifactUpdateEvent\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskArtifactUpdateEvent.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskArtifactUpdateEvent\\:\\:getMetadata\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskArtifactUpdateEvent\:\:getMetadata\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskArtifactUpdateEvent.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskArtifactUpdateEvent\\:\\:setMetadata\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskArtifactUpdateEvent\:\:setMetadata\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskArtifactUpdateEvent.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskArtifactUpdateEvent\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskArtifactUpdateEvent\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskArtifactUpdateEvent.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\TaskArtifactUpdateEvent\\:\\:\\$metadata type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\TaskArtifactUpdateEvent\:\:\$metadata type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskArtifactUpdateEvent.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskStatus\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskStatus\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskStatus.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskStatus\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskStatus\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskStatus.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskStatusUpdateEvent\\:\\:__construct\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\TaskStatus\:\:\$timestamp \(string\|null\) is never assigned null so it can be removed from the property type\.$#'
+			identifier: property.unusedType
+			count: 1
+			path: src/Models/TaskStatus.php
+
+		-
+			message: '#^Method A2A\\Models\\TaskStatusUpdateEvent\:\:__construct\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskStatusUpdateEvent.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskStatusUpdateEvent\\:\\:getMetadata\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskStatusUpdateEvent\:\:getMetadata\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskStatusUpdateEvent.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskStatusUpdateEvent\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskStatusUpdateEvent\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskStatusUpdateEvent.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\TaskStatusUpdateEvent\\:\\:\\$metadata type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\TaskStatusUpdateEvent\:\:\$metadata type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskStatusUpdateEvent.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskV2\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskV2\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskV2\\:\\:getArtifacts\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskV2\:\:getArtifacts\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskV2\\:\\:getHistory\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskV2\:\:getHistory\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskV2\\:\\:getMetadata\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskV2\:\:getMetadata\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskV2\\:\\:setArtifacts\\(\\) has parameter \\$artifacts with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskV2\:\:setArtifacts\(\) has parameter \$artifacts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskV2\\:\\:setHistory\\(\\) has parameter \\$history with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskV2\:\:setHistory\(\) has parameter \$history with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskV2\\:\\:setMetadata\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskV2\:\:setMetadata\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TaskV2\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TaskV2\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskV2.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\TaskV2\\:\\:\\$artifacts type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\TaskV2\:\:\$artifacts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskV2.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\TaskV2\\:\\:\\$history type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\TaskV2\:\:\$history type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskV2.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\TaskV2\\:\\:\\$metadata type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\TaskV2\:\:\$metadata type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TaskV2.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TextPart\\:\\:__construct\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TextPart\:\:__construct\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TextPart.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TextPart\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TextPart\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TextPart.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\TextPart\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\TextPart\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TextPart.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\TextPart\\:\\:\\$metadata type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\TextPart\:\:\$metadata type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/TextPart.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:__construct\\(\\) has parameter \\$defaultInputModes with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\AgentCard\:\:__construct\(\) has parameter \$defaultInputModes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:__construct\\(\\) has parameter \\$defaultOutputModes with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\AgentCard\:\:__construct\(\) has parameter \$defaultOutputModes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:__construct\\(\\) has parameter \\$skills with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\AgentCard\:\:__construct\(\) has parameter \$skills with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\AgentCard\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:getDefaultInputModes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\AgentCard\:\:getDefaultInputModes\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:getDefaultOutputModes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\AgentCard\:\:getDefaultOutputModes\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:getSignatures\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\AgentCard\:\:getSignatures\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:getSkills\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\AgentCard\:\:getSkills\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:setAdditionalInterfaces\\(\\) has parameter \\$additionalInterfaces with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\AgentCard\:\:setAdditionalInterfaces\(\) has parameter \$additionalInterfaces with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:setSecurity\\(\\) has parameter \\$security with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\AgentCard\:\:setSecurity\(\) has parameter \$security with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:setSecuritySchemes\\(\\) has parameter \\$securitySchemes with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\AgentCard\:\:setSecuritySchemes\(\) has parameter \$securitySchemes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:setSignatures\\(\\) has parameter \\$signatures with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\AgentCard\:\:setSignatures\(\) has parameter \$signatures with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\AgentCard\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:\\$defaultInputModes type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\v030\\AgentCard\:\:\$defaultInputModes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:\\$defaultOutputModes type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\v030\\AgentCard\:\:\$defaultOutputModes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:\\$security type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\v030\\AgentCard\:\:\$security type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\v030\\\\AgentCard\\:\\:\\$skills type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\v030\\AgentCard\:\:\$skills type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/AgentCard.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Message\\:\\:__construct\\(\\) has parameter \\$parts with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Message\:\:__construct\(\) has parameter \$parts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Message\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Message\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Message\\:\\:getExtensions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Message\:\:getExtensions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Message\\:\\:getMetadata\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Message\:\:getMetadata\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Message\\:\\:getParts\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Message\:\:getParts\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Message\\:\\:getReferenceTaskIds\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Message\:\:getReferenceTaskIds\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Message\\:\\:setExtensions\\(\\) has parameter \\$extensions with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Message\:\:setExtensions\(\) has parameter \$extensions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Message\\:\\:setMetadata\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Message\:\:setMetadata\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Message\\:\\:setReferenceTaskIds\\(\\) has parameter \\$referenceTaskIds with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Message\:\:setReferenceTaskIds\(\) has parameter \$referenceTaskIds with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Message\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Message\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Message.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\v030\\\\Message\\:\\:\\$extensions type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\v030\\Message\:\:\$extensions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Message.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\v030\\\\Message\\:\\:\\$metadata type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\v030\\Message\:\:\$metadata type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Message.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\v030\\\\Message\\:\\:\\$referenceTaskIds type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\v030\\Message\:\:\$referenceTaskIds type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Message.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Task\\:\\:__construct\\(\\) has parameter \\$artifacts with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Task\:\:__construct\(\) has parameter \$artifacts with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Task\\:\\:__construct\\(\\) has parameter \\$history with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Task\:\:__construct\(\) has parameter \$history with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Task\\:\\:__construct\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Task\:\:__construct\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Task\\:\\:fromArray\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Task\:\:fromArray\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Task\\:\\:getArtifacts\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Task\:\:getArtifacts\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Task\\:\\:getHistory\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Task\:\:getHistory\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Task\\:\\:getMetadata\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Task\:\:getMetadata\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Task\\:\\:setMetadata\\(\\) has parameter \\$metadata with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Task\:\:setMetadata\(\) has parameter \$metadata with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Task.php
 
 		-
-			message: "#^Method A2A\\\\Models\\\\v030\\\\Task\\:\\:toArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Models\\v030\\Task\:\:toArray\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Task.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\v030\\\\Task\\:\\:\\$artifacts type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\v030\\Task\:\:\$artifacts type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Task.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\v030\\\\Task\\:\\:\\$history type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\v030\\Task\:\:\$history type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Task.php
 
 		-
-			message: "#^Property A2A\\\\Models\\\\v030\\\\Task\\:\\:\\$metadata type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\Models\\v030\\Task\:\:\$metadata type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Models/v030/Task.php
 
 		-
-			message: "#^Method A2A\\\\PushNotificationManager\\:\\:listConfigs\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\PushNotificationManager\:\:listConfigs\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/PushNotificationManager.php
 
 		-
-			message: "#^Method A2A\\\\PushNotificationManager\\:\\:listConfigsForTask\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\PushNotificationManager\:\:listConfigsForTask\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/PushNotificationManager.php
 
 		-
-			message: "#^Property A2A\\\\PushNotificationManager\\:\\:\\$configs type has no value type specified in iterable type array\\.$#"
+			message: '#^Property A2A\\PushNotificationManager\:\:\$configs type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/PushNotificationManager.php
 
 		-
-			message: "#^Method A2A\\\\Storage\\\\Storage\\:\\:__construct\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Storage\\Storage\:\:__construct\(\) has parameter \$config with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Storage/Storage.php
 
 		-
-			message: "#^Method A2A\\\\Storage\\\\Storage\\:\\:createCacheRepository\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Storage\\Storage\:\:createCacheRepository\(\) has parameter \$config with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Storage/Storage.php
 
 		-
-			message: "#^Method A2A\\\\Storage\\\\Storage\\:\\:createMemcachedStore\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Storage\\Storage\:\:createMemcachedStore\(\) has parameter \$config with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Storage/Storage.php
 
 		-
-			message: "#^Method A2A\\\\Storage\\\\Storage\\:\\:createRedisStore\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Storage\\Storage\:\:createRedisStore\(\) has parameter \$config with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Storage/Storage.php
 
 		-
-			message: "#^Method A2A\\\\Storage\\\\Storage\\:\\:listPushConfigs\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Storage\\Storage\:\:listPushConfigs\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Storage/Storage.php
 
 		-
-			message: "#^Method A2A\\\\Streaming\\\\StreamingServer\\:\\:handleStreamRequest\\(\\) has parameter \\$request with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Streaming\\StreamingServer\:\:handleStreamRequest\(\) has parameter \$request with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Streaming/StreamingServer.php
 
 		-
-			message: "#^Method A2A\\\\Streaming\\\\StreamingServer\\:\\:streamResubscribeSnapshot\\(\\) has parameter \\$taskSnapshot with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Streaming\\StreamingServer\:\:streamResubscribeSnapshot\(\) has parameter \$taskSnapshot with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Streaming/StreamingServer.php
 
 		-
-			message: "#^Parameter \\#1 \\$data of method A2A\\\\Streaming\\\\SSEStreamer\\:\\:sendEvent\\(\\) expects string, string\\|false given\\.$#"
+			message: '#^Parameter \#1 \$data of method A2A\\Streaming\\SSEStreamer\:\:sendEvent\(\) expects string, string\|false given\.$#'
+			identifier: argument.type
 			count: 5
 			path: src/Streaming/StreamingServer.php
 
 		-
-			message: "#^Method A2A\\\\TaskManager\\:\\:cancelTask\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\TaskManager\:\:cancelTask\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/TaskManager.php
 
 		-
-			message: "#^Method A2A\\\\TaskManager\\:\\:createTask\\(\\) has parameter \\$context with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\TaskManager\:\:createTask\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/TaskManager.php
 
 		-
-			message: "#^Method A2A\\\\Utils\\\\HttpClient\\:\\:get\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Utils\\HttpClient\:\:get\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Utils/HttpClient.php
 
 		-
-			message: "#^Method A2A\\\\Utils\\\\HttpClient\\:\\:post\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Utils\\HttpClient\:\:post\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Utils/HttpClient.php
 
 		-
-			message: "#^Method A2A\\\\Utils\\\\HttpClient\\:\\:post\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Utils\\HttpClient\:\:post\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Utils/HttpClient.php
 
 		-
-			message: "#^Method A2A\\\\Utils\\\\JsonRpc\\:\\:createError\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Utils\\JsonRpc\:\:createError\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Utils/JsonRpc.php
 
 		-
-			message: "#^Method A2A\\\\Utils\\\\JsonRpc\\:\\:createRequest\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Utils\\JsonRpc\:\:createRequest\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Utils/JsonRpc.php
 
 		-
-			message: "#^Method A2A\\\\Utils\\\\JsonRpc\\:\\:createRequest\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Utils\\JsonRpc\:\:createRequest\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Utils/JsonRpc.php
 
 		-
-			message: "#^Method A2A\\\\Utils\\\\JsonRpc\\:\\:createResponse\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Utils\\JsonRpc\:\:createResponse\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Utils/JsonRpc.php
 
 		-
-			message: "#^Method A2A\\\\Utils\\\\JsonRpc\\:\\:isValidRequest\\(\\) has parameter \\$request with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Utils\\JsonRpc\:\:isValidRequest\(\) has parameter \$request with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Utils/JsonRpc.php
 
 		-
-			message: "#^Method A2A\\\\Utils\\\\JsonRpc\\:\\:parseRequest\\(\\) has parameter \\$request with no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Utils\\JsonRpc\:\:parseRequest\(\) has parameter \$request with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Utils/JsonRpc.php
 
 		-
-			message: "#^Method A2A\\\\Utils\\\\JsonRpc\\:\\:parseRequest\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: '#^Method A2A\\Utils\\JsonRpc\:\:parseRequest\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
 			count: 1
 			path: src/Utils/JsonRpc.php

@@ -24,7 +24,7 @@ jobs:
         php: ['8.2', '8.3', '8.4']
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -73,14 +73,14 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       - name: Checkout pinned A2A TCK
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: a2aproject/a2a-tck
           ref: ${{ env.A2A_TCK_REF }}
           path: a2a-tck
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
@@ -108,7 +108,7 @@ jobs:
 
       - name: Upload compliance report
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: tck-compliance-report
           path: a2a-tck/tck-compliance-report.json
