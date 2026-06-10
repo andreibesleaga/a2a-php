@@ -23,7 +23,7 @@ class EndToEndTest extends TestCase
         // Setup agent
         $capabilities = new AgentCapabilities(true, false);
         $skill = new AgentSkill('chat', 'Chat', 'Chat capability', ['chat']);
-        
+
         $agentCard = new AgentCard(
             'E2E Agent',
             'End-to-end test agent',
@@ -38,7 +38,7 @@ class EndToEndTest extends TestCase
         // Setup server
         $protocol = new A2AProtocol_v030($agentCard);
         $server = new A2AServer($protocol);
-        
+
         $messageHandler = new class implements MessageHandlerInterface {
             public function canHandle(Message $message): bool
             {
@@ -69,30 +69,30 @@ class EndToEndTest extends TestCase
         // Setup client with mock HTTP
         $httpClient = new class extends HttpClient {
             private A2AServer $server;
-            
+
             public function setServer(A2AServer $server): void
             {
                 $this->server = $server;
             }
-            
+
             public function post(string $url, array $data): array
             {
                 return $this->server->handleRequest($data);
             }
         };
-        
+
         $httpClient->setServer($server);
         $client = new A2AClient($agentCard, $httpClient);
 
         // Test complete flow
         $message = Message::createUserMessage('Hello Agent');
         $response = $client->sendMessage('http://test', $message);
-        
-    $result = $response['result'];
-    $this->assertSame('task', $result['kind']);
-    $this->assertEquals('completed', $result['status']['state']);
-    $this->assertNotEmpty($result['history']);
-    $this->assertTrue($result['metadata']['handled']);
-    $this->assertSame('E2E Agent', $result['metadata']['fromAgent'] ?? null);
+
+        $result = $response['result'];
+        $this->assertSame('task', $result['kind']);
+        $this->assertEquals('completed', $result['status']['state']);
+        $this->assertNotEmpty($result['history']);
+        $this->assertTrue($result['metadata']['handled']);
+        $this->assertSame('E2E Agent', $result['metadata']['fromAgent'] ?? null);
     }
 }

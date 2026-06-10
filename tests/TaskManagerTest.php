@@ -66,7 +66,7 @@ class TaskManagerTest extends TestCase
         $task = $this->taskManager->createTask('Test task');
         $task->setStatus(new TaskStatus(TaskState::COMPLETED));
         $this->taskManager->updateTask($task);
-        
+
         $result = $this->taskManager->cancelTask($task->getId());
 
         $this->assertArrayHasKey('error', $result);

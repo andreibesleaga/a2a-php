@@ -18,14 +18,14 @@ class PartFactory
         }
 
         switch ($data['kind']) {
-        case 'text':
-            return TextPart::fromArray($data);
-        case 'file':
-            return FilePart::fromArray($data);
-        case 'data':
-            return DataPart::fromArray($data);
-        default:
-            throw new InvalidArgumentException('Unknown part kind: ' . $data['kind']);
+            case 'text':
+                return TextPart::fromArray($data);
+            case 'file':
+                return FilePart::fromArray($data);
+            case 'data':
+                return DataPart::fromArray($data);
+            default:
+                throw new InvalidArgumentException('Unknown part kind: ' . $data['kind']);
         }
     }
 }

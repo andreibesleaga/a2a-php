@@ -84,7 +84,8 @@ class TaskSendHandler implements RequestHandlerInterface
             return $jsonRpc->createResponse($requestId, $task->toArray());
         } catch (\Exception $e) {
             $this->logger->error(
-                'Failed to send task', [
+                'Failed to send task',
+                [
                 'task_id' => $taskId,
                 'error' => $e->getMessage()
                 ]

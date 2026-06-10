@@ -47,7 +47,7 @@ class PushNotificationConfigTest extends TestCase
     {
         // First create a task
         $task = $this->taskManager->createTask('Test task for push config', ['test' => true]);
-        
+
         $request = [
             'jsonrpc' => '2.0',
             'method' => 'tasks/pushNotificationConfig/set',
@@ -75,7 +75,7 @@ class PushNotificationConfigTest extends TestCase
     {
         // First create a task
         $task = $this->taskManager->createTask('Test task for push config get', ['test' => true]);
-        
+
         // First set a config
         $setRequest = [
             'jsonrpc' => '2.0',
@@ -133,7 +133,7 @@ class PushNotificationConfigTest extends TestCase
         // Create tasks first
         $task1 = $this->taskManager->createTask('Test task 1', ['test' => true]);
         $task2 = $this->taskManager->createTask('Test task 2', ['test' => true]);
-        
+
         // Set a couple of configs
         $config1 = [
             'jsonrpc' => '2.0',
@@ -175,7 +175,7 @@ class PushNotificationConfigTest extends TestCase
     {
         // First create a task
         $task = $this->taskManager->createTask('Test task for delete', ['test' => true]);
-        
+
         // First set a config
         $setRequest = [
             'jsonrpc' => '2.0',
@@ -287,7 +287,7 @@ class PushNotificationConfigTest extends TestCase
     {
         // First create a task
         $task = $this->taskManager->createTask('Test task for invalid config', ['test' => true]);
-        
+
         // Test missing config
         $request = [
             'jsonrpc' => '2.0',

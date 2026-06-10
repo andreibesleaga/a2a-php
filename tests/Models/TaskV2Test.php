@@ -20,7 +20,7 @@ class TaskV2Test extends TestCase
     public function testCreateTask(): void
     {
         $task = $this->createTask('task-123', 'ctx-123', TaskState::SUBMITTED);
-        
+
         $this->assertEquals('task-123', $task->getId());
         $this->assertEquals('ctx-123', $task->getContextId());
         $this->assertEquals(TaskState::SUBMITTED, $task->getStatus()->getState());
@@ -30,7 +30,7 @@ class TaskV2Test extends TestCase
     {
         $task = $this->createTask('task-123', 'ctx-123', TaskState::SUBMITTED);
         $array = $task->toArray();
-        
+
         $this->assertEquals('task', $array['kind']);
         $this->assertEquals('task-123', $array['id']);
         $this->assertEquals('ctx-123', $array['contextId']);
@@ -41,10 +41,10 @@ class TaskV2Test extends TestCase
     public function testTaskStates(): void
     {
         $task = $this->createTask('task-123', 'ctx-123', TaskState::SUBMITTED);
-        
+
         $task->setStatus(new TaskStatus(TaskState::WORKING));
         $this->assertEquals(TaskState::WORKING, $task->getStatus()->getState());
-        
+
         // A Task's status is terminal if it's completed, failed, or canceled.
         // We'll simulate this by setting the status directly.
         $task->setStatus(new TaskStatus(TaskState::COMPLETED));

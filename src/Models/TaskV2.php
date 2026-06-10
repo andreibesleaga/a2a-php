@@ -139,7 +139,7 @@ class TaskV2
     public static function fromArray(array $data): self
     {
         $status = TaskStatus::fromArray($data['status']);
-        
+
         $task = new self(
             $data['id'],
             $data['contextId'],

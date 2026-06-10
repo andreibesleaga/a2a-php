@@ -16,7 +16,7 @@ class AgentCardTest extends TestCase
     {
         $capabilities = new AgentCapabilities();
         $skill = new AgentSkill('test', 'Test', 'Test skill', ['test']);
-        
+
         $card = new AgentCard(
             'Test Agent',
             'A test agent',
@@ -38,7 +38,7 @@ class AgentCardTest extends TestCase
     {
         $capabilities = new AgentCapabilities();
         $skill = new AgentSkill('test', 'Test', 'Test skill', ['test']);
-        
+
         $card = new AgentCard(
             'Test Agent',
             'Description',
@@ -94,7 +94,7 @@ class AgentCardTest extends TestCase
     {
         $capabilities = new AgentCapabilities();
         $skill = new AgentSkill('test', 'Test', 'Test skill', ['test']);
-        
+
         $card = new AgentCard(
             'Test Agent',
             'Description',
@@ -105,7 +105,7 @@ class AgentCardTest extends TestCase
             ['text'],
             [$skill]
         );
-        
+
         $provider = new AgentProvider('Test Org', 'https://test.com');
         $card->setProvider($provider);
 

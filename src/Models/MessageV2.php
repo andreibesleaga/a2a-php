@@ -10,7 +10,7 @@ use Ramsey\Uuid\Uuid;
 
 /**
  * A2A Protocol compliant Message implementation
- * 
+ *
  * Represents a single message exchanged between user and agent
  */
 class MessageV2
@@ -39,7 +39,7 @@ class MessageV2
     {
         $messageId = $messageId ?? Uuid::uuid4()->toString();
         $textPart = new TextPart($text);
-        
+
         return new self($messageId, 'user', [$textPart]);
     }
 
@@ -47,7 +47,7 @@ class MessageV2
     {
         $messageId = $messageId ?? Uuid::uuid4()->toString();
         $textPart = new TextPart($text);
-        
+
         return new self($messageId, 'agent', [$textPart]);
     }
 

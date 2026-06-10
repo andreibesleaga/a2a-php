@@ -21,7 +21,7 @@ class PerformanceTest extends TestCase
     {
         $capabilities = new AgentCapabilities();
         $skill = new AgentSkill('test', 'Test', 'Test skill', ['test']);
-        
+
         $agentCard = new AgentCard(
             'Performance Test Agent',
             'Performance test description',
@@ -32,10 +32,10 @@ class PerformanceTest extends TestCase
             ['application/json'],
             [$skill]
         );
-        
+
         $protocol = new A2AProtocol_v030($agentCard);
         $server = new A2AServer($protocol);
-        
+
         $messageHandler = new class implements MessageHandlerInterface {
             public int $processedCount = 0;
 
@@ -52,7 +52,7 @@ class PerformanceTest extends TestCase
         $protocol->addMessageHandler($messageHandler);
 
         $startTime = microtime(true);
-        
+
         for ($i = 0; $i < 1000; $i++) {
             $message = Message::createUserMessage("Message $i");
             $request = [
@@ -64,13 +64,13 @@ class PerformanceTest extends TestCase
                 ],
                 'id' => $i
             ];
-            
+
             $server->handleRequest($request);
         }
-        
+
         $endTime = microtime(true);
         $duration = $endTime - $startTime;
-        
+
         $this->assertEquals(1000, $messageHandler->processedCount);
         $this->assertLessThan(6.0, $duration, 'Processing 1000 messages should take less than 6 seconds');
     }
@@ -79,15 +79,15 @@ class PerformanceTest extends TestCase
     {
         $taskManager = new TaskManager(new Storage('array'));
         $initialMemory = memory_get_usage();
-        
+
         // Create many tasks
         for ($i = 0; $i < 1000; $i++) {
             $taskManager->createTask("Task $i", ['index' => $i]);
         }
-        
+
         $afterCreationMemory = memory_get_usage();
         $memoryIncrease = $afterCreationMemory - $initialMemory;
-        
+
         // Memory increase should be reasonable (less than 10MB for 1000 tasks)
         $this->assertLessThan(10 * 1024 * 1024, $memoryIncrease);
     }
@@ -96,17 +96,17 @@ class PerformanceTest extends TestCase
     {
         $message = Message::createUserMessage('Performance test message');
         $message->setMetadata(['test' => 'value']);
-        
+
         $startTime = microtime(true);
-        
+
         for ($i = 0; $i < 10000; $i++) {
             $array = $message->toArray();
             $reconstructed = Message::fromArray($array);
         }
-        
+
         $endTime = microtime(true);
         $duration = $endTime - $startTime;
-        
+
         $this->assertLessThan(1.0, $duration, 'Serialization/deserialization should be fast');
     }
 }

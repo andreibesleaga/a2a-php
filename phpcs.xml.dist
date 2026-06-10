@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ruleset name="a2a-php">
+    <description>PSR-12 coding standard for the A2A PHP SDK.</description>
+
+    <file>src</file>
+    <file>tests</file>
+
+    <arg name="extensions" value="php"/>
+    <arg name="colors"/>
+    <arg value="sp"/>
+
+    <rule ref="PSR12"/>
+
+    <!--
+        A2AProtocol_v030 is the published v0.3.0 entry-point class name.
+        Renaming it would break the public API, so the PascalCase sniff is
+        suppressed for this one legacy name (see docs/UPGRADE-1.0.md for the
+        rename planned in the next major version).
+    -->
+    <rule ref="Squiz.Classes.ValidClassName.NotCamelCaps">
+        <exclude-pattern>src/A2AProtocol_v030.php</exclude-pattern>
+    </rule>
+</ruleset>

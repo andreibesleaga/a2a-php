@@ -19,7 +19,7 @@ class StreamingClientTest extends TestCase
     {
         $capabilities = new AgentCapabilities(true, false, false);
         $skill = new AgentSkill('test', 'Test', 'Test skill', ['test']);
-        
+
         $agentCard = new AgentCard(
             'Test Agent',
             'Test Description',
@@ -30,7 +30,7 @@ class StreamingClientTest extends TestCase
             ['text'],
             [$skill]
         );
-        
+
         $this->client = new StreamingClient($agentCard);
     }
 
@@ -42,7 +42,7 @@ class StreamingClientTest extends TestCase
     public function testSendMessageStreamMethod(): void
     {
         $message = Message::createUserMessage('Test streaming');
-        
+
         // Test that method exists and can be called
         $this->assertTrue(method_exists($this->client, 'sendMessageStream'));
         $this->assertTrue(method_exists($this->client, 'resubscribeTask'));

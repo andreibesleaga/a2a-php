@@ -15,7 +15,8 @@ class ResultManager
     public function processEvents(ExecutionEventBus $eventBus, string $taskId): void
     {
         $eventBus->subscribe(
-            $taskId, function ($event) use ($taskId) {
+            $taskId,
+            function ($event) use ($taskId) {
                 $this->handleEvent($taskId, $event);
             }
         );

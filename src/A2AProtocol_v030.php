@@ -165,7 +165,8 @@ class A2AProtocol_v030
         $task = new Task($taskId, $contextId, $status, [], [], $metadata);
 
         $this->logger->info(
-            'Task created', [
+            'Task created',
+            [
             'task_id' => $taskId,
             'description' => $description
             ]
@@ -178,7 +179,8 @@ class A2AProtocol_v030
     {
         $jsonRpc = new JsonRpc();
         $request = $jsonRpc->createRequest(
-            'message/send', [
+            'message/send',
+            [
             'from' => $this->agentId,
             'message' => $message->toArray()
             ]
@@ -187,7 +189,8 @@ class A2AProtocol_v030
         try {
             $response = $this->httpClient->post($recipientUrl, $request);
             $this->logger->info(
-                'Message sent successfully', [
+                'Message sent successfully',
+                [
                 'recipient' => $recipientUrl,
                 'message_id' => $message->getMessageId()
                 ]
@@ -195,7 +198,8 @@ class A2AProtocol_v030
             return $response;
         } catch (\Exception $e) {
             $this->logger->error(
-                'Failed to send message', [
+                'Failed to send message',
+                [
                 'recipient' => $recipientUrl,
                 'error' => $e->getMessage()
                 ]
@@ -284,7 +288,8 @@ class A2AProtocol_v030
                     return $handler->handle($message, $fromAgent);
                 } catch (\Exception $e) {
                     $this->logger->error(
-                        'Message handler failed', [
+                        'Message handler failed',
+                        [
                         'handler' => get_class($handler),
                         'error' => $e->getMessage(),
                         'message_id' => $message->getMessageId()

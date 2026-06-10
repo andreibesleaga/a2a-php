@@ -80,7 +80,8 @@ class ComprehensiveTest extends TestCase
 
         $events = [];
         $eventBus->subscribe(
-            'task-123', function ($event) use (&$events) {
+            'task-123',
+            function ($event) use (&$events) {
                 $events[] = $event;
             }
         );

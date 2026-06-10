@@ -61,7 +61,8 @@ class A2AProtocol
         $task = new Task($taskId, $contextId, $status, [], [], $metadata);
 
         $this->logger->info(
-            'Task created', [
+            'Task created',
+            [
             'task_id' => $taskId,
             'description' => $description
             ]
@@ -74,7 +75,8 @@ class A2AProtocol
     {
         $jsonRpc = new JsonRpc();
         $request = $jsonRpc->createRequest(
-            'message/send', [
+            'message/send',
+            [
             'from' => $this->agentId,
             'message' => $message->toArray()
             ]
@@ -83,7 +85,8 @@ class A2AProtocol
         try {
             $response = $this->httpClient->post($recipientUrl, $request);
             $this->logger->info(
-                'Message sent successfully', [
+                'Message sent successfully',
+                [
                 'recipient' => $recipientUrl,
                 'message_id' => $message->getMessageId()
                 ]
@@ -91,7 +94,8 @@ class A2AProtocol
             return $response;
         } catch (\Exception $e) {
             $this->logger->error(
-                'Failed to send message', [
+                'Failed to send message',
+                [
                 'recipient' => $recipientUrl,
                 'error' => $e->getMessage()
                 ]
@@ -108,32 +112,32 @@ class A2AProtocol
             $parsedRequest = $jsonRpc->parseRequest($request);
 
             switch ($parsedRequest['method']) {
-            case 'message/send':
-                return $this->handleMessage($parsedRequest['params'], $parsedRequest['id']);
-            case 'tasks/send':
-                return $this->handleSendTask($parsedRequest['params'], $parsedRequest['id']);
-            case 'tasks/get':
-                return $this->handleGetTask($parsedRequest['params'], $parsedRequest['id']);
-            case 'tasks/cancel':
-                return $this->handleCancelTask($parsedRequest['params'], $parsedRequest['id']);
-            case 'tasks/resubscribe':
-                return $this->handleResubscribeTask($parsedRequest['params'], $parsedRequest['id']);
-            case 'tasks/pushNotificationConfig/set':
-                return $this->handleSetPushConfig($parsedRequest['params'], $parsedRequest['id']);
-            case 'tasks/pushNotificationConfig/get':
-                return $this->handleGetPushConfig($parsedRequest['params'], $parsedRequest['id']);
-            case 'tasks/pushNotificationConfig/list':
-                return $this->handleListPushConfig($parsedRequest['params'], $parsedRequest['id']);
-            case 'tasks/pushNotificationConfig/delete':
-                return $this->handleDeletePushConfig($parsedRequest['params'], $parsedRequest['id']);
-            case 'get_agent_card':
-                return $jsonRpc->createResponse($parsedRequest['id'], $this->agentCard->toArray());
-            case 'agent/getAuthenticatedExtendedCard':
-                return $this->handleGetAuthenticatedExtendedCard($parsedRequest['id']);
-            case 'ping':
-                return $jsonRpc->createResponse($parsedRequest['id'], ['status' => 'pong']);
-            default:
-                throw new InvalidRequestException('Unknown method: ' . $parsedRequest['method']);
+                case 'message/send':
+                    return $this->handleMessage($parsedRequest['params'], $parsedRequest['id']);
+                case 'tasks/send':
+                    return $this->handleSendTask($parsedRequest['params'], $parsedRequest['id']);
+                case 'tasks/get':
+                    return $this->handleGetTask($parsedRequest['params'], $parsedRequest['id']);
+                case 'tasks/cancel':
+                    return $this->handleCancelTask($parsedRequest['params'], $parsedRequest['id']);
+                case 'tasks/resubscribe':
+                    return $this->handleResubscribeTask($parsedRequest['params'], $parsedRequest['id']);
+                case 'tasks/pushNotificationConfig/set':
+                    return $this->handleSetPushConfig($parsedRequest['params'], $parsedRequest['id']);
+                case 'tasks/pushNotificationConfig/get':
+                    return $this->handleGetPushConfig($parsedRequest['params'], $parsedRequest['id']);
+                case 'tasks/pushNotificationConfig/list':
+                    return $this->handleListPushConfig($parsedRequest['params'], $parsedRequest['id']);
+                case 'tasks/pushNotificationConfig/delete':
+                    return $this->handleDeletePushConfig($parsedRequest['params'], $parsedRequest['id']);
+                case 'get_agent_card':
+                    return $jsonRpc->createResponse($parsedRequest['id'], $this->agentCard->toArray());
+                case 'agent/getAuthenticatedExtendedCard':
+                    return $this->handleGetAuthenticatedExtendedCard($parsedRequest['id']);
+                case 'ping':
+                    return $jsonRpc->createResponse($parsedRequest['id'], ['status' => 'pong']);
+                default:
+                    throw new InvalidRequestException('Unknown method: ' . $parsedRequest['method']);
             }
         } catch (\Exception $e) {
             $this->logger->error('Request handling failed', ['error' => $e->getMessage()]);
@@ -165,7 +169,8 @@ class A2AProtocol
         $fromAgent = $params['from'] ?? 'unknown';
 
         $this->logger->info(
-            'Message received', [
+            'Message received',
+            [
             'from' => $fromAgent,
             'message_id' => $message->getMessageId(),
             'content_type' => 'text'
@@ -191,7 +196,8 @@ class A2AProtocol
                     return $handler->handle($message, $fromAgent);
                 } catch (\Exception $e) {
                     $this->logger->error(
-                        'Message handler failed', [
+                        'Message handler failed',
+                        [
                         'handler' => get_class($handler),
                         'error' => $e->getMessage(),
                         'message_id' => $message->getMessageId()
@@ -362,7 +368,8 @@ class A2AProtocol
             return $jsonRpc->createResponse($requestId, $task->toArray());
         } catch (\Exception $e) {
             $this->logger->error(
-                'Failed to send task', [
+                'Failed to send task',
+                [
                 'task_id' => $taskId,
                 'error' => $e->getMessage()
                 ]

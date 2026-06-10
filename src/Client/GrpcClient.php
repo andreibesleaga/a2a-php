@@ -14,7 +14,7 @@ use Psr\Log\NullLogger;
 
 /**
  * gRPC client for A2A protocol communication
- * 
+ *
  * This client provides gRPC transport support for the A2A protocol,
  * enabling high-performance communication between agents.
  */
@@ -47,7 +47,8 @@ class GrpcClient
         // Note: In a real implementation, you would create the actual gRPC client here
         // using the generated protobuf classes from the A2A protocol definition
         $this->logger->info(
-            'gRPC client initialized', [
+            'gRPC client initialized',
+            [
             'server_address' => $this->serverAddress,
             'agent' => $this->agentCard->getName()
             ]
@@ -60,11 +61,12 @@ class GrpcClient
     public function sendMessage(Message $message): array
     {
         $this->ensureConnected();
-        
+
         // In a real implementation, this would use generated protobuf classes
         // For now, we'll simulate the call structure
         $this->logger->info(
-            'Sending message via gRPC', [
+            'Sending message via gRPC',
+            [
             'message_id' => $message->getMessageId(),
             'from' => $this->agentCard->getName()
             ]
@@ -79,9 +81,9 @@ class GrpcClient
     public function getAgentCard(): AgentCard
     {
         $this->ensureConnected();
-        
+
         $this->logger->info('Getting agent card via gRPC');
-        
+
         throw new A2AException('gRPC implementation requires protobuf message definitions. See documentation for setup.');
     }
 
@@ -91,15 +93,16 @@ class GrpcClient
     public function ping(): bool
     {
         $this->ensureConnected();
-        
+
         try {
             $this->logger->info('Pinging server via gRPC');
-            
+
             // In a real implementation, this would call the gRPC ping method
             return true;
         } catch (\Exception $e) {
             $this->logger->warning(
-                'gRPC ping failed', [
+                'gRPC ping failed',
+                [
                 'error' => $e->getMessage()
                 ]
             );
@@ -113,9 +116,10 @@ class GrpcClient
     public function getTask(string $taskId, ?int $historyLength = null): ?Task
     {
         $this->ensureConnected();
-        
+
         $this->logger->info(
-            'Getting task via gRPC', [
+            'Getting task via gRPC',
+            [
             'task_id' => $taskId,
             'history_length' => $historyLength
             ]
@@ -130,9 +134,10 @@ class GrpcClient
     public function cancelTask(string $taskId): bool
     {
         $this->ensureConnected();
-        
+
         $this->logger->info(
-            'Cancelling task via gRPC', [
+            'Cancelling task via gRPC',
+            [
             'task_id' => $taskId
             ]
         );
@@ -146,9 +151,10 @@ class GrpcClient
     public function setPushNotificationConfig(string $taskId, PushNotificationConfig $config): bool
     {
         $this->ensureConnected();
-        
+
         $this->logger->info(
-            'Setting push notification config via gRPC', [
+            'Setting push notification config via gRPC',
+            [
             'task_id' => $taskId
             ]
         );
@@ -162,9 +168,10 @@ class GrpcClient
     public function getPushNotificationConfig(string $taskId): ?PushNotificationConfig
     {
         $this->ensureConnected();
-        
+
         $this->logger->info(
-            'Getting push notification config via gRPC', [
+            'Getting push notification config via gRPC',
+            [
             'task_id' => $taskId
             ]
         );
@@ -178,7 +185,7 @@ class GrpcClient
     public function listPushNotificationConfigs(): array
     {
         $this->ensureConnected();
-        
+
         $this->logger->info('Listing push notification configs via gRPC');
 
         throw new A2AException('gRPC implementation requires protobuf message definitions. See documentation for setup.');
@@ -190,9 +197,10 @@ class GrpcClient
     public function deletePushNotificationConfig(string $taskId): bool
     {
         $this->ensureConnected();
-        
+
         $this->logger->info(
-            'Deleting push notification config via gRPC', [
+            'Deleting push notification config via gRPC',
+            [
             'task_id' => $taskId
             ]
         );
@@ -206,9 +214,10 @@ class GrpcClient
     public function resubscribeTask(string $taskId): bool
     {
         $this->ensureConnected();
-        
+
         $this->logger->info(
-            'Resubscribing to task via gRPC', [
+            'Resubscribing to task via gRPC',
+            [
             'task_id' => $taskId
             ]
         );

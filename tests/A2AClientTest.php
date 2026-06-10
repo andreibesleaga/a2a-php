@@ -221,7 +221,8 @@ class A2AClientTest extends TestCase
             ->expects($this->once())
             ->method('post')
             ->with(
-                '', $this->callback(
+                '',
+                $this->callback(
                     function ($request) {
                         return $request['method'] === 'tasks/send' &&
                         $request['params']['id'] === 'task-123' &&

@@ -30,7 +30,7 @@ class EdgeCaseTest extends TestCase
     {
         $data = ['messageId' => 'test-123', 'role' => 'user', 'parts' => []];
         $message = Message::fromArray($data);
-        
+
         $this->assertEquals('test-123', $message->getMessageId());
         $this->assertEquals('user', $message->getRole());
         $this->assertNotEmpty($message->getMessageId());
@@ -39,7 +39,7 @@ class EdgeCaseTest extends TestCase
     public function testAgentCardWithMinimalData(): void
     {
         $capabilities = new AgentCapabilities();
-        
+
         $card = new AgentCard(
             'Minimal Agent',
             'Description',
@@ -50,7 +50,7 @@ class EdgeCaseTest extends TestCase
             [],
             []
         );
-        
+
         $this->assertEquals('Minimal Agent', $card->getName());
         $this->assertEquals('Description', $card->getDescription());
         $this->assertEquals('1.0.0', $card->getVersion());
@@ -60,14 +60,14 @@ class EdgeCaseTest extends TestCase
     {
         $status = new \A2A\Models\TaskStatus(\A2A\Models\TaskState::SUBMITTED);
         $task = new \A2A\Models\Task('task-1', 'ctx-1', $status);
-        
+
         $states = [
             \A2A\Models\TaskState::SUBMITTED,
             \A2A\Models\TaskState::WORKING,
             \A2A\Models\TaskState::INPUT_REQUIRED,
             \A2A\Models\TaskState::COMPLETED
         ];
-        
+
         foreach ($states as $state) {
             $task->setStatus(new \A2A\Models\TaskStatus($state));
             $this->assertEquals($state, $task->getStatus()->getState());
@@ -78,7 +78,7 @@ class EdgeCaseTest extends TestCase
     {
         $jsonRpc = new JsonRpc();
         $request = $jsonRpc->createRequest('test_method', [], null);
-        
+
         $this->assertEquals('2.0', $request['jsonrpc']);
         $this->assertEquals('test_method', $request['method']);
         self::assertArrayNotHasKey('id', $request);
@@ -88,7 +88,7 @@ class EdgeCaseTest extends TestCase
     {
         $jsonRpc = new JsonRpc();
         $error = $jsonRpc->createError(1, 'Test error', -32000);
-        
+
         $this->assertEquals('2.0', $error['jsonrpc']);
         $this->assertEquals(1, $error['id']);
         $this->assertEquals('Test error', $error['error']['message']);
@@ -99,7 +99,7 @@ class EdgeCaseTest extends TestCase
     {
         $largeContent = str_repeat('A', 10000);
         $message = Message::createUserMessage($largeContent);
-        
+
         $parts = $message->getParts();
         $this->assertInstanceOf(TextPart::class, $parts[0]);
         $this->assertEquals($largeContent, $parts[0]->getText());
@@ -110,11 +110,11 @@ class EdgeCaseTest extends TestCase
     {
         $specialContent = "Hello 世界! 🌍 Special chars: àáâãäå";
         $message = Message::createUserMessage($specialContent);
-        
+
         $parts = $message->getParts();
         $this->assertInstanceOf(TextPart::class, $parts[0]);
         $this->assertEquals($specialContent, $parts[0]->getText());
-        
+
         $array = $message->toArray();
         $reconstructed = Message::fromArray($array);
         $reconstructedParts = $reconstructed->getParts();
@@ -129,7 +129,7 @@ class EdgeCaseTest extends TestCase
             $status = new \A2A\Models\TaskStatus(\A2A\Models\TaskState::SUBMITTED);
             $tasks[] = new \A2A\Models\Task("task-$i", "ctx-$i", $status);
         }
-        
+
         $ids = array_map(fn($task) => $task->getId(), $tasks);
         $this->assertEquals(100, count(array_unique($ids)));
     }

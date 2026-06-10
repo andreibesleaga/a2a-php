@@ -147,7 +147,8 @@ class MessageSendHandler implements RequestHandlerInterface
         $this->pushNotifier->notify($task);
 
         $this->logger->info(
-            'Message processed', [
+            'Message processed',
+            [
             'from' => $fromAgent,
             'message_id' => $message->getMessageId(),
             'task_id' => $task->getId(),

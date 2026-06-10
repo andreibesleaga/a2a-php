@@ -31,7 +31,8 @@ class HttpClient
     {
         try {
             $response = $this->client->post(
-                $url, [
+                $url,
+                [
                 'json' => $data
                 ]
             );
@@ -62,7 +63,8 @@ class HttpClient
     {
         try {
             $response = $this->client->post(
-                $url, [
+                $url,
+                [
                 'json' => $data,
                 'headers' => $headers,
                 'timeout' => min($timeout, $this->timeout)
