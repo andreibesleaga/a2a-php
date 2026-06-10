@@ -15,9 +15,13 @@
         A2AProtocol_v030 is the published v0.3.0 entry-point class name.
         Renaming it would break the public API, so the PascalCase sniff is
         suppressed for this one legacy name (see docs/UPGRADE-1.0.md for the
-        rename planned in the next major version).
+        rename planned in the next major version). The error code is
+        NotCamelCaps in PHPCS 3.x and NotPascalCase in PHPCS 4.x.
     -->
     <rule ref="Squiz.Classes.ValidClassName.NotCamelCaps">
+        <exclude-pattern>src/A2AProtocol_v030.php</exclude-pattern>
+    </rule>
+    <rule ref="Squiz.Classes.ValidClassName.NotPascalCase">
         <exclude-pattern>src/A2AProtocol_v030.php</exclude-pattern>
     </rule>
 </ruleset>
