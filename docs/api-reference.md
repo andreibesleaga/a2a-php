@@ -119,7 +119,7 @@ Tasks are returned by `message/send`, `tasks/send`, `tasks/get`, and SSE resubsc
 | `kind` | string | Always `task`. |
 | `id` | string | Task identifier. |
 | `contextId` | string | Context identifier associated with the task. |
-| `status` | object | Contains `state` (submitted, working, completed, failed, cancelled) and `timestamp`. |
+| `status` | object | Contains `state` (submitted, working, input-required, completed, failed, canceled, rejected, auth-required) and `timestamp`. |
 | `history` | array | Contains message objects; returned on demand or during resubscribe. |
 | `artifacts` | array | Optional; contains artifact descriptors created by handlers. |
 | `metadata` | object | Optional; includes handler-provided metadata. |
@@ -328,11 +328,11 @@ Cancels a running task by ID.
 
 #### Response (tasks/cancel)
 
-On the first successful cancellation the server returns the task snapshot with status `cancelled`.
+On the first successful cancellation the server returns the task snapshot with status `canceled`.
 
 #### Error handling (tasks/cancel)
 
-- `-32606` (`INVALID_AGENT_RESPONSE`) when `id` is missing.
+- `-32006` (`INVALID_AGENT_RESPONSE`) when `id` is missing.
 - `-32002` when the task is already completed or has been cancelled previously.
 - `-32001` when the task does not exist.
 
@@ -365,6 +365,14 @@ Replays stored task history and emits the latest status over an SSE stream. Usef
 
 Stores a push notification configuration for the given task.
 
+Once stored, the server delivers the task snapshot (a plain v0.3 `Task`
+object with `kind: "task"`) to the configured `url` via HTTP POST on every
+subsequent task state change. The request carries
+`X-A2A-Notification-Token: <token>` when `token` is configured and
+`Authorization: <scheme> <credentials>` when `authentication` is
+configured. Delivery is best-effort: failures are logged server-side and
+never affect the JSON-RPC response.
+
 #### Parameters (tasks/pushNotificationConfig/set)
 
 | Name | Type | Required | Notes |
@@ -390,7 +398,8 @@ Stores a push notification configuration for the given task.
 
 #### Error handling (tasks/pushNotificationConfig/set)
 
-- `-32602` when parameters are missing or malformed.
+- `-32602` when parameters are missing or malformed (including a missing/empty `url`).
+- `-32602` when `A2A_WEBHOOK_ALLOWLIST` is set and the webhook URL host is not in the allowlist.
 - `-32603` when persistence fails.
 
 ---

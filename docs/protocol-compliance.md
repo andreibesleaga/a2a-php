@@ -1,15 +1,23 @@
 # A2A Protocol v0.3.0 Compliance Report
 
-This document summarises how the PHP reference implementation satisfies the A2A Test Compatibility Kit (TCK). All results were generated with `python3 ../a2a-tck/run_tck.py --sut-url http://localhost:8081 --category all` using the bundled `examples/complete_a2a_server.php` implementation.
+This document summarises how the PHP reference implementation satisfies the A2A Test Compatibility Kit (TCK). All results were generated with `python3 ../a2a-tck/run_tck.py --sut-url http://localhost:8081 --category all` using the bundled `examples/complete_a2a_server.php` implementation and the TCK pinned at **`0.3.0.beta5`** (latest v0.3.0-era release; see `docs/tck-upgrade.md`).
 
 ## Results overview
 
 | Category   | Status            | Notes |
 | ---------- | ----------------- | ----- |
-| Mandatory  | 25 / 25 passing   | Covers transport, agent discovery, task basics, and error responses. |
-| Capability | 14 / 14 passing   | Exercises streaming, push notifications, contextual messaging, and authenticated cards. |
-| Quality    | 12 / 12 passing   | Validates robustness, error semantics, and idempotency. |
-| Features   | 15 / 15 passing   | Confirms optional behaviours such as task history replay and artifact handling. |
+| Mandatory  | 32 passed, 0 failed, 1 skipped | Covers transport, agent discovery, task basics, and error responses. |
+| Capability | 39 passed, 0 failed, 1 xfail, 38 skipped | Exercises streaming, push notifications (including real webhook delivery), contextual messaging, and authenticated cards. Skips are undeclared optional capabilities. Capability honesty: "excellent". |
+| Transport equivalence | 16 skipped | Single JSON-RPC transport (see ADR 0001). |
+| Quality    | 14 passed, 0 failed | Validates robustness, error semantics, and idempotency. |
+| Features   | 15 passed, 0 failed, 1 skipped | Confirms optional behaviours such as task history replay and artifact handling. |
+
+> Historical note: earlier revisions of this document reported 66/66
+> against a 2025 TCK snapshot. The kit has since grown — notably with
+> push-notification *delivery* tests (TCK PR #178) — and the
+> implementation now passes the enlarged pinned suite in full, including
+> actual webhook delivery with `X-A2A-Notification-Token` and
+> `Authorization` headers and a plain v0.3 Task payload.
 
 ## Mandatory suite highlights
 

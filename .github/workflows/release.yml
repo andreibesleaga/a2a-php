@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    tags: [ "v*" ]
+
+permissions:
+  contents: write
+
+jobs:
+  sbom:
+    name: Build and attach SBOM
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
+
+      - name: Install dependencies (no dev)
+        run: composer install --prefer-dist --no-progress --no-dev
+
+      - name: Generate CycloneDX SBOM
+        run: |
+          composer global config --no-plugins allow-plugins.cyclonedx/cyclonedx-php-composer true
+          composer global require cyclonedx/cyclonedx-php-composer
+          composer CycloneDX:make-sbom --output-format=JSON --output-file=sbom.json --omit=dev
+
+      - name: Attach SBOM to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: sbom.json
+          generate_release_notes: true

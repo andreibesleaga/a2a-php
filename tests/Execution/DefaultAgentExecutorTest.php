@@ -17,19 +17,20 @@ class DefaultAgentExecutorTest extends TestCase
     {
         $executor = new DefaultAgentExecutor();
         $eventBus = new ExecutionEventBusImpl();
-        
+
         $message = Message::createUserMessage('Test message');
         $context = new RequestContext($message, 'task-123', 'ctx-123');
-        
+
         $events = [];
         $eventBus->subscribe(
-            'task-123', function ($event) use (&$events) {
+            'task-123',
+            function ($event) use (&$events) {
                 $events[] = $event;
             }
         );
-        
+
         $executor->execute($context, $eventBus);
-        
+
         $this->assertGreaterThan(0, count($events));
         $this->assertInstanceOf(TaskStatusUpdateEvent::class, $events[1]);
     }
@@ -38,9 +39,9 @@ class DefaultAgentExecutorTest extends TestCase
     {
         $executor = new DefaultAgentExecutor();
         $eventBus = new ExecutionEventBusImpl();
-        
+
         $executor->cancelTask('task-123', $eventBus);
-        
+
         // Test that cancellation is recorded
         $this->assertTrue(true); // Basic test that method executes
     }

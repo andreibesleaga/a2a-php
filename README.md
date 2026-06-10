@@ -13,20 +13,37 @@ php -S localhost:8081 examples/complete_a2a_server.php
 
 # (Optional) expose an authenticated extended card
 export A2A_DEMO_AUTH_TOKEN="example-secret"
+
+# (Optional, recommended in production) restrict push webhook hosts
+export A2A_WEBHOOK_ALLOWLIST="hooks.example.com,callbacks.example.com"
 ```
 
 The server exposes the JSON-RPC endpoint at `http://localhost:8081/` and publishes the agent card at `http://localhost:8081/.well-known/agent-card.json`.
 
 ## Compliance status
 
-| Category   | Result |
-| ---------- | ------ |
-| Mandatory  | 25 / 25 tests passing |
-| Capability | 14 / 14 tests passing |
-| Quality    | 12 / 12 tests passing |
-| Features   | 15 / 15 tests passing |
+Verified against the official [A2A Test Compatibility Kit](https://github.com/a2aproject/a2a-tck)
+pinned at **`0.3.0.beta5`** (the latest v0.3.0-era TCK release) — **every
+category passes**:
 
-Results are produced with the official [A2A Test Compatibility Kit](https://github.com/a2aproject/a2a-tck) using `python3 run_tck.py --category all`.
+| Category | Result |
+| -------- | ------ |
+| Mandatory | 32 passed, 0 failed (1 skipped: not applicable) |
+| Capability | 39 passed, 0 failed — capability honesty "excellent" |
+| Transport equivalence | skipped (single JSON-RPC transport) |
+| Quality | 14 passed, 0 failed |
+| Features | 15 passed, 0 failed (1 skipped) |
+
+The TCK is re-run on every pull request by CI (`.github/workflows/ci.yml`);
+the pin and upgrade procedure are documented in `docs/tck-upgrade.md`.
+
+## Configuration
+
+| Env var | Default | Effect |
+| ------- | ------- | ------ |
+| `A2A_DEMO_AUTH_TOKEN` | unset | When set, `agent/getAuthenticatedExtendedCard` requires a matching `Authorization: Bearer` or `X-API-Key` credential. Demo-grade gate only. |
+| `A2A_WEBHOOK_ALLOWLIST` | unset (allow all) | Comma-separated hostnames allowed as push notification webhook targets. Enforced when configs are stored **and** at delivery time (SSRF guard). |
+| `A2A_MODE` / `A2A_FORCE_HTTPS` | unset | Used only by the demo `https_a2a_server.php` (see `A2A_HTTPS_IMPLEMENTATION.md`). |
 
 ## Implementation highlights
 
@@ -63,19 +80,35 @@ The reference server streams events from the same JSON-RPC endpoint when the `me
 ## Testing
 
 ```bash
-# Start the server in one terminal
-php -S localhost:8081 examples/complete_a2a_server.php
-
-# Run the TCK from the sibling repository
-cd ../a2a-tck
-python3 run_tck.py --sut-url http://localhost:8081 --category all
-
-# Run the PHPUnit suite from the project root
-cd ../a2a-php
+# Full PHPUnit suite (unit + integration + e2e; the e2e suite boots the
+# reference server and a webhook receiver on ephemeral ports by itself)
 composer test
+
+# Static analysis and coding standard
+composer analyse        # PHPStan level 8 (baseline-ratcheted)
+vendor/bin/phpcs -n     # PSR-12
+
+# Official TCK, pinned version (see docs/tck-upgrade.md)
+git clone --branch 0.3.0.beta5 https://github.com/a2aproject/a2a-tck.git ../a2a-tck
+cd ../a2a-tck && pip install -e . && cd -
+php -S localhost:8081 examples/complete_a2a_server.php &
+python3 ../a2a-tck/run_tck.py --sut-url http://localhost:8081 --category all
 ```
 
-The TCK run exercises JSON-RPC validation, streaming behaviour, push notification management, and task-state transitions. PHPUnit covers unit and integration scenarios for the PHP components.
+The TCK run exercises JSON-RPC validation, streaming behaviour, push notification management and **delivery**, and task-state transitions. PHPUnit covers golden-path, edge-case, error-path and end-to-end scenarios for the PHP components.
+
+## Manual review guide
+
+For reviewing a change or release by hand:
+
+| Step | What to check | Where | Expected outcome |
+| ---- | ------------- | ----- | ---------------- |
+| Config | `composer validate --strict`; env vars in the Configuration table above | `composer.json`, this README | Valid manifest; defaults preserve previous behavior |
+| Run | `php -S localhost:8081 examples/complete_a2a_server.php`, then `curl -s -X POST http://localhost:8081/ -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","method":"ping","id":1}'` | `examples/` | `{"jsonrpc":"2.0","id":1,"result":{"status":"pong"}}` |
+| Examples | Run each script under `examples/` with `php examples/<name>.php` (servers run under `php -S`) | `examples/` | No PHP warnings/errors in output |
+| Tests | `composer test`, `composer analyse`, `vendor/bin/phpcs -n` | `tests/`, `phpstan.neon.dist`, `phpcs.xml.dist` | All green, no new PHPStan baseline entries |
+| Compliance | TCK procedure above | `docs/tck-upgrade.md` | All categories pass at the pinned TCK ref |
+| Logs | Inspect `a2a_server.log` produced by the reference server | repo root | Structured log lines, no stack traces leaked to clients |
 
 ## Documentation
 
@@ -84,16 +117,19 @@ Additional documentation lives in the `docs/` directory:
 - `docs/README.md` – high-level overview and architecture notes.
 - `docs/api-reference.md` – detailed method and data model reference.
 - `docs/protocol-compliance.md` – TCK summary and behavioural guarantees.
+- `docs/tck-upgrade.md` – TCK version pin and upgrade procedure.
+- `docs/UPGRADE-1.0.md` – upgrade path to A2A protocol v1.0 (planning doc).
+- `docs/adr/` – architecture decision records.
 
 For HTTPS deployment details, see `A2A_HTTPS_IMPLEMENTATION.md` and `HTTPS_SUMMARY.md`.
+Security policy: `SECURITY.md`. Release history: `CHANGELOG.md`.
 
 ## Contributing
 
-1. Fork the repository and create a feature branch.
-2. Install dependencies with `composer install`.
-3. Add unit tests or TCK scenarios covering the change.
-4. Run `composer test` and (optionally) `python3 ../a2a-tck/run_tck.py`.
-5. Open a pull request describing the change and validation steps.
+See [CONTRIBUTING.md](CONTRIBUTING.md). In short: fork, branch,
+`composer install`, add golden-path/edge/error tests for the change, keep
+`composer test`, `composer analyse`, `vendor/bin/phpcs -n` and the pinned
+TCK green, then open a PR describing the validation steps.
 
 ## License
 

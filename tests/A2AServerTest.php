@@ -122,15 +122,15 @@ class A2AServerTest extends TestCase
 
         $response = $this->server->handleRequest($request);
 
-    $this->assertEquals('2.0', $response['jsonrpc']);
-    $this->assertEquals(3, $response['id']);
+        $this->assertEquals('2.0', $response['jsonrpc']);
+        $this->assertEquals(3, $response['id']);
 
-    $result = $response['result'];
-    $this->assertSame('task', $result['kind']);
-    $this->assertArrayHasKey('id', $result);
-    $this->assertEquals('completed', $result['status']['state']);
-    $this->assertSame('message/send', $result['metadata']['source']);
-    $this->assertNotEmpty($result['history']);
+        $result = $response['result'];
+        $this->assertSame('task', $result['kind']);
+        $this->assertArrayHasKey('id', $result);
+        $this->assertEquals('completed', $result['status']['state']);
+        $this->assertSame('message/send', $result['metadata']['source']);
+        $this->assertNotEmpty($result['history']);
         $this->assertTrue($this->logger->hasRecordThatContains('info', 'Message processed'));
             $this->assertTrue($result['metadata']['handled']);
             $this->assertSame('Hello Server', $result['metadata']['echo']);
@@ -180,9 +180,9 @@ class A2AServerTest extends TestCase
 
         $response = $this->server->handleRequest($request);
 
-    $result = $response['result'];
-    $this->assertEquals('submitted', $result['status']['state']);
-    $this->assertSame('message/send', $result['metadata']['source']);
+        $result = $response['result'];
+        $this->assertEquals('submitted', $result['status']['state']);
+        $this->assertSame('message/send', $result['metadata']['source']);
         $this->assertTrue($this->logger->hasRecordThatContains('error', 'Message handler failed'));
     }
 
@@ -250,9 +250,9 @@ class A2AServerTest extends TestCase
 
         $response = $this->server->handleRequest($request);
 
-    $result = $response['result'];
-    $this->assertEquals('completed', $result['status']['state']);
-    $this->assertSame('handler1', $result['metadata']['handled_by']);
+        $result = $response['result'];
+        $this->assertEquals('completed', $result['status']['state']);
+        $this->assertSame('handler1', $result['metadata']['handled_by']);
     }
 
     public function testHandleTasksSendRequest(): void

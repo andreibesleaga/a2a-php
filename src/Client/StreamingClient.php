@@ -26,9 +26,11 @@ class StreamingClient
     {
         $jsonRpc = new JsonRpc();
         $request = $jsonRpc->createRequest(
-            'message/stream', [
+            'message/stream',
+            [
             'message' => $message->toArray()
-            ], 1
+            ],
+            1
         );
 
         $this->streamRequest($agentUrl, $request, $eventHandler);
@@ -38,9 +40,11 @@ class StreamingClient
     {
         $jsonRpc = new JsonRpc();
         $request = $jsonRpc->createRequest(
-            'tasks/resubscribe', [
+            'tasks/resubscribe',
+            [
             'id' => $taskId
-            ], 1
+            ],
+            1
         );
 
         $this->streamRequest($agentUrl, $request, $eventHandler);

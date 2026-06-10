@@ -22,7 +22,6 @@ use A2A\Utils\HttpClient;
 use A2A\Events\ExecutionEventBusImpl;
 use A2A\Execution\DefaultAgentExecutor;
 use A2A\Models\RequestContext;
-use A2A\Client\StreamingClient;
 
 echo "=== Complete A2A Agent Communication Example ===\n\n";
 
@@ -124,28 +123,41 @@ $complexMessage->setMetadata(['priority' => 'high', 'deadline' => '2024-12-31'])
 
 // Add different part types
 $complexMessage->addPart(new DataPart(['dataset' => 'user_analytics', 'records' => 1000]));
-$fileWithBytes = new FileWithBytes(base64_encode('sample file content'));
-$fileWithBytes->setName('sample.txt');
-$fileWithBytes->setMimeType('text/plain');
+$fileWithBytes = new FileWithBytes(base64_encode('sample file content'), 'sample.txt', 'text/plain');
 $complexMessage->addPart(new FilePart($fileWithBytes));
 
 echo "Agent A sending complex message to Agent B...\n";
 echo "Message parts: " . count($complexMessage->getParts()) . "\n";
 
 // Add message handler to Agent B
-$taskCreated = null;
-$serverB->addMessageHandler(function ($message, $fromAgent) use (&$taskCreated, $protocolB) {
-    echo "Agent B received message from {$fromAgent}\n";
-    echo "Message content: {$message->getContent()}\n";
-    echo "Message parts: " . count($message->getParts()) . "\n";
+$handlerB = new class($protocolB) implements \A2A\Interfaces\MessageHandlerInterface {
+    public ?Task $taskCreated = null;
 
-    // Create a task in response
-    $taskCreated = $protocolB->getTaskManager()->createTask(
-        'Process received data',
-        ['source_agent' => $fromAgent, 'message_id' => $message->getMessageId()]
-    );
-    echo "Agent B created task: {$taskCreated->getId()}\n";
-});
+    public function __construct(private A2AProtocol_v030 $protocol)
+    {
+    }
+
+    public function canHandle(Message $message): bool
+    {
+        return true;
+    }
+
+    public function handle(Message $message, string $fromAgent): array
+    {
+        echo "Agent B received message from {$fromAgent}\n";
+        echo "Message parts: " . count($message->getParts()) . "\n";
+
+        // Create a task in response
+        $this->taskCreated = $this->protocol->getTaskManager()->createTask(
+            'Process received data',
+            ['source_agent' => $fromAgent, 'message_id' => $message->getMessageId()]
+        );
+        echo "Agent B created task: {$this->taskCreated->getId()}\n";
+
+        return ['status' => 'completed'];
+    }
+};
+$serverB->addMessageHandler($handlerB);
 
 $response = $clientA->sendMessage('https://agent-b.example.com', $complexMessage);
 echo "Message sent successfully\n\n";
@@ -166,7 +178,7 @@ echo "Agent A getting task from Agent B...\n";
 $retrievedTask = $protocolB->getTaskManager()->getTask($testTask->getId());
 if ($retrievedTask) {
     echo "Retrieved task: {$retrievedTask->getId()}\n";
-    echo "Task status: {$retrievedTask->getStatus()->value}\n";
+    echo "Task status: {$retrievedTask->getStatus()->getState()->value}\n";
     echo "Task context ID: {$retrievedTask->getContextId()}\n";
 } else {
     echo "Failed to retrieve task\n";
@@ -192,11 +204,11 @@ echo "=== Testing Push Notification Configuration ===\n";
 $pushConfig = new PushNotificationConfig('https://agent-a.example.com/webhook', 'config-001');
 
 echo "Setting push notification config...\n";
-$setConfigResult = $clientA->setPushNotificationConfig('config-001', $pushConfig);
+$setConfigResult = $clientA->setPushNotificationConfig($testTask->getId(), $pushConfig);
 echo "Set config result: " . ($setConfigResult ? 'SUCCESS' : 'FAILED') . "\n";
 
 echo "Getting push notification config...\n";
-$getConfigResult = $clientA->getPushNotificationConfig('config-001');
+$getConfigResult = $clientA->getPushNotificationConfig($testTask->getId());
 echo "Get config result: " . ($getConfigResult !== null ? 'SUCCESS' : 'FAILED') . "\n";
 
 echo "Listing push notification configs...\n";
@@ -204,7 +216,7 @@ $listConfigsResult = $clientA->listPushNotificationConfigs();
 echo "Listed configs: " . count($listConfigsResult) . "\n";
 
 echo "Deleting push notification config...\n";
-$deleteConfigResult = $clientA->deletePushNotificationConfig('config-001');
+$deleteConfigResult = $clientA->deletePushNotificationConfig($testTask->getId());
 echo "Delete config result: " . ($deleteConfigResult ? 'SUCCESS' : 'FAILED') . "\n\n";
 
 // 11. Test Protocol Method: tasks/resubscribe
@@ -215,12 +227,13 @@ echo "Resubscribe result: " . ($resubscribeResult ? 'SUCCESS' : 'FAILED') . "\n\
 
 // 12. Test Streaming Communication
 echo "=== Testing Streaming Communication ===\n";
-$streamingClient = new StreamingClient($agentA);
 $eventBus = new ExecutionEventBusImpl();
 $executor = new DefaultAgentExecutor();
 
 echo "Setting up streaming between agents...\n";
-$streamMessage = Message::createUserMessage('Start streaming task');
+// RequestContext (and the executor pipeline) work on the generic
+// A2A\Models\Message, not the v030 transport model.
+$streamMessage = \A2A\Models\Message::createUserMessage('Start streaming task');
 $streamMessage->setContextId('stream-ctx-001');
 $streamMessage->setTaskId('stream-task-001');
 
@@ -252,7 +265,7 @@ echo " Messages: kind='message', messageId, role, parts " . ($messageValidation 
 $taskValidation = $testTask &&
     !empty($testTask->getId()) &&
     !empty($testTask->getContextId()) &&
-    $testTask->getStatus() instanceof TaskState;
+    $testTask->getStatus() instanceof TaskStatus;
 echo " Tasks: kind='task', id, contextId, status " . ($taskValidation ? 'VALID' : 'INVALID') . "\n";
 
 // Count implemented part types

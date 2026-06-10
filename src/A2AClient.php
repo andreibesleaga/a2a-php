@@ -33,16 +33,19 @@ class A2AClient
     {
         $jsonRpc = new JsonRpc();
         $request = $jsonRpc->createRequest(
-            'message/send', [
+            'message/send',
+            [
             'from' => $this->agentCard->getName(),
             'message' => $message->toArray()
-            ], 1
+            ],
+            1
         );
 
         try {
             $response = $this->httpClient->post($agentUrl, $request);
             $this->logger->info(
-                'Message sent', [
+                'Message sent',
+                [
                 'to' => $agentUrl,
                 'message_id' => $message->getMessageId()
                 ]
@@ -50,7 +53,8 @@ class A2AClient
             return $response;
         } catch (\Exception $e) {
             $this->logger->error(
-                'Failed to send message', [
+                'Failed to send message',
+                [
                 'to' => $agentUrl,
                 'error' => $e->getMessage()
                 ]
@@ -101,7 +105,8 @@ class A2AClient
             return isset($response['result']['status']) && $response['result']['status'] === 'pong';
         } catch (\Exception $e) {
             $this->logger->warning(
-                'Ping failed', [
+                'Ping failed',
+                [
                 'to' => $agentUrl,
                 'error' => $e->getMessage()
                 ]
@@ -127,7 +132,8 @@ class A2AClient
             return null;
         } catch (\Exception $e) {
             $this->logger->error(
-                'Failed to get task', [
+                'Failed to get task',
+                [
                 'task_id' => $taskId,
                 'error' => $e->getMessage()
                 ]
@@ -146,7 +152,8 @@ class A2AClient
             return isset($response['result']);
         } catch (\Exception $e) {
             $this->logger->error(
-                'Failed to cancel task', [
+                'Failed to cancel task',
+                [
                 'task_id' => $taskId,
                 'error' => $e->getMessage()
                 ]
@@ -173,7 +180,8 @@ class A2AClient
             return null;
         } catch (\Exception $e) {
             $this->logger->error(
-                'Failed to send task', [
+                'Failed to send task',
+                [
                 'task_id' => $taskId,
                 'error' => $e->getMessage()
                 ]
@@ -186,10 +194,12 @@ class A2AClient
     {
         $jsonRpc = new JsonRpc();
         $request = $jsonRpc->createRequest(
-            'tasks/pushNotificationConfig/set', [
+            'tasks/pushNotificationConfig/set',
+            [
             'taskId' => $taskId,
             'pushNotificationConfig' => $config->toArray()
-            ], 1
+            ],
+            1
         );
 
         try {
@@ -197,7 +207,8 @@ class A2AClient
             return isset($response['result']);
         } catch (\Exception $e) {
             $this->logger->error(
-                'Failed to set push notification config', [
+                'Failed to set push notification config',
+                [
                 'task_id' => $taskId,
                 'error' => $e->getMessage()
                 ]
@@ -219,7 +230,8 @@ class A2AClient
             return null;
         } catch (\Exception $e) {
             $this->logger->error(
-                'Failed to get push notification config', [
+                'Failed to get push notification config',
+                [
                 'task_id' => $taskId,
                 'error' => $e->getMessage()
                 ]
@@ -235,10 +247,17 @@ class A2AClient
 
         try {
             $response = $this->httpClient->post('', $request);
-            return $response['result']['configs'] ?? [];
+            // The reference server returns the config list directly in
+            // "result"; tolerate servers that wrap it as result.configs.
+            $result = $response['result'] ?? [];
+            if (is_array($result) && array_key_exists('configs', $result)) {
+                return is_array($result['configs']) ? $result['configs'] : [];
+            }
+            return is_array($result) ? $result : [];
         } catch (\Exception $e) {
             $this->logger->error(
-                'Failed to list push notification configs', [
+                'Failed to list push notification configs',
+                [
                 'error' => $e->getMessage()
                 ]
             );
@@ -253,10 +272,13 @@ class A2AClient
 
         try {
             $response = $this->httpClient->post('', $request);
-            return isset($response['result']);
+            // A successful delete returns "result": null, so isset() would
+            // misreport success as failure; check for key presence instead.
+            return array_key_exists('result', $response) && !isset($response['error']);
         } catch (\Exception $e) {
             $this->logger->error(
-                'Failed to delete push notification config', [
+                'Failed to delete push notification config',
+                [
                 'task_id' => $taskId,
                 'error' => $e->getMessage()
                 ]
@@ -275,7 +297,8 @@ class A2AClient
             return isset($response['result']);
         } catch (\Exception $e) {
             $this->logger->error(
-                'Failed to resubscribe task', [
+                'Failed to resubscribe task',
+                [
                 'task_id' => $taskId,
                 'error' => $e->getMessage()
                 ]

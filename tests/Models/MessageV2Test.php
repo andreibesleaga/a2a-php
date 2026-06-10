@@ -13,7 +13,7 @@ class MessageV2Test extends TestCase
     public function testCreateUserMessage(): void
     {
         $message = Message::createUserMessage('Hello World');
-        
+
         $this->assertEquals('user', $message->getRole());
         $this->assertEquals('message', $message->getKind());
         $this->assertNotEmpty($message->getMessageId());
@@ -27,7 +27,7 @@ class MessageV2Test extends TestCase
     public function testCreateAgentMessage(): void
     {
         $message = Message::createAgentMessage('Hello User');
-        
+
         $this->assertEquals('agent', $message->getRole());
         $this->assertEquals('message', $message->getKind());
 
@@ -41,7 +41,7 @@ class MessageV2Test extends TestCase
     {
         $message = Message::createUserMessage('Test');
         $array = $message->toArray();
-        
+
         $this->assertEquals('message', $array['kind']);
         $this->assertEquals('user', $array['role']);
         $this->assertArrayHasKey('messageId', $array);

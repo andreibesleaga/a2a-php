@@ -11,17 +11,16 @@ use Illuminate\Cache\FileStore;
 use Illuminate\Cache\ArrayStore;
 use Illuminate\Filesystem\Filesystem;
 
-
 /**
  * Laravel Cache-based storage for task and push notification persistence
  * Supports multiple drivers while maintaining the same API
- * 
+ *
  * Supported drivers:
  * - 'file': File-based storage (default)
  * - 'array': In-memory storage (for testing)
  * - 'redis': Redis storage (requires illuminate/redis)
  * - 'memcached': Memcached storage (requires memcached extension)
- * 
+ *
  * Usage examples:
  * new Storage(); // Uses file driver with default directory
  * new Storage('file', '/custom/path'); // File driver with custom path
@@ -184,20 +183,20 @@ class Storage
     private function createCacheRepository(string $driver, string $dataDir, array $config): Repository
     {
         switch ($driver) {
-        case 'file':
-            return $this->createFileStore($dataDir);
+            case 'file':
+                return $this->createFileStore($dataDir);
 
-        case 'array':
-            return $this->createArrayStore();
+            case 'array':
+                return $this->createArrayStore();
 
-        case 'redis':
-            return $this->createRedisStore($config);
+            case 'redis':
+                return $this->createRedisStore($config);
 
-        case 'memcached':
-            return $this->createMemcachedStore($config);
+            case 'memcached':
+                return $this->createMemcachedStore($config);
 
-        default:
-            throw new \InvalidArgumentException("Unsupported cache driver: {$driver}");
+            default:
+                throw new \InvalidArgumentException("Unsupported cache driver: {$driver}");
         }
     }
 
@@ -240,7 +239,8 @@ class Storage
             'host' => '127.0.0.1',
             'port' => 6379,
             'database' => 0,
-            ], $config
+            ],
+            $config
         );
 
         // Note: Redis support requires proper Laravel container setup

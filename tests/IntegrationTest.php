@@ -25,7 +25,7 @@ class IntegrationTest extends TestCase
         // Setup server
         $capabilities = new AgentCapabilities();
         $skill = new AgentSkill('test', 'Test', 'Test skill', ['test']);
-        
+
         $serverCard = new AgentCard(
             'Test Server',
             'Server description',
@@ -36,7 +36,7 @@ class IntegrationTest extends TestCase
             ['application/json'],
             [$skill]
         );
-        
+
         $protocol = new A2AProtocol_v030($serverCard);
         $server = new A2AServer($protocol);
 
@@ -77,9 +77,9 @@ class IntegrationTest extends TestCase
             ['application/json'],
             [$skill]
         );
-        
+
     /** @var HttpClient&\PHPUnit\Framework\MockObject\MockObject $mockHttpClient */
-    $mockHttpClient = $this->createMock(HttpClient::class);
+        $mockHttpClient = $this->createMock(HttpClient::class);
         $client = new A2AClient($clientCard, $mockHttpClient);
 
         // Test message flow
@@ -96,21 +96,21 @@ class IntegrationTest extends TestCase
 
         $response = $server->handleRequest($request);
 
-    $this->assertEquals('2.0', $response['jsonrpc']);
-    $this->assertEquals(1, $response['id']);
+        $this->assertEquals('2.0', $response['jsonrpc']);
+        $this->assertEquals(1, $response['id']);
 
-    $result = $response['result'];
-    $this->assertSame('task', $result['kind']);
-    $this->assertEquals('completed', $result['status']['state']);
-    $this->assertSame('Hello Server', $result['metadata']['echo']);
-    $this->assertSame('Test Client', $result['metadata']['fromAgent']);
+        $result = $response['result'];
+        $this->assertSame('task', $result['kind']);
+        $this->assertEquals('completed', $result['status']['state']);
+        $this->assertSame('Hello Server', $result['metadata']['echo']);
+        $this->assertSame('Test Client', $result['metadata']['fromAgent']);
     }
 
     public function testProtocolTaskManagement(): void
     {
         $capabilities = new AgentCapabilities();
         $skill = new AgentSkill('test', 'Test', 'Test skill', ['test']);
-        
+
         $agentCard = new AgentCard(
             'Protocol Agent',
             'Protocol description',
@@ -121,7 +121,7 @@ class IntegrationTest extends TestCase
             ['application/json'],
             [$skill]
         );
-        
+
         $taskManager = new TaskManager(new Storage('array'));
         $protocol = new A2AProtocol_v030($agentCard, null, null, $taskManager);
 
@@ -131,7 +131,7 @@ class IntegrationTest extends TestCase
 
         // Store task in manager
         $taskManager->updateTask($task);
-        
+
         // Retrieve stored task
         $retrievedTask = $taskManager->getTask($task->getId());
         $this->assertNotNull($retrievedTask);
