@@ -67,6 +67,10 @@ class PushNotificationConfig
 
     public static function fromArray(array $data): self
     {
+        if (!isset($data['url']) || !is_string($data['url']) || $data['url'] === '') {
+            throw new \InvalidArgumentException('PushNotificationConfig requires a non-empty string "url" field');
+        }
+
         $authentication = null;
         if (isset($data['authentication'])) {
             $authentication = PushNotificationAuthenticationInfo::fromArray($data['authentication']);

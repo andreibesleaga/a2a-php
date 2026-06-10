@@ -21,6 +21,11 @@ declare(strict_types=1);
  *   php -S localhost:8080 complete_a2a_server.php
  */
 
+// Keep PHP warnings/notices out of the HTTP response body: anything printed
+// before the JSON-RPC payload corrupts the protocol stream for strict clients.
+ini_set('display_errors', '0');
+ini_set('log_errors', '1');
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use A2A\A2AServer;

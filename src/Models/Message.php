@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace A2A\Models;
 
+use A2A\Exceptions\InvalidRequestException;
 use Ramsey\Uuid\Uuid;
 
 /**
@@ -160,6 +161,14 @@ class Message
 
     public static function fromArray(array $data): self
     {
+        if (!isset($data['messageId']) || !is_string($data['messageId']) || $data['messageId'] === '') {
+            throw new InvalidRequestException('Message requires a non-empty string "messageId" field');
+        }
+
+        if (!isset($data['role']) || !is_string($data['role']) || $data['role'] === '') {
+            throw new InvalidRequestException('Message requires a non-empty string "role" field');
+        }
+
         $parts = [];
         if (isset($data['parts'])) {
             foreach ($data['parts'] as $partData) {

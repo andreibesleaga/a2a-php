@@ -36,6 +36,10 @@ class PushNotificationAuthenticationInfo
 
     public static function fromArray(array $data): self
     {
+        if (!isset($data['schemes']) || !is_array($data['schemes'])) {
+            throw new \InvalidArgumentException('PushNotificationAuthenticationInfo requires a "schemes" array field');
+        }
+
         return new self(
             $data['schemes'],
             $data['credentials'] ?? null

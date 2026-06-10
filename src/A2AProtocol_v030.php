@@ -361,6 +361,7 @@ class A2AProtocol_v030
 
         $task->setStatus($this->resolveTaskStatus($handlerResult));
         $this->taskManager->updateTask($task);
+        $this->notifyPushListeners($task);
 
         $this->logger->info(
             'Message processed', [
@@ -554,6 +555,11 @@ class A2AProtocol_v030
             return $jsonRpc->createError($requestId, $result['error']['message'], $result['error']['code']);
         }
 
+        $canceledTask = $this->taskManager->getTask($taskId);
+        if ($canceledTask !== null) {
+            $this->notifyPushListeners($canceledTask);
+        }
+
         return $jsonRpc->createResponse($requestId, $result['result']);
     }
 
@@ -701,6 +707,76 @@ class A2AProtocol_v030
         }
     }
 
+    /**
+     * Deliver the current task snapshot to the configured push notification
+     * webhook, if one exists for the task (A2A v0.3.0 §9.5).
+     *
+     * Delivery failures are logged and never interrupt request handling.
+     */
+    private function notifyPushListeners(Task $task): void
+    {
+        $config = $this->pushNotificationManager->getConfig($task->getId());
+        if ($config === null) {
+            return;
+        }
+
+        $url = $config->getUrl();
+
+        if (!$this->isWebhookUrlAllowed($url)) {
+            $this->logger->warning('Push notification skipped: webhook host not in allowlist', [
+                'task_id' => $task->getId(),
+                'url' => $url
+            ]);
+            return;
+        }
+
+        $headers = [];
+
+        if ($config->getToken() !== null && $config->getToken() !== '') {
+            $headers['X-A2A-Notification-Token'] = $config->getToken();
+        }
+
+        $authentication = $config->getAuthentication();
+        if ($authentication !== null) {
+            $schemes = $authentication->toArray()['schemes'] ?? [];
+            $credentials = $authentication->toArray()['credentials'] ?? null;
+            if (!empty($schemes) && is_string($credentials) && $credentials !== '') {
+                $headers['Authorization'] = $schemes[0] . ' ' . $credentials;
+            }
+        }
+
+        try {
+            $this->httpClient->postNotification($url, $task->toArray(), $headers);
+            $this->logger->info('Push notification delivered', [
+                'task_id' => $task->getId(),
+                'state' => $task->getStatus()->getState()->value
+            ]);
+        } catch (\Throwable $e) {
+            $this->logger->error('Push notification delivery failed', [
+                'task_id' => $task->getId(),
+                'error' => $e->getMessage()
+            ]);
+        }
+    }
+
+    /**
+     * Enforce the optional A2A_WEBHOOK_ALLOWLIST env var (comma-separated
+     * hostnames). When unset or empty, every webhook URL is allowed, which
+     * preserves the pre-allowlist behavior.
+     */
+    private function isWebhookUrlAllowed(string $url): bool
+    {
+        $allowList = getenv('A2A_WEBHOOK_ALLOWLIST');
+        if ($allowList === false || trim($allowList) === '') {
+            return true;
+        }
+
+        $allowedHosts = array_map('trim', explode(',', $allowList));
+        $host = parse_url($url, PHP_URL_HOST);
+
+        return is_string($host) && in_array($host, $allowedHosts, true);
+    }
+
     private function handleSetPushConfig(array $params, $requestId): array
     {
         $jsonRpc = new JsonRpc();
@@ -730,6 +806,14 @@ class A2AProtocol_v030
             return $jsonRpc->createError(
                 $requestId,
                 'Invalid push notification configuration',
+                A2AErrorCodes::INVALID_PARAMS
+            );
+        }
+
+        if (!$this->isWebhookUrlAllowed($config->getUrl())) {
+            return $jsonRpc->createError(
+                $requestId,
+                'Webhook URL host is not in the allowlist',
                 A2AErrorCodes::INVALID_PARAMS
             );
         }
@@ -867,6 +951,8 @@ class A2AProtocol_v030
 
             // Set final status
             $task->setStatus(new TaskStatus(TaskState::COMPLETED));
+            $this->taskManager->updateTask($task);
+            $this->notifyPushListeners($task);
 
             return $jsonRpc->createResponse($requestId, $task->toArray());
         } catch (\Exception $e) {

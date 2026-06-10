@@ -49,6 +49,33 @@ class HttpClient
         }
     }
 
+    /**
+     * Fire a one-way notification POST (e.g. push notification webhook delivery).
+     *
+     * Unlike post(), the response body is not required to be JSON and is ignored.
+     * Returns true when the receiver answered with a 2xx status code.
+     *
+     * @param array<string, mixed>  $data    JSON-serializable payload
+     * @param array<string, string> $headers Additional request headers
+     */
+    public function postNotification(string $url, array $data, array $headers = [], int $timeout = 10): bool
+    {
+        try {
+            $response = $this->client->post(
+                $url, [
+                'json' => $data,
+                'headers' => $headers,
+                'timeout' => min($timeout, $this->timeout)
+                ]
+            );
+
+            $status = $response->getStatusCode();
+            return $status >= 200 && $status < 300;
+        } catch (GuzzleException $e) {
+            throw new A2AException('Notification delivery failed: ' . $e->getMessage());
+        }
+    }
+
     public function get(string $url): array
     {
         try {

@@ -31,6 +31,9 @@ class Part
                 }
                 return new TextPart($text, $data['metadata'] ?? null);
             case 'file':
+                if (!isset($data['file']) || !is_array($data['file'])) {
+                    throw new \InvalidArgumentException('FilePart must have a "file" object.');
+                }
                 $fileData = $data['file'];
                 $uri = $fileData['uri'] ?? $fileData['url'] ?? $fileData['href'] ?? null;
 
@@ -43,9 +46,12 @@ class Part
                 }
                 return new FilePart($file, $data['metadata'] ?? null);
             case 'data':
+                if (!array_key_exists('data', $data)) {
+                    throw new \InvalidArgumentException('DataPart must have a "data" field.');
+                }
                 return new DataPart($data['data'], $data['metadata'] ?? null);
             default:
-        throw new \InvalidArgumentException("Unknown part kind: {$kind}");
+                throw new \InvalidArgumentException("Unknown part kind: {$kind}");
         }
     }
 }
