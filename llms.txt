@@ -1,0 +1,99 @@
+# A2A PHP SDK (a2a-php)
+
+> A PHP implementation of the Agent2Agent (A2A) Protocol **v0.3.0** — claimed to be the first in PHP. Provides JSON-RPC 2.0 transport, task lifecycle management, Server-Sent Events (SSE) streaming, push-notification webhook delivery, and a runnable reference server. Verified against the official A2A Test Compatibility Kit (TCK): every category passes.
+
+This file follows the [llms.txt](https://llmstxt.org/) convention. It gives an AI agent the facts needed to understand, install, operate, and integrate with this library, plus version/compatibility notes. Everything below the detail region links to the authoritative source documents in the repository.
+
+- **Package (Composer/Packagist):** `andreibesleaga/a2a-php`
+- **Repository:** https://github.com/andreibesleaga/a2a-php
+- **License:** Apache-2.0
+- **Language/runtime:** PHP `^8.2` (tested on 8.2, 8.3, 8.4)
+- **Protocol implemented:** A2A v0.3.0 (spec: https://a2a-protocol.org/)
+- **Transport:** JSON-RPC 2.0 over HTTP POST; SSE for streaming methods
+- **Autoload namespace:** `A2A\` (PSR-4, `src/`)
+
+## Install and run
+
+- Install: `composer require andreibesleaga/a2a-php`
+- Start the reference server: `php -S localhost:8081 examples/complete_a2a_server.php`
+- JSON-RPC endpoint: `POST http://localhost:8081/`
+- Agent card (discovery): `GET http://localhost:8081/.well-known/agent-card.json`
+- Diagnostics: `GET http://localhost:8081/info`
+- Run tests: `composer test` (unit + integration + e2e). Static analysis: `composer analyse` (PHPStan level 8). Style: `vendor/bin/phpcs -n` (PSR-12).
+
+## Protocol surface (JSON-RPC methods)
+
+All methods are POSTed to `/` as JSON-RPC 2.0 requests. Implemented methods:
+
+- `message/send` — process an inbound message; returns the task snapshot.
+- `message/stream` — start an SSE session emitting JSON-RPC envelopes as task updates are produced.
+- `tasks/send` — submit a message to an explicit task id; runs handlers and completes the task.
+- `tasks/get` — retrieve task state, history, artifacts; supports optional `historyLength`.
+- `tasks/cancel` — cancel a running task once; repeated cancellation returns `-32002`.
+- `tasks/resubscribe` — replay task history then current status over SSE for reconnecting clients.
+- `tasks/pushNotificationConfig/set` — store a webhook config for a task (then delivered on state change).
+- `tasks/pushNotificationConfig/get` — return the stored config for a task (null when absent).
+- `tasks/pushNotificationConfig/list` — list configs, optionally filtered by `taskId`.
+- `tasks/pushNotificationConfig/delete` — remove a task's config (`result: null` on success).
+- `get_agent_card` — return the public agent card.
+- `agent/getAuthenticatedExtendedCard` — return the extended card when credentials match (see config).
+- `ping` — health check, returns `{ "status": "pong" }`.
+
+## Push notification delivery
+
+When a task's state changes (`message/send`, `tasks/send`, `tasks/cancel`), the server delivers the task snapshot (a plain v0.3 `Task` object, `kind: "task"`) to the configured webhook URL via HTTP POST, carrying `X-A2A-Notification-Token: <token>` when a token is configured and `Authorization: <scheme> <credentials>` when authentication is configured. Delivery is best-effort: failures are logged and never affect the JSON-RPC response.
+
+## Error codes
+
+JSON-RPC standard: `-32700` parse error, `-32600` invalid request, `-32601` method not found, `-32602` invalid params, `-32603` internal error. A2A-specific: `-32001` task not found, `-32002` task not cancelable, `-32003` push notification not supported, `-32004` unsupported operation, `-32005` content type not supported, `-32006` invalid agent response, `-32007` authenticated extended card not configured.
+
+## Configuration (environment variables)
+
+- `A2A_DEMO_AUTH_TOKEN` — when set, `agent/getAuthenticatedExtendedCard` requires a matching `Authorization: Bearer` or `X-API-Key` credential. Demo-grade gate only; use a real auth layer in production.
+- `A2A_WEBHOOK_ALLOWLIST` — comma-separated hostnames allowed as push webhook targets (SSRF guard). Enforced both when a config is stored and at delivery time. Unset = all hosts allowed (preserves pre-allowlist behavior).
+- `A2A_MODE`, `A2A_FORCE_HTTPS` — used only by the demo `https_a2a_server.php` TLS-aware entry point.
+
+## Compatibility notes
+
+- **PHP:** requires `^8.2`. The `illuminate/*` (Laravel) components used for storage require PHP 8.2+, so the constraint is `^8.2` (an earlier `^8.0` declaration could never resolve). CI matrix: 8.2 / 8.3 / 8.4.
+- **Protocol version:** this SDK implements A2A **v0.3.0**. The latest stable A2A spec is **v1.0.1** (released January 2026 under the Linux Foundation). v1.0 is a breaking spec change (unified `Part`, SCREAMING_SNAKE_CASE enums, renamed operations, `supportedInterfaces[]` agent card, signed agent cards, `google.rpc` errors, cursor-paginated `ListTasks`). It is **not yet implemented here**; the planned upgrade is additive (a parallel `A2A\V1\…` namespace beside the frozen v0.3.0 surface, plus a Laravel package layer) so no v0.3.0 consumer breaks. See `docs/UPGRADE-1.0.md`.
+- **Backward compatibility:** the public API of `A2A\A2AProtocol_v030` (constructor, `getAgentCard`, `createTask`, `sendMessage`, `handleRequest`, `addMessageHandler`, `getTaskManager`) and the protected `processMessage()` extension point are stable. Protocol-version-scoped models live in `A2A\Models\v030`; version-agnostic models (parts, files, security schemes) live in `A2A\Models`.
+- **TCK conformance:** verified against the official `a2aproject/a2a-tck` pinned at `0.3.0.beta5` — mandatory 32, capability 39 (honesty "excellent"), quality 14, features 15; zero failures. CI re-runs the TCK on every pull request. Pin/upgrade procedure: `docs/tck-upgrade.md`. (The historical "66/66" figure was measured against an older TCK snapshot; the kit has since grown, e.g. push-delivery tests.)
+- **Transports:** JSON-RPC 2.0 over HTTP is the implemented and TCK-verified transport. gRPC is a stub (`A2A\Client\GrpcClient`) that fails fast unless `ext-grpc` is installed; `grpc/grpc` is a `suggest`, not a hard dependency.
+- **Streaming:** SSE (`text/event-stream`). The PHP built-in server handles one stream at a time — fine for demo/reference scope; production needs a real web server / async runtime.
+- **Deployment:** `examples/*.php` and `https_a2a_server.php` are demo/reference servers. Run production behind a hardened reverse proxy that terminates TLS (see `A2A_HTTPS_IMPLEMENTATION.md`, `SECURITY.md`).
+- **Supply chain:** `composer.lock` committed; `roave/security-advisories` blocks installs with known-CVE deps; CI runs `composer audit`; releases attach a CycloneDX SBOM.
+
+## Documentation
+
+- [README](https://github.com/andreibesleaga/a2a-php/blob/main/README.md): overview, quick start, compliance status, configuration table, reference-server methods, manual review guide.
+- [API reference](https://github.com/andreibesleaga/a2a-php/blob/main/docs/api-reference.md): full JSON-RPC method signatures, request/response schemas, data models, error codes.
+- [Protocol compliance](https://github.com/andreibesleaga/a2a-php/blob/main/docs/protocol-compliance.md): per-category TCK results and guaranteed behaviors.
+- [Architecture](https://github.com/andreibesleaga/a2a-php/blob/main/ARCHITECTURE.md): components, data flow, handler registry, push notifier.
+- [Docs overview](https://github.com/andreibesleaga/a2a-php/blob/main/docs/README.md): architecture tree and capability summary.
+- [TCK upgrade procedure](https://github.com/andreibesleaga/a2a-php/blob/main/docs/tck-upgrade.md): why the kit is pinned and how to bump it.
+- [Upgrade path to A2A v1.0](https://github.com/andreibesleaga/a2a-php/blob/main/docs/UPGRADE-1.0.md): docs-only plan for v1.0 + Composer/Laravel packaging.
+
+## Source and API
+
+- [Protocol entry point: src/A2AProtocol_v030.php](https://github.com/andreibesleaga/a2a-php/blob/main/src/A2AProtocol_v030.php): validates JSON-RPC and dispatches via the handler registry.
+- [Per-method handlers: src/Handlers/v030/](https://github.com/andreibesleaga/a2a-php/tree/main/src/Handlers/v030): one class per JSON-RPC method + `HandlerRegistry`.
+- [Push delivery: src/Notifications/PushNotifier.php](https://github.com/andreibesleaga/a2a-php/blob/main/src/Notifications/PushNotifier.php): webhook delivery + allowlist enforcement.
+- [HTTP client: src/A2AClient.php](https://github.com/andreibesleaga/a2a-php/blob/main/src/A2AClient.php): client for calling remote agents.
+- [Models: src/Models/](https://github.com/andreibesleaga/a2a-php/tree/main/src/Models): AgentCard, Message, Task, Parts, Artifacts, security schemes; v0.3.0-scoped models under `v030/`.
+- [Reference server: examples/complete_a2a_server.php](https://github.com/andreibesleaga/a2a-php/blob/main/examples/complete_a2a_server.php): full TCK-compliant server.
+- [Examples: examples/](https://github.com/andreibesleaga/a2a-php/tree/main/examples): basic agent, client/server, streaming, push notifications, advanced features.
+- [composer.json](https://github.com/andreibesleaga/a2a-php/blob/main/composer.json): dependencies, scripts, autoload.
+
+## Optional
+
+- [CHANGELOG](https://github.com/andreibesleaga/a2a-php/blob/main/CHANGELOG.md): release history (Keep a Changelog).
+- [SECURITY policy](https://github.com/andreibesleaga/a2a-php/blob/main/SECURITY.md): disclosure path, demo-server scoping, webhook allowlist guidance.
+- [CONTRIBUTING](https://github.com/andreibesleaga/a2a-php/blob/main/CONTRIBUTING.md): backward-compat constraint, local TCK instructions, PR checklist.
+- [ADR 0001 — JSON-RPC transport](https://github.com/andreibesleaga/a2a-php/blob/main/docs/adr/0001-why-json-rpc.md)
+- [ADR 0002 — SSE streaming](https://github.com/andreibesleaga/a2a-php/blob/main/docs/adr/0002-why-sse-streaming.md)
+- [ADR 0003 — version-scoped namespacing](https://github.com/andreibesleaga/a2a-php/blob/main/docs/adr/0003-why-v030-namespacing.md)
+- [HTTPS implementation](https://github.com/andreibesleaga/a2a-php/blob/main/A2A_HTTPS_IMPLEMENTATION.md): reverse-proxy/TLS deployment.
+- [Official A2A specification](https://a2a-protocol.org/): upstream protocol spec (v0.3.0 and latest).
+- [Official A2A TCK](https://github.com/a2aproject/a2a-tck): conformance test kit.
+- [Packagist page](https://packagist.org/packages/andreibesleaga/a2a-php): published package.
