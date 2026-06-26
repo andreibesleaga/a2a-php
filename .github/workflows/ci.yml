@@ -24,7 +24,7 @@ jobs:
         php: ['8.2', '8.3', '8.4']
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -73,7 +73,7 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       - name: Checkout pinned A2A TCK
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: a2aproject/a2a-tck
           ref: ${{ env.A2A_TCK_REF }}
