@@ -16,7 +16,7 @@
   ],
   "require": {
     "php": "^8.2",
-    "guzzlehttp/guzzle": "^7.0",
+    "guzzlehttp/guzzle": "^7.0 || ^8.0",
     "ramsey/uuid": "^4.0",
     "psr/log": "^3.0",
     "monolog/monolog": "^3.0",
