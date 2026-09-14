@@ -1,0 +1,16 @@
+.git
+.github
+vendor
+tests
+docs
+*.md
+*.log
+examples/*.log
+.phpunit.result.cache
+phpunit.xml
+phpcs.xml.dist
+phpstan.neon.dist
+phpstan-baseline.neon
+start_https_server.sh
+Dockerfile
+.dockerignore

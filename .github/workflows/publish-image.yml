@@ -1,0 +1,85 @@
+name: Publish container image (ghcr.io)
+
+# Builds the reference-server image from ./Dockerfile and pushes it to GitHub's
+# container registry as ghcr.io/andreibesleaga/a2a-php, so the SDK has a runnable
+# artifact listed in the repository's "Packages" sidebar. (Packagist packages can
+# never appear there — GitHub Packages has no Composer registry — so the image is
+# the only GitHub-hosted artifact this repo can publish. Packagist stays the
+# canonical distribution of the library.)
+#
+# Tags: the version from a `v*` tag (e.g. 0.9.6-beta), the raw tag name, and
+# `latest` for builds from the default branch. Authenticates with the job's
+# GITHUB_TOKEN (`packages: write`) — no secret. The metadata action stamps the
+# OCI `source` label, which is what links the package to this repository.
+#
+# Triggers: every version tag, manual dispatch (backfill from any ref), and
+# pushes to main that touch the image inputs.
+
+on:
+  push:
+    tags: ["v*"]
+    branches: [main]
+    paths:
+      - "Dockerfile"
+      - ".dockerignore"
+      - "composer.json"
+      - "composer.lock"
+      - "src/**"
+      - "examples/**"
+      - ".github/workflows/publish-image.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  image:
+    name: Build · push image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ghcr.io/${{ github.repository }}
+          tags: |
+            type=semver,pattern={{version}}
+            type=ref,event=tag
+            type=raw,value=latest,enable={{is_default_branch}}
+            type=sha
+      - name: Build (smoke-test before pushing)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          tags: a2a-php:ci
+      - name: Smoke-test the reference server (agent card + JSON-RPC ping)
+        run: |
+          docker run -d --rm --name a2a -p 8081:8081 a2a-php:ci
+          for i in $(seq 1 20); do
+            curl -fsS http://127.0.0.1:8081/.well-known/agent-card.json >/dev/null 2>&1 && break
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:8081/.well-known/agent-card.json | head -c 300; echo
+          curl -fsS -X POST http://127.0.0.1:8081/ -H 'Content-Type: application/json' \
+            -d '{"jsonrpc":"2.0","method":"ping","id":1}' | tee /tmp/ping.json; echo
+          grep -q '"pong"' /tmp/ping.json
+          docker stop a2a
+      - name: Push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

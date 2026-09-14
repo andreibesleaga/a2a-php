@@ -20,6 +20,13 @@ export A2A_WEBHOOK_ALLOWLIST="hooks.example.com,callbacks.example.com"
 
 The server exposes the JSON-RPC endpoint at `http://localhost:8081/` and publishes the agent card at `http://localhost:8081/.well-known/agent-card.json`.
 
+Or run the same reference server from the published container image (no PHP or Composer needed):
+
+```bash
+docker run --rm -p 8081:8081 ghcr.io/andreibesleaga/a2a-php:latest
+curl -s -X POST http://localhost:8081/ -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","method":"ping","id":1}'
+```
+
 ## Compliance status
 
 Verified against the official [A2A Test Compatibility Kit](https://github.com/a2aproject/a2a-tck)

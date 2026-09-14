@@ -7,6 +7,12 @@ versioning: [SemVer](https://semver.org/).
 ## [Unreleased]
 
 ### Added
+- **Container image on ghcr.io** — `Dockerfile` (php:8.3-cli-alpine, no-dev vendor from the
+  lockfile, unprivileged, healthchecked) runs the reference server
+  `examples/complete_a2a_server.php`; `.github/workflows/publish-image.yml` builds it, smoke-tests
+  the agent card + JSON-RPC `ping`, and pushes `ghcr.io/andreibesleaga/a2a-php` on `v*` tags, on
+  `main` pushes touching the image inputs, or by manual dispatch. Packagist remains the canonical
+  distribution of the library (GitHub Packages has no Composer registry).
 - Push notification webhook **delivery** (A2A v0.3.0 §9.5): task snapshots
   are POSTed to the configured webhook with `X-A2A-Notification-Token` and
   `Authorization` headers on task state changes.
