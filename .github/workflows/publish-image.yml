@@ -57,7 +57,7 @@ jobs:
             type=raw,value=latest,enable={{is_default_branch}}
             type=sha
       - name: Build (smoke-test before pushing)
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           load: true
@@ -75,7 +75,7 @@ jobs:
           grep -q '"pong"' /tmp/ping.json
           docker stop a2a
       - name: Push
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: true
