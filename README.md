@@ -90,7 +90,7 @@ in memory (`Storage('array')`) for the current process only, while
 ## Compliance status
 
 Verified against the official [A2A Test Compatibility Kit](https://github.com/a2aproject/a2a-tck)
-pinned at **`0.3.0.beta5`** — **every category passes**:
+pinned at **`0.3.0.beta6`** — **every category passes**:
 
 | Category | Result |
 | -------- | ------ |
@@ -160,7 +160,7 @@ composer analyse        # PHPStan level 8 (baseline-ratcheted)
 vendor/bin/phpcs -n     # PSR-12
 
 # Official TCK, pinned version (see docs/tck-upgrade.md)
-git clone --branch 0.3.0.beta5 https://github.com/a2aproject/a2a-tck.git ../a2a-tck
+git clone --branch 0.3.0.beta6 https://github.com/a2aproject/a2a-tck.git ../a2a-tck
 cd ../a2a-tck && pip install -e . && cd -
 php -S localhost:8081 examples/complete_a2a_server.php &
 python3 ../a2a-tck/run_tck.py --sut-url http://localhost:8081 --category all

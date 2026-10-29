@@ -46,7 +46,7 @@ A2A PHP Architecture
 | Quality    | All tests passing |
 | Features   | All tests passing |
 
-Compliance is verified with the official TCK pinned at `0.3.0.beta5`
+Compliance is verified with the official TCK pinned at `0.3.0.beta6`
 (`python3 ../a2a-tck/run_tck.py --sut-url http://localhost:8081 --category all`);
 detailed counts live in `protocol-compliance.md` and the pin procedure in
 `tck-upgrade.md`. CI re-runs the TCK on every pull request.

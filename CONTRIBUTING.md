@@ -32,7 +32,7 @@ php -S localhost:8081 examples/complete_a2a_server.php
 Run the official TCK against it:
 
 ```bash
-git clone --branch 0.3.0.beta5 https://github.com/a2aproject/a2a-tck.git ../a2a-tck
+git clone --branch 0.3.0.beta6 https://github.com/a2aproject/a2a-tck.git ../a2a-tck
 cd ../a2a-tck && pip install -e .
 python run_tck.py --sut-url http://localhost:8081 --category all
 ```

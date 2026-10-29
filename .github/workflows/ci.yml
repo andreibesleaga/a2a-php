@@ -12,7 +12,7 @@ permissions:
 env:
   # Official A2A TCK pinned to the latest v0.3.0-era release.
   # Bump deliberately via PR only — see docs/tck-upgrade.md.
-  A2A_TCK_REF: 0.3.0.beta5
+  A2A_TCK_REF: 0.3.0.beta6
 
 jobs:
   test:

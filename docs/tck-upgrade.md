@@ -13,18 +13,19 @@ This repo pins the TCK in `.github/workflows/ci.yml`:
 
 ```yaml
 env:
-  A2A_TCK_REF: 0.3.0.beta5   # v0.3.0-era TCK tag
+  A2A_TCK_REF: 0.3.0.beta6   # v0.3.0-era TCK tag
 ```
 
-Newer tags exist (listed by `gh api repos/a2aproject/a2a-tck/tags`, 29 Oct 2026):
-`0.3.0.beta6` and the v1.0-era `1.0.0.alpha1` to `1.0.0.alpha3`. `0.3.0.beta6`
-is one commit after `beta5` (2026-10-20, "Ignore files, and constrain Python to
-<= 3.14"), and that commit changes only `.gitignore` and `pyproject.toml`. The
-pin has not been moved to it; moving the pin follows the procedure below.
+`0.3.0.beta6` is the latest v0.3.0-era tag (listed by
+`gh api repos/a2aproject/a2a-tck/tags`, 29 Oct 2026); the v1.0-era tags are
+`1.0.0.alpha1` to `1.0.0.alpha3`. `beta6` is one commit after `beta5`
+(2026-10-20, "Ignore files, and constrain Python to <= 3.14") and that commit
+changes only `.gitignore` and `pyproject.toml`. The pin moved from `beta5` to
+`beta6` in its own pull request.
 
 ## Current verified status
 
-Against `0.3.0.beta5` the reference server passes **every category**:
+Against `0.3.0.beta6` (same test files as `beta5`) the reference server passes **every category**:
 
 | Category | Result |
 |---|---|
@@ -34,7 +35,7 @@ Against `0.3.0.beta5` the reference server passes **every category**:
 | Quality | 14 passed, 0 failed |
 | Features | 15 passed, 0 failed (1 skipped) |
 
-> Known TCK quirk at `0.3.0.beta5`: the aggregated
+> Known TCK quirk at `0.3.0.beta5` and `beta6`: the aggregated
 > `--compliance-report` JSON sometimes ingests zero totals and prints
 > "Not A2A Compliant / 0.0%" even when every category passed. The
 > authoritative results are the per-category console summary and the
