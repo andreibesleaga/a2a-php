@@ -13,8 +13,14 @@ This repo pins the TCK in `.github/workflows/ci.yml`:
 
 ```yaml
 env:
-  A2A_TCK_REF: 0.3.0.beta5   # latest v0.3.0-era TCK tag
+  A2A_TCK_REF: 0.3.0.beta5   # v0.3.0-era TCK tag
 ```
+
+Newer tags exist (listed by `gh api repos/a2aproject/a2a-tck/tags`, 29 Oct 2026):
+`0.3.0.beta6` and the v1.0-era `1.0.0.alpha1` to `1.0.0.alpha3`. `0.3.0.beta6`
+is one commit after `beta5` (2026-10-20, "Ignore files, and constrain Python to
+<= 3.14"), and that commit changes only `.gitignore` and `pyproject.toml`. The
+pin has not been moved to it; moving the pin follows the procedure below.
 
 ## Current verified status
 

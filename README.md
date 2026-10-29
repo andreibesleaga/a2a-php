@@ -8,14 +8,14 @@ A PHP implementation of the A2A (Agent-to-Agent) Protocol (v0.3.0). The reposito
 # Install dependencies
 composer install
 
-# Start the reference server
-php -S localhost:8081 examples/complete_a2a_server.php
-
 # (Optional) expose an authenticated extended card
 export A2A_DEMO_AUTH_TOKEN="example-secret"
 
 # (Optional, recommended in production) restrict push webhook hosts
 export A2A_WEBHOOK_ALLOWLIST="hooks.example.com,callbacks.example.com"
+
+# Start the reference server (reads the variables above at start-up)
+php -S localhost:8081 examples/complete_a2a_server.php
 ```
 
 The server exposes the JSON-RPC endpoint at `http://localhost:8081/` and publishes the agent card at `http://localhost:8081/.well-known/agent-card.json`.
@@ -27,11 +27,70 @@ docker run --rm -p 8081:8081 ghcr.io/andreibesleaga/a2a-php:latest
 curl -s -X POST http://localhost:8081/ -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","method":"ping","id":1}'
 ```
 
+## Install as a library
+
+Every release so far carries a `-beta` suffix, so Composer's default
+`minimum-stability` of `stable` rejects a plain
+`composer require andreibesleaga/a2a-php`. Ask for the beta explicitly:
+
+```bash
+composer require "andreibesleaga/a2a-php:^0.9@beta"
+```
+
+A minimal JSON-RPC endpoint (complete programs: `examples/basic_agent.php`
+and `examples/complete_a2a_server.php`):
+
+```php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+use A2A\A2AProtocol_v030;
+use A2A\A2AServer;
+use A2A\Models\AgentCapabilities;
+use A2A\Models\AgentSkill;
+use A2A\Models\v030\AgentCard;
+use A2A\PushNotificationManager;
+use A2A\Storage\Storage;
+use A2A\TaskManager;
+
+$card = new AgentCard(
+    'My Agent',
+    'A small demo agent',
+    'https://agent.example.com',
+    '1.0.0',
+    new AgentCapabilities(streaming: true, pushNotifications: true),
+    ['text'],
+    ['text'],
+    [new AgentSkill('echo', 'Echo', 'Repeats the input', ['demo'])]
+);
+
+// One shared Storage, so tasks and push configs survive between requests.
+$storage = new Storage('file', '/var/tmp/my-agent');
+$protocol = new A2AProtocol_v030(
+    $card,
+    null,
+    null,
+    new TaskManager($storage),
+    new PushNotificationManager($storage)
+);
+$server = new A2AServer($protocol);
+
+header('Content-Type: application/json');
+echo json_encode($server->handleRequest(json_decode(file_get_contents('php://input'), true)));
+```
+
+Register message handlers with `A2AServer::addMessageHandler()`
+(`A2A\Interfaces\MessageHandlerInterface`; `A2A\Handlers\EchoMessageHandler`
+is a ready-made example). Without a shared `Storage`, `TaskManager` keeps tasks
+in memory (`Storage('array')`) for the current process only, while
+`PushNotificationManager` uses the file driver under `/tmp/a2a_storage`. Under
+`php -S` or PHP-FPM every request is a new process, so pass one shared
+`Storage` to both, as the reference server does.
+
 ## Compliance status
 
 Verified against the official [A2A Test Compatibility Kit](https://github.com/a2aproject/a2a-tck)
-pinned at **`0.3.0.beta5`** (the latest v0.3.0-era TCK release) — **every
-category passes**:
+pinned at **`0.3.0.beta5`** — **every category passes**:
 
 | Category | Result |
 | -------- | ------ |
@@ -42,7 +101,8 @@ category passes**:
 | Features | 15 passed, 0 failed (1 skipped) |
 
 The TCK is re-run on every pull request by CI (`.github/workflows/ci.yml`);
-the pin and upgrade procedure are documented in `docs/tck-upgrade.md`.
+the pin and upgrade procedure are documented in `docs/tck-upgrade.md`, which
+also records newer TCK tags.
 
 ## Configuration
 
@@ -77,6 +137,10 @@ the pin and upgrade procedure are documented in `docs/tck-upgrade.md`.
 | `tasks/pushNotificationConfig/list` | Lists all stored configurations, optionally filtered by `taskId`. | Returns an array of summary objects. |
 | `tasks/pushNotificationConfig/delete` | Removes the configuration for a task. | Returns `null` on success. |
 | `ping` | Health-check method. | Returns `{ "status": "pong" }`. |
+
+`tasks/send`, `get_agent_card` and `ping` are additions of this SDK: the
+[v0.3.0 specification](https://a2a-protocol.org/v0.3.0/specification/) does not
+define them (checked 29 Oct 2026). The other ten methods are specified.
 
 Refer to `docs/api-reference.md` for complete request and response schemas.
 
@@ -129,7 +193,9 @@ Additional documentation lives in the `docs/` directory:
 - `docs/adr/` – architecture decision records.
 
 For HTTPS deployment details, see `A2A_HTTPS_IMPLEMENTATION.md` and `HTTPS_SUMMARY.md`.
-Security policy: `SECURITY.md`. Release history: `CHANGELOG.md`.
+Architecture and diagrams: `ARCHITECTURE.md`. Short guide for contributors and
+coding agents: `AGENTS.md`. Security policy: `SECURITY.md`. Release history:
+`CHANGELOG.md`.
 
 ## Contributing
 
