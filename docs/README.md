@@ -78,4 +78,4 @@ Set `A2A_DEMO_AUTH_TOKEN` to enable authenticated extended card responses.
 - `api-reference.md` – Detailed method signatures, request/response examples, and error codes.
 - `protocol-compliance.md` – Summary of the behaviour that satisfies each TCK category.
 - `A2A_HTTPS_IMPLEMENTATION.md` – HTTPS/TLS deployment details.
-- `HTTPS_SUMMARY.md` – High-level HTTPS migration notes.
+- `COVERAGE_DOCS_SUMMARY.md` – test and coverage artefacts and how to regenerate them.

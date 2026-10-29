@@ -20,7 +20,7 @@ appreciated; credit is given in release notes unless you prefer otherwise.
 - `examples/*.php` and `https_a2a_server.php` are **demo/reference servers**,
   not production runtimes. Run production deployments behind a hardened
   reverse proxy (nginx/Apache/Caddy) that terminates TLS — see
-  `A2A_HTTPS_IMPLEMENTATION.md`.
+  `docs/A2A_HTTPS_IMPLEMENTATION.md`.
 - `A2A_DEMO_AUTH_TOKEN` is a demo credential gate for the authenticated
   extended agent card. Use a real authentication layer in production.
 - Push notification webhooks are an SSRF vector by design. Set

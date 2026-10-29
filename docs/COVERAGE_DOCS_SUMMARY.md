@@ -6,7 +6,7 @@ generate it locally when needed.
 
 ## Documentation (`docs/`)
 
-- `index.html` – Static site wrapper for the Markdown documents.
+- `index.html` – Short landing page for GitHub Pages (built from the README facts).
 - `README.md` – High-level overview of the SDK and architecture.
 - `api-reference.md` – Detailed JSON-RPC method and data model reference.
 - `protocol-compliance.md` – TCK status report and behavioural highlights.

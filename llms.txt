@@ -61,7 +61,7 @@ JSON-RPC standard: `-32700` parse error, `-32600` invalid request, `-32601` meth
 - **TCK conformance:** verified against the official `a2aproject/a2a-tck` pinned at `0.3.0.beta5` — mandatory 32, capability 39 (honesty "excellent"), quality 14, features 15; zero failures. CI re-runs the TCK on every pull request. Pin/upgrade procedure: `docs/tck-upgrade.md`. (The historical "66/66" figure was measured against an older TCK snapshot; the kit has since grown, e.g. push-delivery tests.)
 - **Transports:** JSON-RPC 2.0 over HTTP is the implemented and TCK-verified transport. gRPC is a stub (`A2A\Client\GrpcClient`) that fails fast unless `ext-grpc` is installed; `grpc/grpc` is a `suggest`, not a hard dependency.
 - **Streaming:** SSE (`text/event-stream`). The PHP built-in server handles one stream at a time — fine for demo/reference scope; production needs a real web server / async runtime.
-- **Deployment:** `examples/*.php` and `https_a2a_server.php` are demo/reference servers. Run production behind a hardened reverse proxy that terminates TLS (see `A2A_HTTPS_IMPLEMENTATION.md`, `SECURITY.md`).
+- **Deployment:** `examples/*.php` and `https_a2a_server.php` are demo/reference servers. Run production behind a hardened reverse proxy that terminates TLS (see `docs/A2A_HTTPS_IMPLEMENTATION.md`, `SECURITY.md`).
 - **Supply chain:** `composer.lock` committed; `roave/security-advisories` blocks installs with known-CVE deps; CI runs `composer audit`; releases attach a CycloneDX SBOM.
 
 ## Documentation
@@ -93,7 +93,7 @@ JSON-RPC standard: `-32700` parse error, `-32600` invalid request, `-32601` meth
 - [ADR 0001 — JSON-RPC transport](https://github.com/andreibesleaga/a2a-php/blob/main/docs/adr/0001-why-json-rpc.md)
 - [ADR 0002 — SSE streaming](https://github.com/andreibesleaga/a2a-php/blob/main/docs/adr/0002-why-sse-streaming.md)
 - [ADR 0003 — version-scoped namespacing](https://github.com/andreibesleaga/a2a-php/blob/main/docs/adr/0003-why-v030-namespacing.md)
-- [HTTPS implementation](https://github.com/andreibesleaga/a2a-php/blob/main/A2A_HTTPS_IMPLEMENTATION.md): reverse-proxy/TLS deployment.
+- [HTTPS implementation](https://github.com/andreibesleaga/a2a-php/blob/main/docs/A2A_HTTPS_IMPLEMENTATION.md): reverse-proxy/TLS deployment.
 - [Official A2A specification](https://a2a-protocol.org/): upstream protocol spec (v0.3.0 and latest).
 - [Official A2A TCK](https://github.com/a2aproject/a2a-tck): conformance test kit.
 - [Packagist page](https://packagist.org/packages/andreibesleaga/a2a-php): published package.

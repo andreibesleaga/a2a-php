@@ -110,7 +110,7 @@ also records newer TCK tags.
 | ------- | ------- | ------ |
 | `A2A_DEMO_AUTH_TOKEN` | unset | When set, `agent/getAuthenticatedExtendedCard` requires a matching `Authorization: Bearer` or `X-API-Key` credential. Demo-grade gate only. |
 | `A2A_WEBHOOK_ALLOWLIST` | unset (allow all) | Comma-separated hostnames allowed as push notification webhook targets. Enforced when configs are stored **and** at delivery time (SSRF guard). |
-| `A2A_MODE` / `A2A_FORCE_HTTPS` | unset | Used only by the demo `https_a2a_server.php` (see `A2A_HTTPS_IMPLEMENTATION.md`). |
+| `A2A_MODE` / `A2A_FORCE_HTTPS` | unset | Used only by the demo `https_a2a_server.php` (see `docs/A2A_HTTPS_IMPLEMENTATION.md`). |
 
 ## Implementation highlights
 
@@ -192,7 +192,7 @@ Additional documentation lives in the `docs/` directory:
 - `docs/UPGRADE-1.0.md` – upgrade path to A2A protocol v1.0 (planning doc).
 - `docs/adr/` – architecture decision records.
 
-For HTTPS deployment details, see `A2A_HTTPS_IMPLEMENTATION.md` and `HTTPS_SUMMARY.md`.
+For HTTPS deployment details, see `docs/A2A_HTTPS_IMPLEMENTATION.md`.
 Architecture and diagrams: `ARCHITECTURE.md`. Short guide for contributors and
 coding agents: `AGENTS.md`. Security policy: `SECURITY.md`. Release history:
 `CHANGELOG.md`.
