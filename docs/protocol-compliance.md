@@ -1,6 +1,6 @@
 # A2A Protocol v0.3.0 Compliance Report
 
-This document summarises how the PHP reference implementation satisfies the A2A Test Compatibility Kit (TCK). All results were generated with `python3 ../a2a-tck/run_tck.py --sut-url http://localhost:8081 --category all` using the bundled `examples/complete_a2a_server.php` implementation and the TCK pinned at **`0.3.0.beta5`** (see `docs/tck-upgrade.md` for newer tags).
+This document summarises how the PHP reference implementation satisfies the A2A Test Compatibility Kit (TCK). All results were generated with `python3 ../a2a-tck/run_tck.py --sut-url http://localhost:8081 --category all` using the bundled `examples/complete_a2a_server.php` implementation and the TCK pinned at **`0.3.0.beta6`** (see `docs/tck-upgrade.md` for newer tags).
 
 ## Results overview
 

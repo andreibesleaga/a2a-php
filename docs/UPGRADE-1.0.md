@@ -13,7 +13,7 @@
 | Artifact | Latest stable | Notes |
 |---|---|---|
 | A2A specification | **v1.0.1** (`a2aproject/A2A` tags: `v1.0.0`, `v1.0.1`) | v1.0 announced 12 March 2026 under the Linux Foundation; <https://a2a-protocol.org/latest/specification/> |
-| TCK | `0.3.0.beta5` (v0.3 era, pinned by this repo) and **`1.0.0.alpha1`** (v1.0 era) | 1.x CLI changed: `./run_tck.py --sut-host <url>` (was `--sut-url`), plus `--transport` and `--level must/should/may` filters |
+| TCK | `0.3.0.beta6` (v0.3 era, pinned by this repo) and **`1.0.0.alpha1`** (v1.0 era) | 1.x CLI changed: `./run_tck.py --sut-host <url>` (was `--sut-url`), plus `--transport` and `--level must/should/may` filters |
 | a2a-python (reference SDK) | **v1.1.0** | Implements spec 1.0 with **compatibility mode for 0.3**; proto-first types (ProtoJSON); see migration guide `docs/migrations/v1_0/README.md` in that repo |
 | a2a-js | v0.3.x stable; **1.0 alpha on `@a2a-js/sdk@next`** | Express integration + gRPC optional peer deps |
 | a2a-java | **1.0.0.CR1** | Candidate release for 1.0 |
@@ -124,7 +124,7 @@ CI gains a second TCK job; **both must stay green**:
 
 | Gate | Kit | Command |
 |---|---|---|
-| v0.3 surface (existing) | `a2a-tck @ 0.3.0.beta5` | `./run_tck.py --sut-url <url> --category all` |
+| v0.3 surface (existing) | `a2a-tck @ 0.3.0.beta6` | `./run_tck.py --sut-url <url> --category all` |
 | v1.0 surface (new) | `a2a-tck @ 1.0.0.alpha1` (bump as 1.x tags stabilize, per `docs/tck-upgrade.md`) | `./run_tck.py --sut-host <url> --level must` then `should`/`may`, `--transport jsonrpc` (+ `grpc`, `http_json` when implemented) |
 
 Beyond the TCK, port the official SDKs' unit-level contract tests:
@@ -264,7 +264,7 @@ framework-agnostic core, so behavior is identical outside Laravel):
 
 Release: tag as the package's next major on Packagist with the SBOM
 workflow already in place; announce v0.3-compat guarantees in the
-CHANGELOG; keep the `0.3.0.beta5` TCK job permanently (the user-stated
+CHANGELOG; keep the `0.3.0.beta6` TCK job permanently (the user-stated
 requirement: 100% compatibility with **all** official test kits for every
 implemented protocol version).
 
