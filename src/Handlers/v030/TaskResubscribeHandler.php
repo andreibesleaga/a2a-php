@@ -7,11 +7,12 @@ namespace A2A\Handlers\v030;
 use A2A\Exceptions\A2AErrorCodes;
 use A2A\Streaming\StreamingServer;
 use A2A\TaskManager;
-use A2A\Utils\JsonRpc;
 
 /**
  * Handles the "tasks/resubscribe" method: replays the task snapshot
  * (including history) over SSE so a client can reattach to a task stream.
+ * Like "message/stream", it returns an empty array once the stream has been
+ * written, so the transport sends nothing after the SSE close event.
  */
 class TaskResubscribeHandler implements RequestHandlerInterface
 {
@@ -26,7 +27,6 @@ class TaskResubscribeHandler implements RequestHandlerInterface
 
     public function handle(array $params, mixed $requestId): array
     {
-        $jsonRpc = new JsonRpc();
         $taskId = $params['id'] ?? null;
 
         if (!$taskId) {
@@ -36,11 +36,7 @@ class TaskResubscribeHandler implements RequestHandlerInterface
                 'Task ID is required for resubscription'
             );
 
-            return $jsonRpc->createError(
-                $requestId,
-                'Task ID is required for resubscription',
-                A2AErrorCodes::INVALID_PARAMS
-            );
+            return [];
         }
 
         $task = $this->taskManager->getTask($taskId);
@@ -52,11 +48,7 @@ class TaskResubscribeHandler implements RequestHandlerInterface
                 $taskId
             );
 
-            return $jsonRpc->createError(
-                $requestId,
-                'Task not found',
-                A2AErrorCodes::TASK_NOT_FOUND
-            );
+            return [];
         }
 
         $this->streamingServer->streamResubscribeSnapshot(
@@ -65,13 +57,6 @@ class TaskResubscribeHandler implements RequestHandlerInterface
             $task->toArray()
         );
 
-        return $jsonRpc->createResponse(
-            $requestId,
-            [
-                'status' => 'resubscribed',
-                'taskId' => $taskId,
-                'task' => $task->toArray()
-            ]
-        );
+        return [];
     }
 }

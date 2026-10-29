@@ -7,12 +7,12 @@ The reference server includes optional HTTPS-aware behaviour that lets operators
 ## Test status
 
 HTTPS orchestration reuses the same protocol handlers as the HTTP server,
-so compliance remains unchanged — see `docs/protocol-compliance.md` for the
+so compliance remains unchanged — see `protocol-compliance.md` for the
 current per-category TCK results against the pinned kit version
-(`docs/tck-upgrade.md`).
+(`tck-upgrade.md`).
 
 > `https_a2a_server.php` is a **demo** entry point; production deployments
-> must terminate TLS at a hardened reverse proxy (see `SECURITY.md`).
+> must terminate TLS at a hardened reverse proxy (see `../SECURITY.md`).
 
 ## Key additions
 
@@ -112,6 +112,20 @@ server {
 - `X-Forwarded-Proto` is not read. Behind a TLS-terminating proxy, set `A2A_MODE=production` so that requests are logged as HTTPS.
 - When the server is not in HTTPS mode, `A2A_FORCE_HTTPS=true` makes it answer with a 301 redirect to `https://<host>:8443`.
 - The demo sends `Access-Control-Allow-Origin: *` on every response.
+
+## Compatibility
+
+- HTTP-only workflows remain unchanged.
+- The same JSON-RPC handlers operate in both modes.
+- Agent card, streaming endpoints, and push notification APIs keep their original semantics.
+- Optional HTTPS enforcement: `A2A_FORCE_HTTPS` (301 redirect to port 8443, see Security features).
+
+## Production checklist
+
+1. Terminate TLS with nginx or Apache (examples above).
+2. Forward requests to the PHP built-in server or your preferred PHP-FPM stack.
+3. Validate security headers with `curl -I https://your-host/.well-known/agent-card.json`.
+4. Monitor `a2a_server.log` for HTTPS flag entries to confirm HTTPS mode is on.
 
 ## Monitoring
 

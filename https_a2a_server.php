@@ -471,7 +471,7 @@ class A2AHttpsServer
         ]);
 
         // Handle streaming requests through A2AServer for proper validation
-        if (isset($request['method']) && $request['method'] === 'message/stream') {
+        if (isset($request['method']) && in_array($request['method'], ['message/stream', 'tasks/resubscribe'], true)) {
             try {
                 $response = $this->server->handleRequest($request);
                 // If validation passes and no response returned, it means streaming was started
