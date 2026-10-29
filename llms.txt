@@ -1,6 +1,6 @@
 # A2A PHP SDK (a2a-php)
 
-> A PHP implementation of the Agent2Agent (A2A) Protocol **v0.3.0** — claimed to be the first in PHP. Provides JSON-RPC 2.0 transport, task lifecycle management, Server-Sent Events (SSE) streaming, push-notification webhook delivery, and a runnable reference server. Verified against the official A2A Test Compatibility Kit (TCK): every category passes.
+> A PHP implementation of the Agent2Agent (A2A) Protocol **v0.3.0**. Provides JSON-RPC 2.0 transport, task lifecycle management, Server-Sent Events (SSE) streaming, push-notification webhook delivery, and a runnable reference server. Verified against the official A2A Test Compatibility Kit (TCK): every category passes.
 
 This file follows the [llms.txt](https://llmstxt.org/) convention. It gives an AI agent the facts needed to understand, install, operate, and integrate with this library, plus version/compatibility notes. Everything below the detail region links to the authoritative source documents in the repository.
 

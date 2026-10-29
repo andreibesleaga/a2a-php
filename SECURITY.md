@@ -9,7 +9,7 @@ receives security fixes.
 
 Please report vulnerabilities privately via
 [GitHub Security Advisories](https://github.com/andreibesleaga/a2a-php/security/advisories/new)
-for this repository (preferred), or by contacting the maintainer directly.
+for this repository.
 **Do not open public issues for security reports.**
 
 You can expect an acknowledgment within 7 days. Coordinated disclosure is

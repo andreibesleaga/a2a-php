@@ -5,3 +5,4 @@ composer.phar
 a2a_server.log
 examples/a2a_server.log
 *.log
+coverage/
