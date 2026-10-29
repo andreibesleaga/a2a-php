@@ -15,8 +15,8 @@ the pinned TCK version (`docs/tck-upgrade.md`).
 ### Security
 
 - Added TLS-aware entry point (`https_a2a_server.php`).
-- Applied default security headers (HSTS, nosniff, frame options) in production mode.
-- Introduced optional HTTPS enforcement via `A2A_FORCE_HTTPS` and proxy detection through `X-Forwarded-Proto`.
+- Sends a `Strict-Transport-Security` header in production mode (`nosniff` and frame options come from the proxy configuration in `A2A_HTTPS_IMPLEMENTATION.md`).
+- Introduced optional HTTPS enforcement via `A2A_FORCE_HTTPS` (301 redirect to port 8443).
 
 ### Compatibility
 
@@ -42,12 +42,11 @@ A2A_MODE=production php -S localhost:8081 https_a2a_server.php
 1. Terminate TLS with nginx or Apache (examples are documented in `A2A_HTTPS_IMPLEMENTATION.md`).
 2. Forward requests to the PHP built-in server or your preferred PHP-FPM stack.
 3. Validate security headers with `curl -I https://your-host/.well-known/agent-card.json`.
-4. Monitor `a2a_server.log` for HTTPS flag entries to confirm proxy detection.
+4. Monitor `a2a_server.log` for HTTPS flag entries to confirm HTTPS mode is on.
 
 ## Benefits
 
 - Encrypted transport for production deployments.
-- Security headers applied automatically in production mode.
+- An HSTS header is sent automatically in production mode.
 - Zero change to the core protocol implementation.
 - Straightforward migration path from HTTP to HTTPS.
-

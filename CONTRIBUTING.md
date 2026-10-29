@@ -32,8 +32,8 @@ php -S localhost:8081 examples/complete_a2a_server.php
 Run the official TCK against it:
 
 ```bash
-git clone --branch 0.3.0.beta5 https://github.com/a2aproject/a2a-tck.git
-cd a2a-tck && pip install -e .
+git clone --branch 0.3.0.beta5 https://github.com/a2aproject/a2a-tck.git ../a2a-tck
+cd ../a2a-tck && pip install -e .
 python run_tck.py --sut-url http://localhost:8081 --category all
 ```
 
@@ -51,5 +51,22 @@ python run_tck.py --sut-url http://localhost:8081 --category all
 
 ## Commit style
 
-Use clear, imperative commit subjects. Reference audit recommendation IDs
-(R1–R12) or issues when applicable.
+Use clear, imperative commit subjects. Reference issues or pull requests when
+applicable.
+
+## CI and releases
+
+Workflows live in `.github/workflows/`:
+
+| Workflow | Runs on | What it does |
+| -------- | ------- | ------------ |
+| `ci.yml` (CI) | push and pull request to `main` | Job `test` on PHP 8.2, 8.3 and 8.4: `composer validate --strict`, `composer install`, PHP syntax lint, `vendor/bin/phpcs -n`, PHPStan level 8 with the baseline, `composer audit`, PHPUnit. Job `tck` (PHP 8.3): runs the pinned official TCK against the reference server. |
+| `release.yml` (Release) | push of a tag `v*` | Builds a CycloneDX SBOM (`sbom.json`, no dev packages) and attaches it to the GitHub release, with generated release notes. |
+| `publish-image.yml` (Publish container image) | push of a tag `v*`; manual dispatch; push to `main` that touches `Dockerfile`, `.dockerignore`, `composer.json`, `composer.lock`, `src/`, `examples/` or the workflow itself | Builds the reference-server image from `Dockerfile`, smoke-tests the agent card and `ping`, then pushes `ghcr.io/andreibesleaga/a2a-php`. Image tags: the version from a `v*` tag, the raw tag name, `latest` for the default branch, and the short commit SHA. |
+
+Dependabot (`.github/dependabot.yml`) opens weekly update pull requests for
+Composer and GitHub Actions dependencies.
+
+Release tags in this repository look like `v0.9.6-beta`. Pushing a `v*` tag
+starts `release.yml` and `publish-image.yml`. The Packagist page lists the same
+version names as the tags.

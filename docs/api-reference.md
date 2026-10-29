@@ -81,7 +81,7 @@ Key fields:
 | `url` | string | Base URL for the agent. |
 | `version` | string | Agent version string. |
 | `protocolVersion` | string | Always `0.3.0` for this implementation. |
-| `capabilities` | object | Includes `canReceiveMessages`, `canSendMessages`, `canManageTasks`, `supportsStreaming`, `supportsPushNotifications`. |
+| `capabilities` | object | Contains `streaming`, `pushNotifications` and `stateTransitionHistory` (booleans). |
 | `defaultInputModes` | array | Content types accepted by default. |
 | `defaultOutputModes` | array | Content types produced by default. |
 | `skills` | array | Describes available skills. |
@@ -246,24 +246,29 @@ Initiates a Server-Sent Events (SSE) stream. The request body matches `message/s
 
 1. Send an HTTP POST request with `Accept: text/event-stream`.
 2. Keep the connection open to observe events.
-3. Events include:
-   - `event: message` for message history entries.
-   - `event: task-status` for task status updates.
-   - `event: error` when failures occur.
+3. The reference server emits these SSE event names:
+   - `event: event` for the initial task snapshot and other event objects.
+   - `event: message` for message events.
+   - `event: task-status` for task status updates (the last one carries `"final": true`).
+   - `event: error` when the executor fails.
+   - `event: close` as the last event of every stream.
 
 #### Event stream example (message/stream)
 
 ```text
-event: message
-data: {"jsonrpc":"2.0","id":"stream-1","result":{"kind":"message","messageId":"msg-1",...}}
+event: event
+data: {"jsonrpc":"2.0","id":"stream-1","result":{"kind":"task","id":"task-42","status":{"state":"submitted"},...}}
 
 event: task-status
-data: {"jsonrpc":"2.0","id":"stream-1","result":{"kind":"task","id":"task-42","status":{"state":"completed"}}}
+data: {"jsonrpc":"2.0","id":"stream-1","result":{"kind":"status-update","taskId":"task-42","status":{"state":"completed"},"final":true}}
+
+event: close
+data:
 ```
 
 #### Error handling (message/stream)
 
-- The server emits an `error` event with code `-32602` when `message` is missing.
+- When `message` is missing, the reference server answers with a plain JSON-RPC error response (code `-32602`) and opens no stream.
 - Connection closes after the stream is completed or an error occurs.
 
 ---
@@ -312,7 +317,8 @@ Returns the latest task snapshot. Optionally limits the number of history entrie
 #### Error handling (tasks/get)
 
 - `-32001` when the task does not exist.
-- `-32602` when `id` is missing or when `historyLength` is negative.
+- `-32006` when `id` is missing.
+- `-32602` when `historyLength` is negative or not an integer.
 
 ---
 
@@ -352,7 +358,7 @@ Replays stored task history and emits the latest status over an SSE stream. Usef
 
 1. The server emits one SSE event per stored history entry (`event: message`).
 2. A final `task-status` event is emitted with the complete task snapshot.
-3. The stream closes after the snapshot is sent.
+3. An `event: close` is sent and the stream closes.
 
 #### Error handling (tasks/resubscribe)
 
@@ -399,6 +405,7 @@ never affect the JSON-RPC response.
 #### Error handling (tasks/pushNotificationConfig/set)
 
 - `-32602` when parameters are missing or malformed (including a missing/empty `url`).
+- `-32001` when the task does not exist.
 - `-32602` when `A2A_WEBHOOK_ALLOWLIST` is set and the webhook URL host is not in the allowlist.
 - `-32603` when persistence fails.
 
@@ -493,6 +500,6 @@ Deletes the stored configuration for the specified task.
 | `-32004` | `UNSUPPORTED_OPERATION` | Reserved for future use. |
 | `-32005` | `CONTENT_TYPE_NOT_SUPPORTED` | Returned when a message part type cannot be processed. |
 | `-32006` | `INVALID_AGENT_RESPONSE` | Used when required task identifiers are missing. |
-| `-32007` | `AUTHENTICATED_EXTENDED_CARD_NOT_CONFIGURED` | Authentication is required or failed for the extended card method.
+| `-32007` | `AUTHENTICATED_EXTENDED_CARD_NOT_CONFIGURED` | Authentication is required or failed for the extended card method. |
 
 All responses strictly follow the JSON-RPC structure: `{"jsonrpc":"2.0","id":<same as request>,"result":...}` on success or include an `error` object otherwise.

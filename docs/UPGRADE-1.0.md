@@ -12,7 +12,7 @@
 
 | Artifact | Latest stable | Notes |
 |---|---|---|
-| A2A specification | **v1.0.1** (`a2aproject/A2A` tags: `v1.0.0`, `v1.0.1`) | v1.0 announced January 2026 under the Linux Foundation; <https://a2a-protocol.org/latest/specification/> |
+| A2A specification | **v1.0.1** (`a2aproject/A2A` tags: `v1.0.0`, `v1.0.1`) | v1.0 announced 12 March 2026 under the Linux Foundation; <https://a2a-protocol.org/latest/specification/> |
 | TCK | `0.3.0.beta5` (v0.3 era, pinned by this repo) and **`1.0.0.alpha1`** (v1.0 era) | 1.x CLI changed: `./run_tck.py --sut-host <url>` (was `--sut-url`), plus `--transport` and `--level must/should/may` filters |
 | a2a-python (reference SDK) | **v1.1.0** | Implements spec 1.0 with **compatibility mode for 0.3**; proto-first types (ProtoJSON); see migration guide `docs/migrations/v1_0/README.md` in that repo |
 | a2a-js | v0.3.x stable; **1.0 alpha on `@a2a-js/sdk@next`** | Express integration + gRPC optional peer deps |
@@ -24,6 +24,14 @@ Sources: [spec](https://a2a-protocol.org/latest/specification/) ·
 [a2a-python](https://github.com/a2aproject/a2a-python) ·
 [a2a-js](https://github.com/a2aproject/a2a-js) ·
 [a2a-tck](https://github.com/a2aproject/a2a-tck).
+
+> Re-checked on 29 Oct 2026 against the GitHub release and tag lists: the
+> specification's latest tag is still `v1.0.1` (2026-05-28); a2a-python is at
+> `v1.3.0` (2026-10-27), a2a-js at `v1.3.0` (2026-09-29), a2a-java at
+> `v1.4.0.Final` (2026-09-28); a2a-tck has the tags `0.3.0.beta6` and
+> `1.0.0.alpha1` to `1.0.0.alpha3`. The table above is the June 2026 snapshot.
+> The plan below still names a2a-python v1.1.0 and TCK `1.0.0.alpha1` as its
+> reference points.
 
 **Target for this SDK:** implement **spec v1.0.1** with a **v0.3
 compatibility mode**, exactly like a2a-python v1.1.0 — both protocol
@@ -38,7 +46,7 @@ versions served from one codebase, verified by **both** TCKs.
 | Parts | `TextPart`/`FilePart`/`DataPart` with `kind` discriminator; files nested as `FileWithBytes`/`FileWithUri` | Single unified `Part`; discriminate by present member (`text`, `url`, `raw`, `data`); `mimeType` → `mediaType`; `filename` on the part itself; no base64 wrapper semantics in proto form |
 | Stream events | `kind` field + `final` boolean | Named wrapper members in a `StreamResponse` (`task`, `message`, `statusUpdate`, `artifactUpdate`); `final` removed — stream closure signals completion |
 | Enums | lowercase/kebab (`submitted`, `input-required`, `user`) | ProtoJSON `SCREAMING_SNAKE_CASE` with type prefixes (`TASK_STATE_SUBMITTED`, `TASK_STATE_INPUT_REQUIRED`, `ROLE_USER`) plus `*_UNSPECIFIED` zero-variants |
-| Agent Card | top-level `protocolVersion`, `url`, `preferredTransport`, `additionalInterfaces`, `supportsAuthenticatedExtendedCard` | `supportedInterfaces[]` of `AgentInterface{url, protocolBinding: JSONRPC|HTTP+JSON|GRPC, protocolVersion}`; extended-card flag becomes `capabilities.extendedAgentCard`; `examples` move from card to each `AgentSkill`; per-skill `inputModes`/`outputModes` override card-level defaults |
+| Agent Card | top-level `protocolVersion`, `url`, `preferredTransport`, `additionalInterfaces`, `supportsAuthenticatedExtendedCard` | `supportedInterfaces[]` of `AgentInterface{url, protocolBinding: JSONRPC\|HTTP+JSON\|GRPC, protocolVersion}`; extended-card flag becomes `capabilities.extendedAgentCard`; `examples` move from card to each `AgentSkill`; per-skill `inputModes`/`outputModes` override card-level defaults |
 | Errors | JSON-RPC error objects / RFC 9457 for REST | `google.rpc.Status` + mandatory `google.rpc.ErrorInfo` (`reason` in UPPER_SNAKE_CASE, domain `a2a-protocol.org`) |
 | Operations | `message/send`, `message/stream`, `tasks/get`, `tasks/cancel`, `tasks/resubscribe`, `agent/getAuthenticatedExtendedCard`, `tasks/pushNotificationConfig/*` | `SendMessage`, `SendStreamingMessage`, `GetTask`, **`ListTasks` (new, cursor pagination)**, `CancelTask`, `SubscribeToTask`, `GetExtendedAgentCard`, `CreateTaskPushNotificationConfig` / `GetTaskPushNotificationConfig` / `ListTaskPushNotificationConfigs` / `DeleteTaskPushNotificationConfig` |
 | IDs | compound resource names | separate `taskId` / `configId` request fields |
@@ -70,7 +78,7 @@ a2a-js, so examples and mental models transfer across languages.
 | Official SDK concept (python / js) | PHP equivalent (new, `A2A\V1` namespace family) |
 |---|---|
 | `AgentExecutor` (`execute(context, event_queue)`, `cancel`) | `A2A\V1\Server\AgentExecutorInterface` — `execute(RequestContext $ctx, EventQueueInterface $queue): void`, `cancelTask()` |
-| `EventQueue` (single `enqueue_event`, `tap()`) | `A2A\V1\Server\EventQueueInterface` — `enqueue(Task|Message|TaskStatusUpdateEvent|TaskArtifactUpdateEvent $event): void`, `tap(): iterable` |
+| `EventQueue` (single `enqueue_event`, `tap()`) | `A2A\V1\Server\EventQueueInterface` — `enqueue(Task\|Message\|TaskStatusUpdateEvent\|TaskArtifactUpdateEvent $event): void`, `tap(): iterable` |
 | `DefaultRequestHandler(agent_card, task_store, executor)` | `A2A\V1\Server\DefaultRequestHandler(AgentCard $card, TaskStoreInterface $store, AgentExecutorInterface $executor)` |
 | `TaskStore` / `InMemoryTaskStore` | `A2A\V1\Server\TaskStoreInterface` + `InMemoryTaskStore`, `CacheTaskStore` (PSR-16 / Illuminate cache — reuses the existing `A2A\Storage` drivers) |
 | Route factories: `create_agent_card_routes`, `create_jsonrpc_routes(..., enable_v0_3_compat=True)`, `create_rest_routes` | Framework-agnostic **PSR-15** handlers: `AgentCardRequestHandler`, `JsonRpcTransportHandler`, `RestTransportHandler` — each a `Psr\Http\Server\RequestHandlerInterface`, with an `enableV03Compat: bool` flag mirroring python's compat mode |

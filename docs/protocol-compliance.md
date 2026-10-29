@@ -1,6 +1,6 @@
 # A2A Protocol v0.3.0 Compliance Report
 
-This document summarises how the PHP reference implementation satisfies the A2A Test Compatibility Kit (TCK). All results were generated with `python3 ../a2a-tck/run_tck.py --sut-url http://localhost:8081 --category all` using the bundled `examples/complete_a2a_server.php` implementation and the TCK pinned at **`0.3.0.beta5`** (latest v0.3.0-era release; see `docs/tck-upgrade.md`).
+This document summarises how the PHP reference implementation satisfies the A2A Test Compatibility Kit (TCK). All results were generated with `python3 ../a2a-tck/run_tck.py --sut-url http://localhost:8081 --category all` using the bundled `examples/complete_a2a_server.php` implementation and the TCK pinned at **`0.3.0.beta5`** (see `docs/tck-upgrade.md` for newer tags).
 
 ## Results overview
 
@@ -51,7 +51,7 @@ This document summarises how the PHP reference implementation satisfies the A2A 
 
 1. Start the server: `php -S localhost:8081 examples/complete_a2a_server.php`.
 2. Run the TCK: `python3 ../a2a-tck/run_tck.py --sut-url http://localhost:8081 --category all`.
-3. Inspect `tck/reports/latest/` for the HTML summary if desired.
+3. Optionally add `--report` to the TCK command; the HTML reports are written to `reports/<category>_test_report.html` in the TCK checkout.
 4. Review `a2a_server.log` (created by the reference server) for structured handling logs.
 
 ## Known limitations

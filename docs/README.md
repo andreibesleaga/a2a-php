@@ -24,9 +24,9 @@ A2A PHP Architecture
 ├── PushNotificationMgr # Persists webhook configurations in shared storage
 ├── Notifications/      # PushNotifier: webhook delivery + allowlist enforcement
 ├── StreamingServer     # Emits SSE events for live processing and resubscribe
-├── Storage/            # File-backed cache built on Illuminate\Cache
+├── Storage/            # Illuminate\Cache storage (file, array, redis, memcached drivers)
 ├── Models/             # AgentCard, Message, Task, TaskStatus, Parts, Artifacts
-└── Utils/              # JsonRpc validator, HTTP client helpers, logging glue
+└── Utils/              # JsonRpc validator, HTTP client helpers
 ```
 
 ### Event flow

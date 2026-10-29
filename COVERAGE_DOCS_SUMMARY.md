@@ -33,7 +33,8 @@ php -d zend_extension=xdebug.so -d xdebug.mode=coverage \
     ./vendor/bin/phpunit --coverage-html coverage --coverage-text
 ```
 
-The resulting HTML lands in `coverage/` (git-ignored).
+The resulting HTML lands in `coverage/`. `.gitignore` does not list this
+directory, so do not commit it.
 
 ## Regenerating documentation
 

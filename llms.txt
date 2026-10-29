@@ -14,7 +14,7 @@ This file follows the [llms.txt](https://llmstxt.org/) convention. It gives an A
 
 ## Install and run
 
-- Install: `composer require andreibesleaga/a2a-php`
+- Install: `composer require "andreibesleaga/a2a-php:^0.9@beta"` (all releases so far are `-beta` tags, which Composer's default `stable` minimum-stability rejects)
 - Start the reference server: `php -S localhost:8081 examples/complete_a2a_server.php`
 - JSON-RPC endpoint: `POST http://localhost:8081/`
 - Agent card (discovery): `GET http://localhost:8081/.well-known/agent-card.json`
@@ -56,7 +56,7 @@ JSON-RPC standard: `-32700` parse error, `-32600` invalid request, `-32601` meth
 ## Compatibility notes
 
 - **PHP:** requires `^8.2`. The `illuminate/*` (Laravel) components used for storage require PHP 8.2+, so the constraint is `^8.2` (an earlier `^8.0` declaration could never resolve). CI matrix: 8.2 / 8.3 / 8.4.
-- **Protocol version:** this SDK implements A2A **v0.3.0**. The latest stable A2A spec is **v1.0.1** (released January 2026 under the Linux Foundation). v1.0 is a breaking spec change (unified `Part`, SCREAMING_SNAKE_CASE enums, renamed operations, `supportedInterfaces[]` agent card, signed agent cards, `google.rpc` errors, cursor-paginated `ListTasks`). It is **not yet implemented here**; the planned upgrade is additive (a parallel `A2A\V1\…` namespace beside the frozen v0.3.0 surface, plus a Laravel package layer) so no v0.3.0 consumer breaks. See `docs/UPGRADE-1.0.md`.
+- **Protocol version:** this SDK implements A2A **v0.3.0**. The latest stable A2A spec is **v1.0.1** (v1.0.0 announced 12 March 2026 under the Linux Foundation; v1.0.1 followed on 28 May 2026). v1.0 is a breaking spec change (unified `Part`, SCREAMING_SNAKE_CASE enums, renamed operations, `supportedInterfaces[]` agent card, signed agent cards, `google.rpc` errors, cursor-paginated `ListTasks`). It is **not yet implemented here**; the planned upgrade is additive (a parallel `A2A\V1\…` namespace beside the frozen v0.3.0 surface, plus a Laravel package layer) so no v0.3.0 consumer breaks. See `docs/UPGRADE-1.0.md`.
 - **Backward compatibility:** the public API of `A2A\A2AProtocol_v030` (constructor, `getAgentCard`, `createTask`, `sendMessage`, `handleRequest`, `addMessageHandler`, `getTaskManager`) and the protected `processMessage()` extension point are stable. Protocol-version-scoped models live in `A2A\Models\v030`; version-agnostic models (parts, files, security schemes) live in `A2A\Models`.
 - **TCK conformance:** verified against the official `a2aproject/a2a-tck` pinned at `0.3.0.beta5` — mandatory 32, capability 39 (honesty "excellent"), quality 14, features 15; zero failures. CI re-runs the TCK on every pull request. Pin/upgrade procedure: `docs/tck-upgrade.md`. (The historical "66/66" figure was measured against an older TCK snapshot; the kit has since grown, e.g. push-delivery tests.)
 - **Transports:** JSON-RPC 2.0 over HTTP is the implemented and TCK-verified transport. gRPC is a stub (`A2A\Client\GrpcClient`) that fails fast unless `ext-grpc` is installed; `grpc/grpc` is a `suggest`, not a hard dependency.

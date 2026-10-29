@@ -51,6 +51,7 @@ versioning: [SemVer](https://semver.org/).
   (`display_errors=0`).
 
 ### Changed
+- Docs: audit of 29 Oct 2026 corrected the install command, API reference and HTTPS notes, and added library usage, diagrams, CI/releases notes and `AGENTS.md`.
 - `composer.json`: `php` constraint corrected from `^8.0` to `^8.2`
   (the `illuminate/* ^12` dependencies already required PHP 8.2+, so
   8.0/8.1 installs could never resolve).

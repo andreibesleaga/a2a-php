@@ -22,7 +22,8 @@ JSON-RPC response envelope. `SSEStreamer` handles headers/flushing;
 - Works in plain PHP request lifecycles without an async runtime.
 - One streaming response per request process: PHP's built-in server is
   single-threaded, so the demo server handles one stream at a time —
-  acceptable for the reference/demo scope, documented in SECURITY.md.
+  acceptable for the reference/demo scope, documented in
+  docs/protocol-compliance.md ("Known limitations").
 - True concurrent streaming (many long-lived connections) needs an async
   runtime (ReactPHP/Amp/Swoole/FrankenPHP worker mode); that is a v2
-  architecture concern (see audit Future/V4).
+  architecture concern.
