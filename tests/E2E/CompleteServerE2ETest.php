@@ -312,6 +312,23 @@ class CompleteServerE2ETest extends TestCase
         $this->assertStringContainsString('data:', $raw['body']);
     }
 
+    public function testResubscribeEndsWithCloseEventAndNoJsonBody(): void
+    {
+        $created = $this->rpc('message/send', $this->textMessage('resub me', 'e2e-resub-1'), 20);
+        $taskId = $created['result']['id'];
+
+        $raw = $this->httpRequest('POST', '/', json_encode([
+            'jsonrpc' => '2.0',
+            'id' => 'resub-1',
+            'method' => 'tasks/resubscribe',
+            'params' => ['id' => $taskId]
+        ]));
+
+        $this->assertStringContainsString('text/event-stream', $raw['headers']['content-type'] ?? '');
+        $this->assertStringContainsString('event: task-status', $raw['body']);
+        $this->assertMatchesRegularExpression('/event: close\ndata: \n\n$/', $raw['body']);
+    }
+
     public function testPushNotificationWebhookDeliveryEndToEnd(): void
     {
         @unlink(self::$webhookLog);

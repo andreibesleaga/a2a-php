@@ -239,11 +239,8 @@ class PushNotificationConfigTest extends TestCase
 
         $response = $this->server->handleRequest($request);
 
-        $this->assertEquals('2.0', $response['jsonrpc']);
-        $this->assertEquals(5, $response['id']);
-        $this->assertArrayHasKey('result', $response);
-        $this->assertEquals('resubscribed', $response['result']['status']);
-        $this->assertEquals($task->getId(), $response['result']['taskId']);
+        // The snapshot goes out over SSE; no JSON-RPC body may follow it.
+        $this->assertSame([], $response);
     }
 
     public function testTasksResubscribeNotFound(): void
@@ -259,9 +256,8 @@ class PushNotificationConfigTest extends TestCase
 
         $response = $this->server->handleRequest($request);
 
-        $this->assertEquals('2.0', $response['jsonrpc']);
-        $this->assertEquals(6, $response['id']);
-        $this->assertArrayHasKey('error', $response);
+        // The error is delivered as an SSE error event, not as a second body.
+        $this->assertSame([], $response);
     }
 
     public function testPushNotificationConfigMissingParameters(): void
