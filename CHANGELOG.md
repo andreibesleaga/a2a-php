@@ -6,6 +6,8 @@ versioning: [SemVer](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.9.7-beta] — 2026-10-29
+
 ### Added
 - **Container image on ghcr.io** — `Dockerfile` (php:8.3-cli-alpine, no-dev vendor from the
   lockfile, unprivileged, healthchecked) runs the reference server
@@ -13,6 +15,31 @@ versioning: [SemVer](https://semver.org/).
   the agent card + JSON-RPC `ping`, and pushes `ghcr.io/andreibesleaga/a2a-php` on `v*` tags, on
   `main` pushes touching the image inputs, or by manual dispatch. Packagist remains the canonical
   distribution of the library (GitHub Packages has no Composer registry).
+
+### Fixed
+- `tasks/resubscribe` no longer sends a JSON body after the SSE close event
+  (`TaskResubscribeHandler`); tests added.
+
+### Changed
+- Docs: audit of 29 Oct 2026 corrected the install command, API reference and HTTPS notes, and added library usage, diagrams, CI/releases notes and `AGENTS.md`;
+  root documents moved under `docs/`, the HTTPS summary merged into the HTTPS guide, the Pages
+  landing page replaced; an unverifiable contact line and a "first in PHP" claim removed;
+  `coverage/` ignored.
+- Official A2A TCK pin moved from `0.3.0.beta5` to `0.3.0.beta6` (`docs/tck-upgrade.md`).
+- Dependency updates (Dependabot): guzzle, phpstan, monolog, ramsey/uuid, docker actions.
+
+## [0.9.6-beta] — 2026-09-10
+
+### Added
+- `llms.txt` (llmstxt.org) for AI-agent consumers.
+
+### Changed
+- Dependency updates (Dependabot): guzzle, phpstan, monolog, ramsey/uuid, php_codesniffer,
+  actions/checkout.
+
+## [0.9.5-beta] — 2026-06-10
+
+### Added
 - Push notification webhook **delivery** (A2A v0.3.0 §9.5): task snapshots
   are POSTed to the configured webhook with `X-A2A-Notification-Token` and
   `Authorization` headers on task state changes.
@@ -51,7 +78,6 @@ versioning: [SemVer](https://semver.org/).
   (`display_errors=0`).
 
 ### Changed
-- Docs: audit of 29 Oct 2026 corrected the install command, API reference and HTTPS notes, and added library usage, diagrams, CI/releases notes and `AGENTS.md`.
 - `composer.json`: `php` constraint corrected from `^8.0` to `^8.2`
   (the `illuminate/* ^12` dependencies already required PHP 8.2+, so
   8.0/8.1 installs could never resolve).
@@ -67,3 +93,11 @@ versioning: [SemVer](https://semver.org/).
   Note: the previously advertised 66/66 figure was measured against an
   older TCK snapshot; the kit has since grown (e.g. webhook delivery
   tests), and this release passes the enlarged suite in full.
+
+Earlier tags (v0.1.0-beta, 2025-07-10 … v0.9.0-beta, 2025-10-07) predate this file; see the
+GitHub releases.
+
+[Unreleased]: https://github.com/andreibesleaga/a2a-php/compare/v0.9.7-beta...HEAD
+[0.9.7-beta]: https://github.com/andreibesleaga/a2a-php/compare/v0.9.6-beta...v0.9.7-beta
+[0.9.6-beta]: https://github.com/andreibesleaga/a2a-php/compare/v0.9.5-beta...v0.9.6-beta
+[0.9.5-beta]: https://github.com/andreibesleaga/a2a-php/compare/v0.9.0-beta...v0.9.5-beta
