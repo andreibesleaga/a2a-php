@@ -7,7 +7,7 @@ the README wins; fix this file.
 
 ## What this repository is
 
-A PHP SDK for the A2A (Agent-to-Agent) Protocol **v0.3.0**: JSON-RPC 2.0 over
+A PHP SDK for the A2A (Agent2Agent) Protocol **v0.3.0**: JSON-RPC 2.0 over
 HTTP POST, Server-Sent Events for streaming, push notification webhooks, and a
 runnable reference server. Composer package `andreibesleaga/a2a-php`, PHP `^8.2`,
 namespace `A2A\` mapped to `src/`. The v1.0 protocol is not implemented; see
