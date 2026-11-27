@@ -1,6 +1,6 @@
 {
   "name": "andreibesleaga/a2a-php",
-  "description": "A2A (AI Agent-to-Agent) Protocol PHP SDK",
+  "description": "A2A (AI Agent2Agent) Protocol PHP SDK",
   "type": "library",
   "keywords": ["a2a", "agent", "protocol", "sdk"],
   "license": "Apache-2.0",

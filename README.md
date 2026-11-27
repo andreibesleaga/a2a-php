@@ -1,6 +1,6 @@
 # A2A PHP SDK
 
-A PHP implementation of the A2A (Agent-to-Agent) Protocol (v0.3.0). The repository includes the unofficial library implementation and a fully compliant sample server, strict JSON-RPC validation logic, task management utilities, streaming support, and push notification handling.
+A PHP implementation of the A2A (Agent2Agent) Protocol (v0.3.0). The repository includes the unofficial library implementation and a fully compliant sample server, strict JSON-RPC validation logic, task management utilities, streaming support, and push notification handling.
 
 ## Quick start
 
@@ -196,6 +196,8 @@ For HTTPS deployment details, see `docs/A2A_HTTPS_IMPLEMENTATION.md`.
 Architecture and diagrams: `ARCHITECTURE.md`. Short guide for contributors and
 coding agents: `AGENTS.md`. Security policy: `SECURITY.md`. Release history:
 `CHANGELOG.md`.
+
+Related: [agentic-ai-php](https://github.com/andreibesleaga/agentic-ai-php), the PHP port of the companion code of the book *Agentic AI Architectures: Multi-Agent System Patterns with TypeScript* by Andrei N. Besleaga (Wiley; publication planned for 2026; https://agenticaiarchitectures.com), uses this SDK in its Agent2Agent example.
 
 ## Contributing
 

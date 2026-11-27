@@ -2,7 +2,7 @@
 
 ## Overview
 
-The a2a-php SDK implements the A2A (Agent-to-Agent) Protocol in PHP.
+The a2a-php SDK implements the A2A (Agent2Agent) Protocol in PHP.
 
 ## Diagrams
 
